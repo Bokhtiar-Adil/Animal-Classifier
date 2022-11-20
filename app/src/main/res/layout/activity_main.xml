@@ -4,18 +4,90 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg_1"
     tools:context="com.example.animalclassifierv3.MainActivity">
 
-    <Button
-        android:id="@+id/result"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="256dp"
-        android:text="Result"
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="225dp"
+        android:layout_marginTop="48dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/tiger_eyes_1"
+        android:scaleType="fitXY"/>
+
+    <Button
+        android:id="@+id/camerabtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/midnight_blue"
+        android:padding="10dp"
+        android:text="Take a photo"
+        android:textColor="@color/lime"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/gallerybtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/midnight_blue"
+        android:padding="10dp"
+        android:text="Open Gallery"
+
+        android:textColor="@color/lime"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/camerabtn" />
+
+    <Button
+        android:id="@+id/encyclobtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/gallerybtn"
+        android:text="Encyclopedia"
+        android:textColor="@color/lime"
+        android:background="@color/midnight_blue"
+        android:textSize="18sp"
+        android:padding="10dp"
+        />
+
+    <Button
+        android:id="@+id/aboutbtn"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/encyclobtn"
+        android:text="About App"
+        android:textColor="@color/lime"
+        android:background="@color/midnight_blue"
+        android:textSize="18sp"
+        android:padding="10dp"/>
+
+    <!--    <Button-->
+<!--        android:id="@+id/result"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="52dp"-->
+<!--        android:text="Result"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintHorizontal_bias="0.498"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/encyclobtn" />-->
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

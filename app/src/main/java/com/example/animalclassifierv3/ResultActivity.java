@@ -33,10 +33,14 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
+        Bundle extras = getIntent().getExtras();
+        byte[] byteArray = extras.getByteArray("userInput");
+
         Bitmap bitmap = null;
         Module module = null;
         try {
-            bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
+            bitmap = BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
+            //bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
             module = LiteModuleLoader.load(assetFilePath(this, "model.pt"));
         } catch (IOException e) {
             Log.e("PytorchHelloWorld", "Error reading assets", e);
