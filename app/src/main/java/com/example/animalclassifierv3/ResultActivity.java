@@ -1,6 +1,7 @@
 package com.example.animalclassifierv3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -35,6 +36,10 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("userInput");
+
+//        Intent intent = getIntent();
+//        String img = intent.getStringExtra("userInput");
+//        Uri file
 
         Bitmap bitmap = null;
         Module module = null;
