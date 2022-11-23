@@ -1,7 +1,6 @@
 package com.example.animalclassifierv3;
 
 import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -13,7 +12,6 @@ import org.pytorch.IValue;
 import org.pytorch.LiteModuleLoader;
 import org.pytorch.Module;
 import org.pytorch.Tensor;
-import com.example.animalclassifierv3.R;
 import org.pytorch.torchvision.TensorImageUtils;
 import org.pytorch.MemoryFormat;
 
@@ -24,8 +22,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import com.example.animalclassifierv3.ImageNetClasses;
 
 public class ResultActivity extends AppCompatActivity {
 
@@ -70,13 +66,14 @@ public class ResultActivity extends AppCompatActivity {
         float maxScore = -Float.MAX_VALUE;
         int maxScoreIdx = -1;
         for (int i = 0; i < scores.length; i++) {
+            if (i==21 || i==51 || i==101 || i>=398) continue;
             if (scores[i] > maxScore) {
                 maxScore = scores[i];
                 maxScoreIdx = i;
             }
         }
 
-        String className = ImageNetClasses.IMAGENET_CLASSES[maxScoreIdx];
+        String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
 
         // showing className on UI
         TextView textView = findViewById(R.id.text);

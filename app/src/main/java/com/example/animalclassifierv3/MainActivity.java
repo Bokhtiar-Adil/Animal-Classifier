@@ -95,9 +95,15 @@ public class MainActivity extends AppCompatActivity {
 //          String ddf = String.valueOf(ht), fff = String.valueOf(wt);
 //          temp.setText(ddf+fff);
           Bitmap resizedImg = img;
-          if(ht*wt > 876544) {
+          if(ht*wt > 876544 && wt>ht) {
             int newHt = (int) ((ht*1024)/wt);
-            resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
+            if(newHt!=1024) resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
+            else resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
+          }
+          else if(ht*wt > 876544 && ht>wt) {
+            int newWt = (int) ((wt*1024)/ht);
+            if(newWt!=1024) resizedImg = Bitmap.createScaledBitmap(img, newWt,1024,true);
+            else resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
           }
           ByteArrayOutputStream stream = new ByteArrayOutputStream();
           resizedImg.compress(Bitmap.CompressFormat.JPEG, 100, stream);
