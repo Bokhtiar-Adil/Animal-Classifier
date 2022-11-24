@@ -97,13 +97,20 @@ public class MainActivity extends AppCompatActivity {
           Bitmap resizedImg = img;
           if(ht*wt > 876544 && wt>ht) {
             int newHt = (int) ((ht*1024)/wt);
-            if(newHt!=1024) resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
-            else resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
+            if(newHt<856) resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
+            else {
+              newHt /= 2;
+              resizedImg = Bitmap.createScaledBitmap(img, 512, newHt,true);
+            }
+
           }
           else if(ht*wt > 876544 && ht>wt) {
             int newWt = (int) ((wt*1024)/ht);
-            if(newWt!=1024) resizedImg = Bitmap.createScaledBitmap(img, newWt,1024,true);
-            else resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
+            if(newWt<856) resizedImg = Bitmap.createScaledBitmap(img, newWt,1024,true);
+            else {
+              newWt /= 2;
+              resizedImg = Bitmap.createScaledBitmap(img, newWt, 512,true);
+            }
           }
           ByteArrayOutputStream stream = new ByteArrayOutputStream();
           resizedImg.compress(Bitmap.CompressFormat.JPEG, 100, stream);
