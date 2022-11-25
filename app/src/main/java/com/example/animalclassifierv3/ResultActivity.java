@@ -66,7 +66,7 @@ public class ResultActivity extends AppCompatActivity {
         float maxScore = -Float.MAX_VALUE;
         int maxScoreIdx = -1;
         for (int i = 0; i < scores.length; i++) {
-            if (i==21 || i==51 || i==101 || i>=398) continue;
+            if (i>=398) continue;
             if (scores[i] > maxScore) {
                 maxScore = scores[i];
                 maxScoreIdx = i;
