@@ -1,49 +1,281 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ResultActivity">
+    android:layout_height="wrap_content"
+    >
 
-    <TextView
-        android:id="@+id/header"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/image"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="16dp"
-        android:text="Bingo !! We got it !"
-        android:textSize="21sp"
-        android:padding="10dp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="#fff"
-        android:background="@color/midnight_blue"
-        />
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        tools:context=".ResultActivity">
 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_marginTop="144dp"
-        android:scaleType="fitCenter"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@+id/image"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp"
+            android:text="Bingo !! We got it !"
+            android:textSize="21sp"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:background="@color/midnight_blue"
+            />
 
-    <TextView
-        android:id="@+id/text"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:textSize="21sp"
-        android:padding="10dp"
-        android:textAllCaps="true"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textColor="@color/lime"
-        android:background="@color/midnight_blue"
-        app:layout_constraintTop_toBottomOf="@+id/image"
-        tools:layout_editor_absoluteX="0dp" />
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="100dp"
+            android:scaleType="fitCenter"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="0dp" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:background="@color/midnight_blue"
+            android:padding="10dp"
+            android:textAlignment="center"
+            android:textAllCaps="true"
+            android:textColor="@color/lime"
+            android:textSize="21sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/image"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <TextView
+            android:id="@+id/alert"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            app:layout_constraintTop_toBottomOf="@+id/text"
+            tools:layout_editor_absoluteX="0dp"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:padding="5dp"
+            android:textColor="#ff0000"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/brief"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/alert"
+            tools:layout_editor_absoluteX="0dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"
+            />
+
+        <TextView
+            android:id="@+id/sciname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/brief"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Scientific Name"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/scidet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/sciname"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"
+
+            />
+
+        <TextView
+            android:id="@+id/nature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/scidet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Nature"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/naturedet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/nature"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/habitat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/naturedet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Habitat"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/habitatdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/habitat"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/food"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/habitatdet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Preferred Food"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/fooddet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/food"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/spec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/fooddet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Specialities"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/specdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/spec"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/misc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/specdet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Miscellaneous"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/miscdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/misc"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/miscdet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Click on the following button to learn more about it from online. Also, make sure your internet connection is on."
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <Button
+            android:id="@+id/morebtn"
+            android:layout_width="200dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/more"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Learn more"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="@color/lime"
+            android:background="@color/midnight_blue"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
+

@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
     gallerybtn = findViewById(R.id.gallerybtn);
     encyclobtn = findViewById(R.id.encyclobtn);
     aboutbtn = findViewById(R.id.aboutbtn);
+
 //    TextView temp = findViewById(R.id.temp);
+//    String ss = AnimalDetails.Details[1][3];
+//    temp.setText(ss);
 
 //    btn = findViewById(R.id.result);
 //    btn.setOnClickListener(new View.OnClickListener() {
