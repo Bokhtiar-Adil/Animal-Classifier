@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
 //          String ddf = String.valueOf(ht), fff = String.valueOf(wt);
 //          temp.setText(ddf+fff);
           Bitmap resizedImg = img;
-          if(ht*wt > 876544 && wt>ht) {
+          if(ht*wt > 876544 && wt>=ht) {
             int newHt = (int) ((ht*1024)/wt);
             if(newHt<856) resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
             else {

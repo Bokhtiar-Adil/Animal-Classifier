@@ -63,7 +63,8 @@
             android:textSize="25sp"
             android:padding="5dp"
             android:textColor="#ff0000"
-            android:visibility="invisible" />
+            android:visibility="visible"
+            />
 
         <TextView
             android:id="@+id/brief"
@@ -108,11 +109,41 @@
             />
 
         <TextView
-            android:id="@+id/nature"
+            android:id="@+id/cst"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/scidet"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:text="Conservation Status"
+            android:textAlignment="center"
+            android:textSize="21sp"
+            android:padding="5dp"
+            android:textColor="#000CF4"
+
+            />
+
+        <TextView
+            android:id="@+id/cstdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/cst"
+            tools:layout_editor_absoluteX="16dp"
+
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp"
+
+            />
+
+        <TextView
+            android:id="@+id/nature"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/cstdet"
             tools:layout_editor_absoluteX="16dp"
 
             android:text="Nature"
@@ -189,14 +220,14 @@
             android:padding="5dp"/>
 
         <TextView
-            android:id="@+id/spec"
+            android:id="@+id/desc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/fooddet"
             tools:layout_editor_absoluteX="16dp"
 
-            android:text="Specialities"
+            android:text="Description"
             android:textAlignment="center"
             android:textSize="21sp"
             android:padding="5dp"
@@ -205,49 +236,24 @@
             />
 
         <TextView
-            android:id="@+id/specdet"
+            android:id="@+id/descdet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/spec"
+            app:layout_constraintTop_toBottomOf="@+id/desc"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp"/>
 
-        <TextView
-            android:id="@+id/misc"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/specdet"
-            tools:layout_editor_absoluteX="16dp"
 
-            android:text="Miscellaneous"
-            android:textAlignment="center"
-            android:textSize="21sp"
-            android:padding="5dp"
-            android:textColor="#000CF4"
-
-            />
-
-        <TextView
-            android:id="@+id/miscdet"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/misc"
-            tools:layout_editor_absoluteX="16dp"
-            android:textAlignment="center"
-            android:textSize="18sp"
-            android:padding="5dp"/>
 
         <TextView
             android:id="@+id/more"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
-            app:layout_constraintTop_toBottomOf="@+id/miscdet"
+            app:layout_constraintTop_toBottomOf="@+id/descdet"
             tools:layout_editor_absoluteX="16dp"
 
             android:text="Click on the following button to learn more about it from online. Also, make sure your internet connection is on."
