@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -25,6 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
+    TextView alert,brief,scifi,cst,nature,habitat,food,desc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +46,7 @@ public class ResultActivity extends AppCompatActivity {
             //bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
             module = LiteModuleLoader.load(assetFilePath(this, "model.pt"));
         } catch (IOException e) {
-            Log.e("PytorchHelloWorld", "Error reading assets", e);
+            Log.e("AnimalClassifier", "Error reading assets", e);
             finish();
         }
 
@@ -74,10 +76,38 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
+        //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
+        String[] details = AnimalDetails.Dummy;
 
         // showing className on UI
         TextView textView = findViewById(R.id.text);
         textView.setText(className);
+
+
+        // showing details on UI
+        alert = findViewById(R.id.alert);
+        brief = findViewById(R.id.brief);
+        scifi = findViewById(R.id.scidet);
+        cst = findViewById(R.id.cstdet);
+        nature = findViewById(R.id.naturedet);
+        habitat = findViewById(R.id.habitatdet);
+        food = findViewById(R.id.fooddet);
+        desc = findViewById(R.id.descdet);
+
+        if(details[1] == "False") {
+            alert.setVisibility(View.VISIBLE);
+        }
+        else {
+            alert.setText(details[1]);
+        }
+        brief.setText(details[2]);
+        scifi.setText(details[3]);
+        cst.setText(details[4]);
+        nature.setText(details[5]);
+        habitat.setText(details[6]);
+        food.setText(details[7]);
+        desc.setText(details[8]);
+
     }
 
     public static String assetFilePath(Context context, String assetName) throws IOException {
