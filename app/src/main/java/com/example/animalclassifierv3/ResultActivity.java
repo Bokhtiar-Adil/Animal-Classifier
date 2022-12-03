@@ -26,7 +26,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
-    TextView alert,brief,scifi,cst,nature,habitat,food,desc;
+    TextView alert,scifi,cst,desc;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -86,27 +86,19 @@ public class ResultActivity extends AppCompatActivity {
 
         // showing details on UI
         alert = findViewById(R.id.alert);
-        brief = findViewById(R.id.brief);
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
-        nature = findViewById(R.id.naturedet);
-        habitat = findViewById(R.id.habitatdet);
-        food = findViewById(R.id.fooddet);
         desc = findViewById(R.id.descdet);
 
-        if(details[1] == "False") {
+        if(details[2] == "False") {
             alert.setVisibility(View.VISIBLE);
         }
         else {
-            alert.setText(details[1]);
+            alert.setText(details[2]);
         }
-        brief.setText(details[2]);
         scifi.setText(details[3]);
         cst.setText(details[4]);
-        nature.setText(details[5]);
-        habitat.setText(details[6]);
-        food.setText(details[7]);
-        desc.setText(details[8]);
+        desc.setText(details[5]);
 
     }
 
