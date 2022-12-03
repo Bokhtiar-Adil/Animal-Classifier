@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
   private final int GALLERY_REQ_CODE = 2;
   Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn;
   ImageView imgview;
+//  TextView temp;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     encyclobtn = findViewById(R.id.encyclobtn);
     aboutbtn = findViewById(R.id.aboutbtn);
 
-//    TextView temp = findViewById(R.id.temp);
+//    temp = findViewById(R.id.temp);
 //    String ss = AnimalDetails.Details[1][3];
 //    temp.setText(ss);
 
@@ -95,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
           Bitmap img = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
           int ht = img.getHeight();
           int wt = img.getWidth();
-//          String ddf = String.valueOf(ht), fff = String.valueOf(wt);
+          String ddf = String.valueOf(ht), fff = String.valueOf(wt);
 //          temp.setText(ddf+fff);
           Bitmap resizedImg = img;
           if(ht*wt > 876544 && wt>=ht) {
@@ -114,7 +115,10 @@ public class MainActivity extends AppCompatActivity {
               newWt /= 2;
               resizedImg = Bitmap.createScaledBitmap(img, newWt, 512,true);
             }
+            //temp.setText(ddf+" "+fff+" "+String.valueOf(newWt)+" "+String.valueOf(1024));
           }
+          //temp.setText(ddf+fff+String.valueOf(newWt));
+          //resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
           ByteArrayOutputStream stream = new ByteArrayOutputStream();
           resizedImg.compress(Bitmap.CompressFormat.JPEG, 100, stream);
           byte[] byteArray = stream.toByteArray();
