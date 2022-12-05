@@ -76,11 +76,8 @@
 
             android:text="Scientific Name"
             android:textAlignment="center"
-            android:textSize="21sp"
-            android:padding="5dp"
-            android:textColor="#000CF4"
-
-            />
+            android:textSize="18sp"
+            android:padding="5dp" />
 
         <TextView
             android:id="@+id/scidet"
@@ -91,10 +88,9 @@
             tools:layout_editor_absoluteX="16dp"
 
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:padding="5dp"
-
-            />
+            android:textColor="#000CF4" />
 
         <TextView
             android:id="@+id/cst"
@@ -106,11 +102,8 @@
 
             android:text="Conservation Status"
             android:textAlignment="center"
-            android:textSize="21sp"
-            android:padding="5dp"
-            android:textColor="#000CF4"
-
-            />
+            android:textSize="18sp"
+            android:padding="5dp" />
 
         <TextView
             android:id="@+id/cstdet"
@@ -121,10 +114,9 @@
             tools:layout_editor_absoluteX="16dp"
 
             android:textAlignment="center"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:padding="5dp"
-
-            />
+            android:textColor="#000CF4" />
 
 
         <TextView
@@ -137,11 +129,8 @@
 
             android:text="Description"
             android:textAlignment="center"
-            android:textSize="21sp"
-            android:padding="5dp"
-            android:textColor="#000CF4"
-
-            />
+            android:textSize="18sp"
+            android:padding="5dp" />
 
         <TextView
             android:id="@+id/descdet"
@@ -151,8 +140,9 @@
             app:layout_constraintTop_toBottomOf="@+id/desc"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
-            android:textSize="18sp"
-            android:padding="5dp"/>
+            android:textSize="20sp"
+            android:padding="5dp"
+            android:textColor="#000CF4" />
 
 
 
@@ -167,10 +157,7 @@
             android:text="Click on the following button to learn more about it from online. Also, make sure your internet connection is on."
             android:textAlignment="center"
             android:textSize="21sp"
-            android:padding="5dp"
-            android:textColor="#000CF4"
-
-            />
+            android:padding="5dp" />
 
         <Button
             android:id="@+id/morebtn"
