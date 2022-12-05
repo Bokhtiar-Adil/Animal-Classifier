@@ -1,11 +1,13 @@
 package com.example.animalclassifierv3;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,6 +29,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity {
 
     TextView alert,scifi,cst,desc;
+    Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,12 +79,19 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
+        String mm = Float.toString(maxScoreIdx);
         //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
         String[] details = AnimalDetails.Dummy;
+        for(int i=0; i<AnimalDetails.DETAILS.length; i++){
+            if(AnimalDetails.DETAILS[i][0] == mm) {
+                details = AnimalDetails.DETAILS[maxScoreIdx];
+            }
+        }
 
         // showing className on UI
         TextView textView = findViewById(R.id.text);
         textView.setText(className);
+        final String cd = className;
 
 
         // showing details on UI
@@ -90,8 +100,10 @@ public class ResultActivity extends AppCompatActivity {
         cst = findViewById(R.id.cstdet);
         desc = findViewById(R.id.descdet);
 
+        btn = findViewById(R.id.morebtn);
+
         if(details[2] == "False") {
-            alert.setVisibility(View.VISIBLE);
+            alert.setVisibility(View.GONE);
         }
         else {
             alert.setText(details[2]);
@@ -99,6 +111,15 @@ public class ResultActivity extends AppCompatActivity {
         scifi.setText(details[3]);
         cst.setText(details[4]);
         desc.setText(details[5]);
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(ResultActivity.this, WebViewActivity.class);
+                intent.putExtra("searchItem", cd);
+                startActivity(intent);
+            }
+        });
 
     }
 
