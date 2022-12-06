@@ -67,6 +67,14 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(gallery, GALLERY_REQ_CODE);
       }
     });
+
+    encyclobtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, EncyclopediaActivity.class);
+        startActivity(intent);
+      }
+    });
   }
 
   @Override
