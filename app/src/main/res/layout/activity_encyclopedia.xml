@@ -52,8 +52,8 @@
             android:id="@+id/sciname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
 
             android:padding="5dp"
             android:text="Scientific Name"
@@ -67,7 +67,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
 
             android:padding="5dp"
             android:textAlignment="center"
@@ -75,7 +76,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toEndOf="@+id/sciname"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
 
@@ -83,8 +83,8 @@
             android:id="@+id/cst"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
 
             android:padding="5dp"
             android:text="Conservation Status"
@@ -97,7 +97,8 @@
             android:id="@+id/cstdet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:padding="5dp"
             android:textAlignment="center"
 
@@ -105,15 +106,14 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.42"
-            app:layout_constraintStart_toEndOf="@+id/cst"
             app:layout_constraintTop_toBottomOf="@+id/scidet" />
 
         <TextView
             android:id="@+id/alert"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
             android:padding="5dp"
             android:text="Venomous status"
             android:textAlignment="center"
@@ -126,7 +126,8 @@
             android:id="@+id/alertdet"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:padding="5dp"
             android:textAlignment="center"
 
@@ -134,7 +135,6 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.472"
-            app:layout_constraintStart_toEndOf="@+id/alert"
             app:layout_constraintTop_toBottomOf="@+id/cstdet" />
 
         <TextView
@@ -200,12 +200,16 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="76dp"
             android:layout_marginTop="20dp"
-            android:background="@color/midnight_blue"
-            android:padding="5dp"
+            android:background="@drawable/custom_btn_1"
+            android:focusable="true"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="15dp"
             android:text="Photos"
-            android:textAlignment="center"
-            android:textColor="@color/lime"
-            android:textSize="18sp"
+            android:textAllCaps="false"
+            android:textColor="@color/midnight_blue"
+            android:textSize="17sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/more" />
 
@@ -214,16 +218,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@color/midnight_blue"
-            android:padding="5dp"
-            android:text="Links"
-            android:textAlignment="center"
-            android:textColor="@color/lime"
-            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.37"
             app:layout_constraintStart_toEndOf="@+id/photos"
-            app:layout_constraintTop_toBottomOf="@+id/more" />
+            app:layout_constraintTop_toBottomOf="@+id/more"
+            android:text="Links"
+            android:textColor="@color/midnight_blue"
+            android:textSize="17sp"
+            android:paddingTop="15dp"
+            android:paddingBottom="15dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp"
+            android:focusable="true"
+            android:textAllCaps="false"
+            android:background="@drawable/custom_btn_1"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="12dp"
+            app:layout_constraintTop_toBottomOf="@+id/photos"
+            tools:layout_editor_absoluteX="0dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
