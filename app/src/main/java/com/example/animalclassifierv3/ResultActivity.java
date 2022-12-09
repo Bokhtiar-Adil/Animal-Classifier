@@ -69,11 +69,15 @@ public class ResultActivity extends AppCompatActivity {
 
         // searching for the index with maximum score
         float maxScore = -Float.MAX_VALUE;
-        int maxScoreIdx = -1;
+        int maxScoreIdx = -1, maxSecondScoreIdx = -1, maxThirdScoreIdx = -1, maxFourthScoreIdx = -1, maxFifthScoreIdx = -1;
         for (int i = 0; i < scores.length; i++) {
             if (i>=398) continue;
             if (scores[i] > maxScore) {
                 maxScore = scores[i];
+//                maxFifthScoreIdx = maxFourthScoreIdx;
+//                maxFourthScoreIdx = maxThirdScoreIdx;
+//                maxThirdScoreIdx = maxSecondScoreIdx;
+//                maxSecondScoreIdx = maxScoreIdx;
                 maxScoreIdx = i;
             }
         }
