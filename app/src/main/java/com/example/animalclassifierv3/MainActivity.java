@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
-    imgview = findViewById(R.id.imageView);
+    //imgview = findViewById(R.id.imageView);
     camerabtn = findViewById(R.id.camerabtn);
     gallerybtn = findViewById(R.id.gallerybtn);
     encyclobtn = findViewById(R.id.encyclobtn);
