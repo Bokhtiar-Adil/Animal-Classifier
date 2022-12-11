@@ -18,7 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="52dp"
             android:padding="10dp"
-            android:text="Select an animal to learn about:"
             android:textSize="18sp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="0dp" />
@@ -56,7 +55,6 @@
             android:layout_marginTop="20dp"
 
             android:padding="5dp"
-            android:text="Scientific Name"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -87,7 +85,6 @@
             android:layout_marginTop="20dp"
 
             android:padding="5dp"
-            android:text="Conservation Status"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -115,7 +112,6 @@
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
             android:padding="5dp"
-            android:text="Venomous status"
             android:textAlignment="center"
             android:textSize="18sp"
             android:visibility="visible"
@@ -162,7 +158,6 @@
             app:layout_constraintTop_toBottomOf="@+id/alertdet2"
             tools:layout_editor_absoluteX="16dp"
 
-            android:text="Description"
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp" />
@@ -189,7 +184,6 @@
             app:layout_constraintTop_toBottomOf="@+id/descdet"
             tools:layout_editor_absoluteX="16dp"
 
-            android:text="Click on the following buttons to learn more about it from online. Also, make sure your internet connection is on."
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp" />
