@@ -33,6 +33,7 @@ public class ResultActivity extends AppCompatActivity {
     TextView scilbl,cstlbl,desclbl,header,more;
     int language;
     Button btn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,7 +124,13 @@ public class ResultActivity extends AppCompatActivity {
             }
         }
 
-        String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
+        String className;
+        if(language==0) {
+            className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
+        }
+        else {
+            className = AnimalClasses.ANIMAL_CLASSES_BANGLA[maxScoreIdx];
+        }
         String[] details = AnimalDetails.Dummy;
         //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
         int ind;
