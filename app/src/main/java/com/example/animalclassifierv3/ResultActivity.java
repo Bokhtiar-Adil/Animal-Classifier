@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,11 +30,51 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ResultActivity extends AppCompatActivity {
 
     TextView alert,scifi,cst,desc;
+    TextView scilbl,cstlbl,desclbl,header,more;
+    int language;
     Button btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+
+        scilbl = findViewById(R.id.sciname);
+        cstlbl = findViewById(R.id.cst);
+        desclbl = findViewById(R.id.desc);
+        header = findViewById(R.id.header);
+        more = findViewById(R.id.more);
+
+        final Typeface tf = Typeface.createFromAsset(this.getAssets(),
+                "font/kalpurush.ttf");
+
+        header.setTypeface(tf);
+        scilbl.setTypeface(tf);
+        desclbl.setTypeface(tf);
+        cstlbl.setTypeface(tf);
+        more.setTypeface(tf);
+        //btn.setTypeface(tf);
+
+        Intent intent = getIntent();
+        language = intent.getIntExtra("language", 0);
+        Log.d("languageRes", String.valueOf(language));
+
+        if(language==0) {
+            header.setText(R.string.res_header);
+            scilbl.setText(R.string.res_scifi);
+            desclbl.setText(R.string.res_desc);
+            cstlbl.setText(R.string.res_cst);
+            more.setText(R.string.res_more);
+            //btn.setText(R.string.res_more_btn);
+        }
+        else {
+            header.setText(R.string.res_header_bangla);
+            scilbl.setText(R.string.res_scifi_bangla);
+            desclbl.setText(R.string.res_desc_bangla);
+            cstlbl.setText(R.string.res_cst_bangla);
+            more.setText(R.string.res_more_bangla);
+            //btn.setText(R.string.res_more_btn_bangla);
+        }
+
 
         Bundle extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("userInput");

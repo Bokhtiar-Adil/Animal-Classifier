@@ -19,7 +19,6 @@
             app:layout_constraintBottom_toTopOf="@+id/image"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="16dp"
-            android:text="Bingo !! We got it !"
             android:textSize="21sp"
             android:padding="10dp"
             android:textAlignment="center"
@@ -72,9 +71,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-
             android:padding="5dp"
-            android:text="Scientific Name"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -104,8 +101,6 @@
             android:layout_marginTop="20dp"
             android:layout_marginStart="10dp"
             android:padding="5dp"
-
-            android:text="Conservation Status"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -133,8 +128,6 @@
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/cstdet"
             tools:layout_editor_absoluteX="16dp"
-
-            android:text="Description"
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp" />
@@ -160,8 +153,6 @@
             android:layout_marginTop="20dp"
             app:layout_constraintTop_toBottomOf="@+id/descdet"
             tools:layout_editor_absoluteX="16dp"
-
-            android:text="Click on the following button to learn more about it from online. Also, make sure your internet connection is on."
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp" />
@@ -175,7 +166,8 @@
             app:layout_constraintTop_toBottomOf="@+id/more"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
-            android:text="Learn more"
+
+            android:text="Learn More"
             android:textColor="@color/midnight_blue"
             android:textSize="17sp"
             android:paddingTop="15dp"

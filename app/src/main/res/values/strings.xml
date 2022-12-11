@@ -12,4 +12,20 @@
     <string name="main_capture_bangla">প্রাণীর ছবি আপলোড করে ছবির প্রাণীটি সম্পর্কে জানুন।</string>
     <string name="main_encyclo_bangla">প্রাণিজগতের বৈচিত্রময় প্রাণীদের সম্পর্কে সংক্ষেপে জানুন আমাদের ডাটাবেজ থেকে। অনলাইনে কানেক্ট করুন বিস্তারিত জানার জন্য।</string>
     <string name="main_online_feature_bangla">অনলাইনে কানেক্ট করে বিভিন্ন বিশেষ ফিচার উপভোগ করুন।</string>
+    <string name="res_header">Bingo !! We got it!!</string>
+    <string name="res_header_bangla">আমরা প্রাণীটিকে ডিটেক্ট করতে সক্ষম হয়েছি!!</string>
+    <string name="res_scifi">Scientific Name</string>
+    <string name="res_scifi_bangla">বৈজ্ঞানিক নাম</string>
+    <string name="res_cst">Conservation Status</string>
+    <string name="res_cst_bangla">সংরক্ষণ অবস্থা</string>
+    <string name="res_desc">Description</string>
+    <string name="res_desc_bangla">বর্ণনা</string>
+    <string name="res_more">Click on the following button to learn more about it from online. Also, make sure your internet connection is on.</string>
+    <string name="res_more_bangla">আরও বিস্তারিত জানতে ইন্টারনেট একটিভ করে নিচের বাটনে ক্লিক করুন।</string>
+    <string name="res_more_btn">Learn More</string>
+    <string name="res_more_btn_bangla">আরও জানুন</string>
+    <string name="ency_header">Select an animal to learn about:</string>
+    <string name="ency_header_bangla">যে প্রাণীটি সম্পর্কে জানতে চান সেটি সিলেক্ট করুনঃ</string>
+    <string name="ency_venom">Venomous Status</string>
+    <string name="ency_venom_bangla">বিষাক্ত কী?</string>
 </resources>
