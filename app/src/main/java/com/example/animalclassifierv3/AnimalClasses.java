@@ -1,4 +1,4 @@
-package com.example.animalclassifierv3;
+ package com.example.animalclassifierv3;
 
 public class AnimalClasses {
   public static String[] ANIMAL_CLASSES = new String[]{
