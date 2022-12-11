@@ -69,22 +69,27 @@ public class ResultActivity extends AppCompatActivity {
 
         // searching for the index with maximum score
         float maxScore = -Float.MAX_VALUE;
-        int maxScoreIdx = -1;
+        int maxScoreIdx = -1, maxSecondScoreIdx = -1, maxThirdScoreIdx = -1, maxFourthScoreIdx = -1, maxFifthScoreIdx = -1;
         for (int i = 0; i < scores.length; i++) {
             if (i>=398) continue;
             if (scores[i] > maxScore) {
                 maxScore = scores[i];
+//                maxFifthScoreIdx = maxFourthScoreIdx;
+//                maxFourthScoreIdx = maxThirdScoreIdx;
+//                maxThirdScoreIdx = maxSecondScoreIdx;
+//                maxSecondScoreIdx = maxScoreIdx;
                 maxScoreIdx = i;
             }
         }
 
         String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
-        String mm = Float.toString(maxScoreIdx);
-        //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
         String[] details = AnimalDetails.Dummy;
-        for(int i=0; i<AnimalDetails.DETAILS.length; i++){
-            if(AnimalDetails.DETAILS[i][0] == mm) {
-                details = AnimalDetails.DETAILS[maxScoreIdx];
+        //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
+        int ind;
+        for(ind=0; ind<AnimalDetails.DETAILS.length; ind++){
+            if(Integer.parseInt(AnimalDetails.DETAILS[ind][0]) == maxScoreIdx){
+                details = AnimalDetails.DETAILS[ind];
+                break;
             }
         }
 

@@ -33,8 +33,12 @@
                 android:text="Classify Animals From Images"
                 android:textAlignment="viewStart"
                 android:textColor="@color/lime"
-                android:textSize="28sp"
+                android:textSize="25sp"
                 android:textStyle="bold" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/lime"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -43,7 +47,7 @@
                 android:text="@string/main_capture_photo"
                 android:textAlignment="viewStart"
                 android:textColor="#fff"
-                android:textSize="21sp" />
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -63,10 +67,12 @@
                     android:paddingTop="15dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="15dp"
-                    android:text="Take a photo"
+                    android:drawableLeft="@android:drawable/ic_menu_camera"
+                    android:text="Camera"
                     android:textAllCaps="false"
                     android:textColor="@color/midnight_blue"
-                    android:textSize="17sp" />
+                    android:textSize="17sp" >
+                </Button>
 
                 <Button
                     android:id="@+id/gallerybtn"
@@ -79,7 +85,8 @@
                     android:paddingTop="15dp"
                     android:paddingEnd="25dp"
                     android:paddingBottom="15dp"
-                    android:text="Open Gallery"
+                    android:drawableLeft="@android:drawable/ic_menu_gallery"
+                    android:text="Gallery"
                     android:textAllCaps="false"
                     android:textColor="@color/midnight_blue"
                     android:textSize="17sp" />
@@ -109,7 +116,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="28sp"
+                android:textSize="25sp"
                 android:text="Learn About Animals"
                 android:textStyle="bold"
                 android:textColor="@color/lime"
@@ -119,8 +126,13 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/lime"/>
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="21sp"
+                android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:text="@string/main_encyclo"
                 android:padding="10dp"
@@ -146,6 +158,7 @@
                     android:textSize="17sp"
                     android:focusable="true"
                     android:textAllCaps="false"
+                    android:drawableLeft="@android:drawable/ic_menu_agenda"
                     android:background="@drawable/custom_btn_1"
                     />
 
@@ -176,7 +189,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="28sp"
+                android:textSize="25sp"
                 android:text="Exclusive Online Features"
                 android:textStyle="bold"
                 android:textColor="@color/lime"
@@ -186,8 +199,13 @@
 
             <TextView
                 android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="@color/lime"/>
+
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="21sp"
+                android:textSize="20sp"
                 android:textAlignment="viewStart"
                 android:text="@string/main_online_feature"
                 android:padding="10dp"
@@ -213,6 +231,7 @@
                     android:textSize="17sp"
                     android:focusable="true"
                     android:textAllCaps="false"
+                    android:drawableLeft="@android:drawable/ic_menu_more"
                     android:background="@drawable/custom_btn_1"
                     />
 
