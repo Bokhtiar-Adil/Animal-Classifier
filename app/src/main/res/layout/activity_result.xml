@@ -91,6 +91,7 @@
             android:textAlignment="center"
             android:textColor="#000CF4"
             android:textSize="18sp"
+            android:textStyle="italic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toEndOf="@+id/sciname"

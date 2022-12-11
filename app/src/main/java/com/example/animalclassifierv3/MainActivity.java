@@ -108,21 +108,23 @@ public class MainActivity extends AppCompatActivity {
 //          temp.setText(ddf+fff);
           Bitmap resizedImg = img;
           if(ht*wt > 876544 && wt>=ht) {
-            int newHt = (int) ((ht*1024)/wt);
-            if(newHt<856) resizedImg = Bitmap.createScaledBitmap(img, 1024,newHt,true);
-            else {
-              newHt /= 2;
-              resizedImg = Bitmap.createScaledBitmap(img, 512, newHt,true);
-            }
+            int newHt = (int) ((ht*512)/wt);
+            resizedImg = Bitmap.createScaledBitmap(img, 512,newHt,true);
+//            if(newHt<856) resizedImg = Bitmap.createScaledBitmap(img, 512,newHt,true);
+//            else {
+//              newHt /= 2;
+//              resizedImg = Bitmap.createScaledBitmap(img, 512, newHt,true);
+//            }
 
           }
           else if(ht*wt > 876544 && ht>wt) {
-            int newWt = (int) ((wt*1024)/ht);
-            if(newWt<856) resizedImg = Bitmap.createScaledBitmap(img, newWt,1024,true);
-            else {
-              newWt /= 2;
-              resizedImg = Bitmap.createScaledBitmap(img, newWt, 512,true);
-            }
+            int newWt = (int) ((wt*512)/ht);
+            resizedImg = Bitmap.createScaledBitmap(img, newWt,512,true);
+//            if(newWt<856) resizedImg = Bitmap.createScaledBitmap(img, newWt,512,true);
+//            else {
+//              newWt /= 2;
+//              resizedImg = Bitmap.createScaledBitmap(img, newWt, 512,true);
+//            }
             //temp.setText(ddf+" "+fff+" "+String.valueOf(newWt)+" "+String.valueOf(1024));
           }
           //temp.setText(ddf+fff+String.valueOf(newWt));

@@ -83,12 +83,13 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         String className = AnimalClasses.ANIMAL_CLASSES[maxScoreIdx];
-        String mm = Float.toString(maxScoreIdx);
-        //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
         String[] details = AnimalDetails.Dummy;
-        for(int i=0; i<AnimalDetails.DETAILS.length; i++){
-            if(AnimalDetails.DETAILS[i][0] == mm) {
-                details = AnimalDetails.DETAILS[maxScoreIdx];
+        //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
+        int ind;
+        for(ind=0; ind<AnimalDetails.DETAILS.length; ind++){
+            if(Integer.parseInt(AnimalDetails.DETAILS[ind][0]) == maxScoreIdx){
+                details = AnimalDetails.DETAILS[ind];
+                break;
             }
         }
 
