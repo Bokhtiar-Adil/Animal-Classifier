@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
 
         Intent toResult = new Intent(this, ResultActivity.class);
         toResult.putExtra("userInput", byteArray);
+        toResult.putExtra("language", language);
         startActivity(toResult);
       }
       else if(requestCode==GALLERY_REQ_CODE){
