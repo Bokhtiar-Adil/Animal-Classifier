@@ -18,19 +18,48 @@
 <!--            app:layout_constraintTop_toTopOf="parent" />-->
 <!--        app:layout_constraintTop_toBottomOf="@id/hudai1"-->
 
+        <RadioGroup
+            android:id="@+id/langSet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <RadioButton
+                android:id="@+id/english"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="English"
+                android:textSize="18sp" />
+
+            <RadioButton
+                android:id="@+id/bangla"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#fff"
+                android:text="Bangla"
+                android:textSize="18sp" />
+
+        </RadioGroup>
+
         <LinearLayout
             android:id="@+id/top"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/rounded_corner_layout"
             android:orientation="vertical"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@id/langSet">
+
+
 
             <TextView
+                android:id="@+id/header1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="Classify Animals From Images"
+                android:text="@string/main_header_1"
                 android:textAlignment="viewStart"
                 android:textColor="@color/lime"
                 android:textSize="25sp"
@@ -41,10 +70,11 @@
                 android:background="@color/lime"/>
 
             <TextView
+                android:id="@+id/para1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:text="@string/main_capture_photo"
+                android:text="@string/main_capture"
                 android:textAlignment="viewStart"
                 android:textColor="#fff"
                 android:textSize="20sp" />
@@ -99,6 +129,7 @@
 
 
         </LinearLayout>
+
         <TextView
             android:id="@+id/hudai2"
             android:layout_width="match_parent"
@@ -114,10 +145,11 @@
             android:background="@drawable/rounded_corner_layout">
 
             <TextView
+                android:id="@+id/header2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Learn About Animals"
+                android:text="@string/main_header_2"
                 android:textStyle="bold"
                 android:textColor="@color/lime"
                 android:padding="10dp"
@@ -130,6 +162,7 @@
                 android:background="@color/lime"/>
 
             <TextView
+                android:id="@+id/para2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -187,10 +220,11 @@
             android:background="@drawable/rounded_corner_layout">
 
             <TextView
+                android:id="@+id/header3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="25sp"
-                android:text="Exclusive Online Features"
+                android:text="@string/main_header_3"
                 android:textStyle="bold"
                 android:textColor="@color/lime"
                 android:padding="10dp"
@@ -203,6 +237,7 @@
                 android:background="@color/lime"/>
 
             <TextView
+                android:id="@+id/para3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
@@ -244,6 +279,8 @@
 
 
         </LinearLayout>
+
+
 
         <Button
             android:id="@+id/aboutbtn"

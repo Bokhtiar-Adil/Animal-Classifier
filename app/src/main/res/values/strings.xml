@@ -1,6 +1,15 @@
 <resources>
     <string name="app_name">Animal Classifier</string>
-    <string name="main_capture_photo">Capture a photo or upload an images of an animal and find out what it is.</string>
+    <string name="main_capture">Capture a photo or upload an image of an animal and find out what it is.</string>
     <string name="main_encyclo">Take a deep dive into the vast ocean of knowledge about animal characteristics. Connect to online to learn more.</string>
     <string name="main_online_feature">Connect to online to unlock some more exclusive features!</string>
+    <string name="main_header_1">Classify Animals From Images</string>
+    <string name="main_header_2">Learn About Animals</string>
+    <string name="main_header_3">Exclusive Online Feature</string>
+    <string name="main_header_1_bangla">ছবি থেকে প্রাণী চিহ্নিত করুন</string>
+    <string name="main_header_2_bangla">প্রাণী সম্পর্কে জানুন</string>
+    <string name="main_header_3_bangla">অনলাইন ফিচার</string>
+    <string name="main_capture_bangla">প্রাণীর ছবি আপলোড করে ছবির প্রাণীটি সম্পর্কে জানুন।</string>
+    <string name="main_encyclo_bangla">প্রাণিজগতের বৈচিত্রময় প্রাণীদের সম্পর্কে সংক্ষেপে জানুন আমাদের ডাটাবেজ থেকে। অনলাইনে কানেক্ট করুন বিস্তারিত জানার জন্য।</string>
+    <string name="main_online_feature_bangla">অনলাইনে কানেক্ট করে বিভিন্ন বিশেষ ফিচার উপভোগ করুন।</string>
 </resources>
