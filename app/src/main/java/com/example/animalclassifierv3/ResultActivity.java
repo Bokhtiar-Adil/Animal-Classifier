@@ -44,6 +44,7 @@ public class ResultActivity extends AppCompatActivity {
         desclbl = findViewById(R.id.desc);
         header = findViewById(R.id.header);
         more = findViewById(R.id.more);
+        btn = findViewById(R.id.morebtn);
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -65,7 +66,8 @@ public class ResultActivity extends AppCompatActivity {
             desclbl.setText(R.string.res_desc);
             cstlbl.setText(R.string.res_cst);
             more.setText(R.string.res_more);
-            //btn.setText(R.string.res_more_btn);
+            btn.setTypeface(Typeface.DEFAULT);
+            btn.setText(R.string.res_more_btn);
         }
         else {
             header.setText(R.string.res_header_bangla);
@@ -73,7 +75,8 @@ public class ResultActivity extends AppCompatActivity {
             desclbl.setText(R.string.res_desc_bangla);
             cstlbl.setText(R.string.res_cst_bangla);
             more.setText(R.string.res_more_bangla);
-            //btn.setText(R.string.res_more_btn_bangla);
+            btn.setTypeface(tf);
+            btn.setText(R.string.res_more_btn_bangla);
         }
 
 
@@ -153,7 +156,7 @@ public class ResultActivity extends AppCompatActivity {
         cst = findViewById(R.id.cstdet);
         desc = findViewById(R.id.descdet);
 
-        btn = findViewById(R.id.morebtn);
+
 
         if(details[2] == "False") {
             alert.setVisibility(View.GONE);

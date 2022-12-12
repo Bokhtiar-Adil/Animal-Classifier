@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
     para_1.setTypeface(tf);
     para_2.setTypeface(tf);
     para_3.setTypeface(tf);
+    camerabtn = findViewById(R.id.camerabtn);
+    gallerybtn = findViewById(R.id.gallerybtn);
+    encyclobtn = findViewById(R.id.encyclobtn);
+    aboutbtn = findViewById(R.id.aboutbtn);
 
 
     lang = findViewById(R.id.langSet);
@@ -66,21 +70,31 @@ public class MainActivity extends AppCompatActivity {
             para_1.setText(getString(R.string.main_capture));
             para_2.setText(getString(R.string.main_encyclo));
             para_3.setText(getString(R.string.main_online_feature));
+            camerabtn.setTypeface(Typeface.DEFAULT);
+            gallerybtn.setTypeface(Typeface.DEFAULT);
+            aboutbtn.setTypeface(Typeface.DEFAULT);
+            encyclobtn.setTypeface(Typeface.DEFAULT);
+            camerabtn.setText(R.string.main_camerabtn);
+            gallerybtn.setText(R.string.main_gallerybtn);
+            encyclobtn.setText(R.string.main_encybtn);
+            aboutbtn.setText(R.string.main_aboutbtn);
             language = 0;
             break;
           case R.id.bangla:
-//            header_1.setTypeface(tf);
-//            header_2.setTypeface(tf);
-//            header_3.setTypeface(tf);
-//            para_1.setTypeface(tf);
-//            para_2.setTypeface(tf);
-//            para_3.setTypeface(tf);
             header_1.setText(getString(R.string.main_header_1_bangla));
             header_2.setText(getString(R.string.main_header_2_bangla));
             header_3.setText(getString(R.string.main_header_3_bangla));
             para_1.setText(getString(R.string.main_capture_bangla));
             para_2.setText(getString(R.string.main_encyclo_bangla));
             para_3.setText(getString(R.string.main_online_feature_bangla));
+            camerabtn.setTypeface(tf);
+            gallerybtn.setTypeface(tf);
+            aboutbtn.setTypeface(tf);
+            encyclobtn.setTypeface(tf);
+            camerabtn.setText(R.string.main_camerabtn_bangla);
+            gallerybtn.setText(R.string.main_gallerybtn_bangla);
+            encyclobtn.setText(R.string.main_encybtn_bangla);
+            aboutbtn.setText(R.string.main_aboutbtn_bangla);
             language = 1;
             break;
           default:
@@ -90,10 +104,7 @@ public class MainActivity extends AppCompatActivity {
     });
 
     //imgview = findViewById(R.id.imageView);
-    camerabtn = findViewById(R.id.camerabtn);
-    gallerybtn = findViewById(R.id.gallerybtn);
-    encyclobtn = findViewById(R.id.encyclobtn);
-    aboutbtn = findViewById(R.id.aboutbtn);
+
 
 
     camerabtn.setOnClickListener(new View.OnClickListener() {
