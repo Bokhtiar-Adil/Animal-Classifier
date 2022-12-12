@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -24,6 +25,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.util.Locale;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -32,7 +34,8 @@ public class ResultActivity extends AppCompatActivity {
     TextView alert,scifi,cst,desc;
     TextView scilbl,cstlbl,desclbl,header,more;
     int language;
-    Button btn;
+    Button btn, speak, speak2;
+    TextToSpeech ts;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,6 +81,19 @@ public class ResultActivity extends AppCompatActivity {
             btn.setTypeface(tf);
             btn.setText(R.string.res_more_btn_bangla);
         }
+
+        ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                // if No error is found then only it will run
+                if(i!=TextToSpeech.ERROR){
+                    // To Choose language of speech
+                    if(language==0) ts.setLanguage(Locale.ENGLISH);
+                    else ts.setLanguage(new Locale("bn_IN"));
+                }
+            }
+        });
+
 
 
         Bundle extras = getIntent().getExtras();
@@ -145,18 +161,24 @@ public class ResultActivity extends AppCompatActivity {
         }
 
         // showing className on UI
-        TextView textView = findViewById(R.id.text);
+        final TextView textView = findViewById(R.id.text);
         textView.setText(className);
         final String cd = className;
-
 
         // showing details on UI
         alert = findViewById(R.id.alert);
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
         desc = findViewById(R.id.descdet);
+        speak = findViewById(R.id.speak);
+        speak2 = findViewById(R.id.speak2);
 
-
+        speak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(textView.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
 
         if(details[2] == "False") {
             alert.setVisibility(View.GONE);
@@ -165,6 +187,13 @@ public class ResultActivity extends AppCompatActivity {
             alert.setText(details[2]);
         }
         scifi.setText(details[3]);
+        speak2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(scifi.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
         cst.setText(details[4]);
         desc.setText(details[5]);
 

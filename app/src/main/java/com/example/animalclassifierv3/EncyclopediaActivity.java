@@ -5,13 +5,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class EncyclopediaActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
@@ -19,6 +22,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     TextView scilbl,cstlbl,venomlbl,desclbl,header,more;
     Spinner spin;
     ArrayList<String> animals = new ArrayList<>();
+    Button speak, speak2;
+    TextToSpeech ts;
     int language;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +39,30 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         desclbl = findViewById(R.id.desc);
         header = findViewById(R.id.text);
         more = findViewById(R.id.more);
+        speak = findViewById(R.id.speak);
+        speak2 = findViewById(R.id.speak2);
+
+        ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+                @Override
+                public void onInit(int i) {
+                    // if No error is found then only it will run
+                    if(i!=TextToSpeech.ERROR){
+                        // To Choose language of speech
+                        if(language==0) ts.setLanguage(Locale.ENGLISH);
+                        else ts.setLanguage(new Locale("bn_IN"));
+                    }
+                }
+        });
+
+        speak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(name.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+
+
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -73,6 +102,13 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
         desc = findViewById(R.id.descdet);
+
+        speak2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(scifi.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
 
         int len = AnimalDetails.DETAILS.length;
         animals.add("");

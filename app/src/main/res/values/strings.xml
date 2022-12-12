@@ -10,7 +10,7 @@
     <string name="main_header_2_bangla">প্রাণী সম্পর্কে জানুন</string>
     <string name="main_header_3_bangla">অনলাইন ফিচার</string>
     <string name="main_capture_bangla">প্রাণীর ছবি আপলোড করে ছবির প্রাণীটি সম্পর্কে জানুন।</string>
-    <string name="main_encyclo_bangla">প্রাণিজগতের বৈচিত্রময় প্রাণীদের সম্পর্কে সংক্ষেপে জানুন আমাদের ডাটাবেজ থেকে। অনলাইনে কানেক্ট করুন বিস্তারিত জানার জন্য।</string>
+    <string name="main_encyclo_bangla">প্রাণিজগতের বৈচিত্রময় প্রাণীদের সম্পর্কে সংক্ষেপে জানুন বিশ্বকোষ থেকে। অনলাইনে কানেক্ট করুন বিস্তারিত জানার জন্য।</string>
     <string name="main_online_feature_bangla">অনলাইনে কানেক্ট করে বিভিন্ন বিশেষ ফিচার উপভোগ করুন।</string>
     <string name="main_camerabtn">Camera</string>
     <string name="main_camerabtn_bangla">ক্যামেরা</string>
@@ -25,7 +25,7 @@
     <string name="res_scifi">Scientific Name</string>
     <string name="res_scifi_bangla">বৈজ্ঞানিক নাম</string>
     <string name="res_cst">Conservation Status</string>
-    <string name="res_cst_bangla">সংরক্ষণ অবস্থা</string>
+    <string name="res_cst_bangla">বিলুপ্তির সম্ভাবনা</string>
     <string name="res_desc">Description</string>
     <string name="res_desc_bangla">বর্ণনা</string>
     <string name="res_more">Click on the following button to learn more about it from online. Also, make sure your internet connection is on.</string>
