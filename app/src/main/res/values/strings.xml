@@ -25,7 +25,7 @@
     <string name="res_scifi">Scientific Name</string>
     <string name="res_scifi_bangla">বৈজ্ঞানিক নাম</string>
     <string name="res_cst">Conservation Status</string>
-    <string name="res_cst_bangla">সংরক্ষণ অবস্থা</string>
+    <string name="res_cst_bangla">বিলুপ্তির সম্ভাবনা</string>
     <string name="res_desc">Description</string>
     <string name="res_desc_bangla">বর্ণনা</string>
     <string name="res_more">Click on the following button to learn more about it from online. Also, make sure your internet connection is on.</string>
