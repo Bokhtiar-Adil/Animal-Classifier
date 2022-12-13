@@ -25,6 +25,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     Button speak, speak2;
     TextToSpeech ts;
     int language;
+    String bnCst;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -122,23 +123,51 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if(i!=0){
-            String details[] = AnimalDetails.DETAILS[i-1];
-            name.setText(details[1]);
-            scifi.setText(details[3]);
-            cst.setText(details[4]);
-            desc.setText(details[5]);
-            if(details[2]=="False") {
-                alert2.setVisibility(View.GONE);
-                alert.setVisibility(View.VISIBLE);
-                alert.setText("Not venomous");
+//        if(language==0){
+            if(i!=0){
+                String details[] = AnimalDetails.DETAILS[i-1];
+                name.setText(details[1]);
+                scifi.setText(details[3]);
+                cst.setText(details[4]);
+                desc.setText(details[5]);
+                if(details[2]=="False") {
+                    alert2.setVisibility(View.GONE);
+                    alert.setVisibility(View.VISIBLE);
+                    alert.setText("Not venomous");
+                }
+                else {
+                    alert2.setVisibility(View.VISIBLE);
+                    alert.setVisibility(View.GONE);
+                    alert2.setText(details[2]);
+                }
             }
-            else {
-                alert2.setVisibility(View.VISIBLE);
-                alert.setVisibility(View.GONE);
-                alert2.setText(details[2]);
-            }
-        }
+//        }
+//        else {
+//            if(i!=0){
+//                String details[] = AnimalDetails.DETAILS[i-1];
+//                int bnClass = Integer.parseInt(details[i-1]);
+//                name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+//                scifi.setText(details[3]);
+//
+//                if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
+//                else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
+//                else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
+//                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
+//                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+//                cst.setText(bnCst);
+//                desc.setText(details[7]);
+//                if(details[2]=="False") {
+//                    alert2.setVisibility(View.GONE);
+//                    alert.setVisibility(View.VISIBLE);
+//                    alert.setText(details[6]);
+//                }
+//                else {
+//                    alert2.setVisibility(View.VISIBLE);
+//                    alert.setVisibility(View.GONE);
+//                    alert2.setText(details[6]);
+//                }
+//            }
+//        }
     }
 
     @Override
