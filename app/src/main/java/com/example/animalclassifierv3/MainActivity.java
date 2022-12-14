@@ -16,6 +16,7 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -39,6 +40,12 @@ public class MainActivity extends AppCompatActivity {
     final Typeface tf = Typeface.createFromAsset(this.getAssets(),
             "font/kalpurush.ttf");
     final Typeface tf2 = Typeface.DEFAULT;
+
+    // Write a message to the database
+//    FirebaseDatabase database = FirebaseDatabase.getInstance(FirebaseApp.getInstance("https://animalclassifierv3-default-rtdb.asia-southeast1.firebasedatabase.app/"));
+//    DatabaseReference myRef = database.getReference("message");
+//
+//    myRef.setValue("Hello, World!");
 
     header_1 = findViewById(R.id.header1);
     header_2 = findViewById(R.id.header2);

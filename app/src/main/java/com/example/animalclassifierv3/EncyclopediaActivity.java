@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -104,6 +105,14 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         cst = findViewById(R.id.cstdet);
         desc = findViewById(R.id.descdet);
 
+        text.setTypeface(tf);
+        name.setTypeface(tf);
+        alert.setTypeface(tf);
+        alert2.setTypeface(tf);
+        scifi.setTypeface(tf);
+        cst.setTypeface(tf);
+        desc.setTypeface(tf);
+
         speak2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -123,7 +132,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-//        if(language==0){
+        if(language==0){
             if(i!=0){
                 String details[] = AnimalDetails.DETAILS[i-1];
                 name.setText(details[1]);
@@ -141,33 +150,36 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
                     alert2.setText(details[2]);
                 }
             }
-//        }
-//        else {
-//            if(i!=0){
-//                String details[] = AnimalDetails.DETAILS[i-1];
-//                int bnClass = Integer.parseInt(details[i-1]);
-//                name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
-//                scifi.setText(details[3]);
-//
-//                if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
-//                else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
-//                else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
-//                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
-//                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
-//                cst.setText(bnCst);
-//                desc.setText(details[7]);
-//                if(details[2]=="False") {
-//                    alert2.setVisibility(View.GONE);
-//                    alert.setVisibility(View.VISIBLE);
-//                    alert.setText(details[6]);
-//                }
-//                else {
-//                    alert2.setVisibility(View.VISIBLE);
-//                    alert.setVisibility(View.GONE);
-//                    alert2.setText(details[6]);
-//                }
-//            }
-//        }
+        }
+        else {
+            if(i!=0){
+                String details[] = AnimalDetails.DETAILS[i-1];
+                int bnClass = Integer.parseInt(details[0]);
+                Log.d("BANGLA", String.valueOf(bnClass));
+                name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+                scifi.setText(details[3]);
+
+                if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
+                else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
+                else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
+                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
+                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+                Log.d("BANGLA", details[4]);
+                Log.d("BANGLA", bnCst);
+                cst.setText(bnCst);
+                desc.setText(details[7]);
+                if(details[2]=="False") {
+                    alert2.setVisibility(View.GONE);
+                    alert.setVisibility(View.VISIBLE);
+                    alert.setText(details[6]);
+                }
+                else {
+                    alert2.setVisibility(View.VISIBLE);
+                    alert.setVisibility(View.GONE);
+                    alert2.setText(details[6]);
+                }
+            }
+        }
     }
 
     @Override
