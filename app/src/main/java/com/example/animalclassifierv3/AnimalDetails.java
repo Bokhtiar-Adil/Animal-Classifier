@@ -43,7 +43,7 @@ public class AnimalDetails {
                         "Goldfish.",
                         "False",
                         "Carassius auratus",
-                        "Least Concern",
+                        "Least concern",
                         "The goldfish (Carassius auratus) is a freshwater fish in the family Cyprinidae of order Cypriniformes." +
                                 "It is commonly kept as a pet in indoor aquariums, and is one of the most popular aquarium fish." +
                                 " Goldfish released into the wild have become an invasive pest in parts of North America." +

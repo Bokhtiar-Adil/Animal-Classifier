@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "171594565826",
+    "firebase_url": "https://animalclassifierv3-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "animalclassifierv3",
+    "storage_bucket": "animalclassifierv3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:171594565826:android:71395337362d8563d0935b",
+        "android_client_info": {
+          "package_name": "com.example.animalclassifierv3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "171594565826-hg9gtifnd1gn8h3ogb9pngkdgnak4blp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBJRhiyhLk9RNTf7P2ADn3Lmij_hlumYmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "171594565826-hg9gtifnd1gn8h3ogb9pngkdgnak4blp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
