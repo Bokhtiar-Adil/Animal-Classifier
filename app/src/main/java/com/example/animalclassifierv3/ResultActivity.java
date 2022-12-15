@@ -36,6 +36,7 @@ public class ResultActivity extends AppCompatActivity {
     int language;
     Button btn, speak, speak2;
     TextToSpeech ts;
+    String bnCst;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -173,6 +174,12 @@ public class ResultActivity extends AppCompatActivity {
         speak = findViewById(R.id.speak);
         speak2 = findViewById(R.id.speak2);
 
+
+        alert.setTypeface(tf);
+        scifi.setTypeface(tf);
+        cst.setTypeface(tf);
+        desc.setTypeface(tf);
+
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -184,9 +191,25 @@ public class ResultActivity extends AppCompatActivity {
             alert.setVisibility(View.GONE);
         }
         else {
-            alert.setText(details[2]);
+            if(language==0) alert.setText(details[2]);
+            else alert.setText(details[6]);
         }
-        scifi.setText(details[3]);
+        if(language==0) {
+            scifi.setText(details[3]);
+            cst.setText(details[4]);
+            desc.setText(details[5]);
+        }
+        else {
+            scifi.setText(details[3]);
+            if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
+            else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
+            else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
+            else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
+            else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+            if(details.length==8) desc.setText(details[7]);
+            else desc.setText("দুঃখিত, বাংলা ডাটা এখনো যোগ করা হয়নি।");
+        }
+
         speak2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -194,8 +217,7 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        cst.setText(details[4]);
-        desc.setText(details[5]);
+
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override

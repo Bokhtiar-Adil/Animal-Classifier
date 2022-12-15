@@ -122,9 +122,15 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
 
         int len = AnimalDetails.DETAILS.length;
         animals.add("");
-
+        int bnInd;
+        String bnName;
         for(int i=0; i<len; i++){
-            animals.add(AnimalDetails.DETAILS[i][1]);
+            if(language==0) animals.add(AnimalDetails.DETAILS[i][1]);
+            else {
+                bnInd = Integer.parseInt(AnimalDetails.DETAILS[i][0]);
+                bnName = AnimalClasses.ANIMAL_CLASSES_BANGLA[bnInd];
+                animals.add(bnName);
+            }
         }
         ArrayAdapter<String> spinAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, animals);
         spin.setAdapter(spinAdp);
@@ -162,12 +168,13 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
                 if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
                 else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
                 else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
-                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
-                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+                else if(details[4].equalsIgnoreCase("Domesticated")) bnCst = "পোষ মানানো হয়েছে";
+                else bnCst = "শংকামুক্ত";
                 Log.d("BANGLA", details[4]);
                 Log.d("BANGLA", bnCst);
                 cst.setText(bnCst);
-                desc.setText(details[7]);
+                if(details.length==8) desc.setText(details[7]);
+                else desc.setText("দুঃখিত, বাংলা ডাটা এখনো যোগ করা হয়নি।");
                 if(details[2]=="False") {
                     alert2.setVisibility(View.GONE);
                     alert.setVisibility(View.VISIBLE);
