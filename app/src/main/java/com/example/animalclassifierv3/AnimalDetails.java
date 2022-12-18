@@ -104,6 +104,13 @@ public class AnimalDetails {
                                 "\n" + "The tiger shark is second only to the great white in recorded fatal attacks on humans," +
                                 "but these events are still exceedingly rare.",
                         "অবিষাক্ত",
+                        "বাঘ হাঙর (গ্যালিওসারডো কুভিয়ার) হল রিকুয়েম হাঙরের একটি প্রজাতি এবং গ্যালিওসারডোনিডি পরিবারের সর্বশেষ বর্তমান সদস্য। এটি একটি বড় ম্যাক্রোপ্রিডেটর, যা 5 মিটার (16 ফুট 5 ইঞ্চি) এর বেশি দৈর্ঘ্য অর্জন করতে সক্ষম। জনসংখ্যা অনেক গ্রীষ্মমন্ডলীয় এবং নাতিশীতোষ্ণ জলে, বিশেষ করে মধ্য প্রশান্ত মহাসাগরীয় দ্বীপের চারপাশে পাওয়া যায়। এর নামটি এর শরীরের নিচের কালো ডোরা থেকে এসেছে, যা একটি বাঘের প্যাটার্নের মতো, কিন্তু হাঙ্গর পরিপক্ক হওয়ার সাথে সাথে বিবর্ণ হয়ে যায়।" +
+                                "                                টাইগার হাঙ্গর হল একটি নির্জন, বেশিরভাগ নিশাচর শিকারী। এটি শিকারের একটি পরিসর সহ সমস্ত হাঙ্গরের বিস্তৃত খাদ্য বর্ণালী থাকার জন্য উল্লেখযোগ্য" +
+                                "                                যার মধ্যে রয়েছে ক্রাস্টেসিয়ান, মাছ, সীল, পাখি, স্কুইড, কচ্ছপ, সামুদ্রিক সাপ, ডলফিন এবং এমনকি অন্যান্য ছোট হাঙ্গর। এটি একটি আবর্জনা ভক্ষক হিসেবেও খ্যাতি রয়েছে," +
+                                "                                বিভিন্ন রকমের অখাদ্য, মনুষ্যসৃষ্ট বস্তু গ্রাস করে যা এর পেটে থাকে। যদিও সর্বোচ্চ শিকারী, বাঘ হাঙরকে কখনও কখনও ঘাতক তিমির দল শিকার হিসাবে গ্রহণ করে।\" +\n" +
+                                "                                মানুষ দ্বারা ফিনিং এবং মাছ ধরার কারণে এটি একটি প্রায় বিপন্ন প্রজাতি হিসাবে বিবেচিত হয়৷" +
+                                "                                মানুষের উপর নথিভুক্ত মারাত্মক আক্রমণের ক্ষেত্রে বাঘ হাঙ্গর মহান সাদার পরেই দ্বিতীয় স্থানে রয়েছে," +
+                                "                                কিন্তু এই ঘটনাগুলি এখনও অত্যন্ত বিরল।"
 
                 },
                 {
@@ -154,7 +161,7 @@ public class AnimalDetails {
                         "Domesticated",
                         "The chicken (Gallus gallus domesticus) is a domesticated junglefowl species, with attributes of wild species such as the grey and the Ceylon junglefowl[1] that are originally from Southeastern Asia. Rooster or cock is a term for an adult male bird, and a younger male may be called a cockerel. A male that has been castrated is a capon. An adult female bird is called a hen and a sexually immature female is called a pullet. Humans now keep chickens primarily as a source of food (consuming both their meat and eggs) and as pets. " +
                                 "Traditionally they were also bred for cockfighting, which is still practiced in some places.",
-                        "অবিষাক্ত",
+                        "অবিষাক্ত"
                 },
                 {
                         "8",
@@ -173,13 +180,9 @@ public class AnimalDetails {
                         "False",
                         "Struthio camelus",
                         "Not threatened",
-                        "Ostriches are large flightless birds of the genus Struthio in the order Struthioniformes, part of the infra-class " +
-                                "Palaeognathae, a diverse group of flightless birds also known as ratites that includes the emus," +
-                                " rheas, and kiwis. There are two living species of ostrich: the common ostrich, native to large areas of sub-Saharan Africa and the Somali ostrich, native to the Horn of Africa.[2] The common ostrich was also historically native to the Arabian Peninsula," +
-                                " and ostriches were present across Asia as far east as Mongolia during the Late Pleistocene and possibly into the Holocene. They lay the largest eggs of any living land animal. With the ability to run at 70 km/h (43.5 mph), " +
-                                "they are the fastest birds on land. They are farmed worldwide, particularly for their feathers as they are used as decoration and feather dusters. " +
-                                "Their skin is also used for leather products. They are the heaviest living birds.",
+                        "Ostriches are large flightless birds of the genus Struthio in the order Struthioniformes, part of the infra-class Palaeognathae, a diverse group of flightless birds also known as ratites that includes the emus, rheas, and kiwis. There are two living species of ostrich: the common ostrich, native to large areas of sub-Saharan Africa and the Somali ostrich, native to the Horn of Africa.  The common ostrich was also historically native to the Arabian Peninsula, and ostriches were present across Asia as far east as Mongolia during the Late Pleistocene and possibly into the Holocene. They lay the largest eggs of any living land animal. With the ability to run at 70 km/h (43.5 mph), they are the fastest birds on land. They are farmed worldwide, particularly for their feathers as they are used as decoration and feather dusters. Their skin is also used for leather products. They are the heaviest living birds.\\n\\n\\n== Taxonomic history ==\\nThe genus Struthio was first described by Carl Linnaeus in 1758. The genus was used by Linnaeus and other early taxonomists to include the emu, rhea, and cassowary, until they each were placed in their own genera.",
                         "অবিষাক্ত",
+                        "উটপাখি হ'ল স্ট্রুথিও গোত্রের স্ট্রুথিওনিফর্মের ক্রমানুসারে বড় উড়ন্ত পাখি, যা ইনফ্রা-শ্রেণির প্যালেওগনাথায়ের অংশ, উড়ন্ত পাখিদের একটি বৈচিত্র্যময় দল যা রেটাইট নামেও পরিচিত যার মধ্যে ইমু, রিয়া এবং কিউই রয়েছে। উটপাখির দুটি জীবন্ত প্রজাতি রয়েছে: সাধারণ উটপাখি, সাব-সাহারান আফ্রিকার বৃহৎ অঞ্চলের স্থানীয় এবং সোমালি উটপাখি, আফ্রিকার হর্নের স্থানীয়। সাধারণ উটপাখিও ঐতিহাসিকভাবে আরব উপদ্বীপের স্থানীয় ছিল এবং উটপাখিরা প্লিসটোসিনের শেষের দিকে এবং সম্ভবত হলসিনে মঙ্গোলিয়া পর্যন্ত এশিয়া জুড়ে উপস্থিত ছিল। তারা যে কোনো জীবন্ত স্থল প্রাণীর মধ্যে সবচেয়ে বড় ডিম পাড়ে। 70 কিমি/ঘন্টা (43.5 মাইল) বেগে দৌড়ানোর ক্ষমতা সহ, তারা ভূমিতে সবচেয়ে দ্রুততম পাখি। এগুলি বিশ্বব্যাপী চাষ করা হয়, বিশেষ করে তাদের পালকের জন্য কারণ এগুলি সাজসজ্জা এবং পালক ঝাড়ন হিসাবে ব্যবহৃত হয়। তাদের চামড়া চামড়াজাত পণ্যের জন্যও ব্যবহৃত হয়। তারা সবচেয়ে ভারী জীবন্ত পাখি। শ্রেণীবিন্যাস ইতিহাস স্ট্রুথিও জিনাসটি কার্ল লিনিয়াস দ্বারা 1758 সালে প্রথম বর্ণনা করা হয়েছিল। লিনিয়াস এবং অন্যান্য প্রাথমিক শ্রেণীবিন্যাসবিদরা এমু, রিয়া এবং ক্যাসোওয়ারি অন্তর্ভুক্ত করার জন্য জিনাসটি ব্যবহার করেছিলেন, যতক্ষণ না তাদের প্রত্যেককে তাদের নিজস্ব বংশে স্থাপন করা হয়েছিল।"
 
                 },
                 {
@@ -245,7 +248,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "14",
+                        "15",
                         "American robin",
                         "False",
                         "Turdus migratorius",
@@ -259,7 +262,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "15",
+                        "16",
                         "Bulbul",
                         "False",
                         "Pycnonotidae",
@@ -272,7 +275,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "16",
+                        "17",
                         "Jay",
                         "False",
                         "Cyanocitta cristata",
@@ -285,7 +288,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "17",
+                        "19",
                         "Chickadee",
                         "False",
                         "Poecile",
@@ -297,7 +300,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "18",
+                        "20",
                         "Dipper",
                         "False",
                         "Cinclus Cinclidae",
@@ -307,7 +310,7 @@ public class AnimalDetails {
                         "অবিষাক্ত",
                 },
                 {
-                        "20",
+                        "22",
                         "Bald eagle",
                         "False",
                         "Haliaeetus leucocephalus",
@@ -321,7 +324,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "21",
+                        "23",
                         "Vulture",
                         "False",
                         "Cathartes",
@@ -336,7 +339,7 @@ public class AnimalDetails {
                 },
 
                 {
-                        "22",
+                        "24",
                         "Great Grey Owl",
                         "False",
                         "Strix nebulosa",
@@ -349,16 +352,14 @@ public class AnimalDetails {
                 },
 
                 {
-                        "23",
+                        "25",
                         "European fire salamander",
                         "Venomous. The fire salamander's primary alkaloid toxin, samandarin, causes strong muscle convulsions and hypertension combined with hyperventilation in all vertebrates.",
                         "Salamandra salamandra",
                         "Least concern",
-                        "Fire salamanders live in the forests of central Europe and are more common in hilly areas. They prefer deciduous forests since they like to hide in fallen leaves and around mossy tree trunks. They need small brooks or ponds with clean water in their habitat for the development of the larvae. " +
-                                "Males and females look very similar, except during the breeding season, when the most " +
-                                "conspicuous difference is a swollen gland around the male's vent. This gland produces the spermatophore, " +
-                                "which carries a sperm packet at its tip",
+                        "The fire salamander (Salamandra salamandra) is a common species of salamander found in Europe. It is black with yellow spots or stripes to a varying degree; some specimens can be nearly completely black while on others the yellow is dominant. Shades of red and orange may sometimes appear, either replacing or mixing with the yellow according to subspecies. This bright coloration is highly conspicuous and acts to deter predators by honest signalling of its toxicity (aposematism) Fire salamanders can have a very long lifespan; one specimen lived for more than 50 years in Museum Koenig, a German natural history museum. Fire salamanders live in the forests of central Europe and are more common in hilly areas. They prefer deciduous forests since they like to hide in fallen leaves and around mossy tree trunks. They need small brooks or ponds with clean water in their habitat for the development of the larvae. Whether on land or in water, fire salamanders are inconspicuous. They spend much of their time hidden under wood or other objects. They are active in the evening and the night, but on rainy days they are active in the daytime as well.The diet of the fire salamander consists of various insects, spiders, millipedes, centipedes, earthworms and slugs, but they also occasionally eat newts and young frogs.",
                         "বিষাক্ত। ক্ষারকীয় বিষ 'সামান্দারিন' যা মাংসপেশীর খিচুনি, উচ্চ রক্তচাপ ও হাপানীর সৃষ্টি করে।",
+                        "ফায়ার স্যালামান্ডার (স্যালামান্দ্রা সালাম্যান্ড্রা) হল ইউরোপে পাওয়া সালামন্ডারের একটি সাধারণ প্রজাতি। এটি হলুদ দাগ বা বিভিন্ন ডিগ্রী ডোরা সঙ্গে কালো; কিছু নমুনা প্রায় সম্পূর্ণ কালো হতে পারে যখন অন্যদের উপর হলুদ প্রভাবশালী। লাল এবং কমলা রঙের ছায়া কখনও কখনও প্রদর্শিত হতে পারে, হয় প্রতিস্থাপন বা উপ-প্রজাতি অনুসারে হলুদের সাথে মিশ্রিত হয়। এই উজ্জ্বল রঙ অত্যন্ত সুস্পষ্ট এবং এর বিষাক্ততার সৎ সংকেত দ্বারা শিকারীকে আটকাতে কাজ করে (অ্যাপোসেমেটিজম) ফায়ার সালাম্যান্ডারদের জীবনকাল খুব দীর্ঘ হতে পারে; একটি নমুনা জার্মান প্রাকৃতিক ইতিহাস জাদুঘর কোয়েনিগে 50 বছরেরও বেশি সময় ধরে বেঁচে ছিল। ফায়ার সালাম্যান্ডাররা মধ্য ইউরোপের বনাঞ্চলে বাস করে এবং পাহাড়ি এলাকায় বেশি দেখা যায়। তারা পর্ণমোচী বন পছন্দ করে কারণ তারা পতিত পাতা এবং শ্যাওলা গাছের কাণ্ডের চারপাশে লুকিয়ে থাকতে পছন্দ করে। লার্ভা বিকাশের জন্য তাদের বাসস্থানে পরিষ্কার জল সহ ছোট খাল বা পুকুর প্রয়োজন। স্থলে হোক বা জলে, ফায়ার স্যালাম্যান্ডারগুলি অদৃশ্য। তারা তাদের বেশিরভাগ সময় কাঠ বা অন্যান্য বস্তুর নিচে লুকিয়ে কাটায়। তারা সন্ধ্যায় এবং রাতে সক্রিয় থাকে, কিন্তু বৃষ্টির দিনে তারা দিনের বেলাও সক্রিয় থাকে। ফায়ার স্যালামান্ডারের খাদ্যে বিভিন্ন পোকামাকড়, মাকড়সা, মিলিপিডস, সেন্টিপিডস, কেঁচো এবং স্লাগ থাকে, তবে তারা মাঝে মাঝে নিউটসও খায়। এবং তরুণ ব্যাঙ।"
                 },
 
                 {
@@ -622,363 +623,26 @@ public class AnimalDetails {
                 },
 
                 {
-                        "45",
-                        "African crocodile",
-                        "",
-                        "Crocodylus niloticus",
-                        "",
-                        ""
-                },
-
-                {
-                        "46",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "47",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "48",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "49",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "50",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-
-                {
-                        "51",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "52",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "53",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "54",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "55",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "56",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "57",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "58",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "59",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "60",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "61",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "62",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "63",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "64",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "65",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "66",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "67",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "68",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "69",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "70",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "71",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
+                        "162",
+                        "Beagle Dog",
+                        "False",
+                        "Canis lupus familiaris",
+                        "Least concern",
+                        "The beagle is a breed of  small scent hound, similar in appearance to the much larger foxhound. The beagle was developed primarily for hunting hare known as beagling. Possessing a great sense of smell and superior tracking instincts, the beagle is the primary breed used as a detection dog for prohibited agricultural imports and foodstuffs in quarantine around the world. The beagle is intelligent and is a popular pet due to its size, good temper, and a lack of inherited health problems.The modern breed was developed in Great Britain around the 1830s from several breeds, including the Talbot Hound, the North Country Beagle, the Southern Hound, and possibly the Harrier.Beagles have been depicted in popular culture since Elizabethan times in literature and paintings and more recently in film, television, and comic books. The origin of the beagle is not known. In the 11th century, William the Conqueror brought the St. Hubert Hound and the Talbot hound to Britain. In Britain, both of these strains were then crossed with Greyhounds to give them speed and stamina for deer hunting.",
+                        "অবিষাক্ত",
+                        "বিগল হল ছোট ঘ্রাণ হাউন্ডের একটি জাত, যা দেখতে অনেক বড় ফক্সহাউন্ডের মতো। বিগলটি মূলত বিগলিং নামে পরিচিত খরগোশ শিকারের জন্য তৈরি করা হয়েছিল। গন্ধের একটি দুর্দান্ত বোধ এবং উচ্চতর ট্র্যাকিং প্রবৃত্তির অধিকারী, বিগল হল প্রাথমিক জাত যা বিশ্বজুড়ে কোয়ারেন্টাইনে নিষিদ্ধ কৃষি আমদানি এবং খাদ্যদ্রব্য সনাক্তকরণের কুকুর হিসাবে ব্যবহৃত হয়। বীগল বুদ্ধিমান এবং তার আকার, ভালো মেজাজ এবং উত্তরাধিকারসূত্রে প্রাপ্ত স্বাস্থ্য সমস্যার অভাবের কারণে এটি একটি জনপ্রিয় পোষা প্রাণী। আধুনিক ব্রিটেনে 1830 সালের দিকে গ্রেট ব্রিটেনে ট্যালবট হাউন্ড, নর্থ কান্ট্রি বিগল, সহ বিভিন্ন জাত থেকে বিকশিত হয়েছিল। সাউদার্ন হাউন্ড, এবং সম্ভবত হ্যারিয়ার। বিগলসকে এলিজাবেথান কাল থেকে জনপ্রিয় সংস্কৃতিতে চিত্রিত করা হয়েছে সাহিত্য ও চিত্রকলায় এবং সাম্প্রতিককালে চলচ্চিত্র, টেলিভিশন এবং কমিক বইয়ে। বিগলের উৎপত্তি জানা যায়নি। 11 শতকে, উইলিয়াম দ্য কনকারর সেন্ট হুবার্ট হাউন্ড এবং ট্যালবট হাউন্ডকে ব্রিটেনে নিয়ে আসেন। ব্রিটেনে, হরিণ শিকারের গতি ও সহনশীলতা দেওয়ার জন্য এই দুটি স্ট্রেনই গ্রেহাউন্ডের সাথে অতিক্রম করা হয়েছিল।"
                 },
                 {
-                        "72",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "73",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "74",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "75",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "76",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "77",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "78",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "79",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "80",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "81",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "82",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "83",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
-                },
-
-                {
-                        "84",
-                        "",
-                        "",
-                        "",
-                        "",
-                        ""
+                        "285",
+                        "Egyptian cat",
+                        "False",
+                        "Felis catus",
+                        "Least concern",
+                        "Egyptian Maus are a small to medium-sized short-haired cat breed. They are one of the few naturally spotted breeds of domesticated cat. The spots of the Mau occur on only the tips of the hairs of its coat. It is considered a rare breed.\nCharacteristics \nEgyptian Maus are considered by proponents to be one of the progenitor breeds of the modern domestic cat. The breed conformation is described as a balance between the compactness of a Burmese and the slim elegance of a Siamese. Its medium-length body is muscular, with the hind legs longer than the front, giving the Mau the appearance of standing on tiptoes when upright. The Egyptian Mau is the fastest of the domestic cats, with its longer hind legs, and unique flap of skin extending from the flank to the back knee, which assists in running by allowing the legs to stretch back farther, providing for greater agility and length of stride. Maus have been clocked running more than 48 km/h (30 mph).One of the most important recognizable traits of this breed is a long, dark, dorsal stripe that runs from its head to its tail along its spine.Maus come in six colours. From most to least common, these colours are silver, bronze, smoke, black, caramel and blue/pewter. Black and pewter Maus cannot be shown, but may be used in breeding.",
+                        "অবিষাক্ত",
+                        "মিশরীয় মাউস একটি ছোট থেকে মাঝারি আকারের ছোট কেশিক বিড়ালের জাত। তারা গৃহপালিত বিড়ালের কয়েকটি প্রাকৃতিকভাবে দাগযুক্ত জাতগুলির মধ্যে একটি। মৌ এর দাগ এর কোটের চুলের ডগায় দেখা যায়। এটি একটি বিরল প্রজাতি হিসাবে বিবেচিত হয়।\n" +
+                                "বৈশিষ্ট্য\n" +
+                                "মিশরীয় মাউসকে সমর্থকরা আধুনিক গার্হস্থ্য বিড়ালের পূর্বপুরুষদের মধ্যে একটি বলে মনে করেন। শাবক গঠনকে বার্মিজদের কম্প্যাক্টনেস এবং সিয়ামিজের পাতলা কমনীয়তার মধ্যে ভারসাম্য হিসাবে বর্ণনা করা হয়। এর মাঝারি-দৈর্ঘ্যের শরীর পেশীবহুল, পিছনের পা সামনের চেয়ে লম্বা, মাউকে খাড়া অবস্থায় টিপটোর উপর দাঁড়ানোর চেহারা দেয়। মিশরীয় মাউ হল গৃহপালিত বিড়ালদের মধ্যে দ্রুততম, যার পিছনের পা লম্বা, এবং ত্বকের অনন্য ফ্ল্যাপ ফ্ল্যাঙ্ক থেকে পিছনের হাঁটু পর্যন্ত প্রসারিত, যা পাগুলিকে আরও দূরে প্রসারিত করার অনুমতি দিয়ে দৌড়াতে সহায়তা করে, আরও চটপটে এবং দৈর্ঘ্য প্রদান করে। অগ্রগতি মাউস 48 কিমি/ঘন্টা (30 মাইল) এরও বেশি গতিতে ছুটে চলেছে৷ এই প্রজাতির সবচেয়ে গুরুত্বপূর্ণ স্বীকৃত বৈশিষ্ট্যগুলির মধ্যে একটি হল একটি দীর্ঘ, গাঢ়, পৃষ্ঠীয় স্ট্রাইপ যা এটির মেরুদণ্ড বরাবর এর মাথা থেকে লেজ পর্যন্ত চলে। মাউস ছয়টি আসে। রং সবচেয়ে কম সাধারণ থেকে, এই রংগুলি হল রূপালী, ব্রোঞ্জ, ধোঁয়া, কালো, ক্যারামেল এবং নীল/পিউটার। কালো এবং পিউটার মাউস দেখানো যাবে না, তবে প্রজননে ব্যবহার করা যেতে পারে।"
                 },
                 {
                         "291",
@@ -986,21 +650,19 @@ public class AnimalDetails {
                         "False",
                         "Panthera leo",
                         "Vulnerable",
-                        "The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It has a muscular, broad-chested body, short, " +
-                                "rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions are larger than females " +
-                                "and have a prominent mane. It is a social species, forming groups called prides. A lion's pride consists of a few adult males, " +
-                                "related females, and cubs. Groups of female lions usually hunt together, preying mostly on large ungulates. " +
-                                "The lion is an apex and keystone predator; although some lions scavenge when opportunities occur and have been known to hunt humans, the species typically does not actively seek out and prey on humans.\n" +
-                                "The lion inhabits grasslands, savannas and shrublands. It is usually more diurnal than other wild cats, but when persecuted, it adapts to being active at night and at twilight. During the Neolithic period, the lion ranged throughout Africa and Eurasia from Southeast Europe to India, " +
-                                "but it has been reduced to fragmented populations in sub-Saharan Africa and one population in western India. It has been listed as Vulnerable on the IUCN Red List since 1996 because populations in African countries have declined by about 43% since the early 1990s. " +
-                                "Lion populations are untenable outside designated protected areas. " +
-                                "Although the cause of the decline is not fully understood, habitat loss and conflicts with humans are the greatest causes for concern.\n" +
-                                "One of the most widely recognised animal symbols in human culture, the lion has been extensively depicted in sculptures and paintings, " +
-                                "on national flags, and in contemporary films and literature. Lions have been kept in menageries since the time of the Roman Empire and have been " +
-                                "a key species sought for exhibition in zoological gardens across the world since the late 18th century. Cultural depictions of lions w" +
-                                "ere prominent in Ancient Egypt, and depictions have occurred in virtually all ancient and medieval cultures in the lion's " +
-                                "historic and current range. ",
-                        "অবিষাক্ত।",
+                        "The lion (Panthera leo) is a large cat of the genus Panthera native to Africa and India. It has a muscular, broad-chested body, short, rounded head, round ears, and a hairy tuft at the end of its tail. It is sexually dimorphic; adult male lions are larger than females and have a prominent mane. It is a social species, forming groups called prides. A lion's pride consists of a few adult males, related females, and cubs. Groups of female lions usually hunt together, preying mostly on large ungulates. The lion is an apex and keystone predator; although some lions scavenge when opportunities occur and have been known to hunt humans, the species typically does not actively seek out and prey on humans. The lion inhabits grasslands, savannas and shrublands. It is usually more diurnal than other wild cats, but when persecuted, it adapts to being active at night and at twilight. During the Neolithic period, the lion ranged throughout Africa and Eurasia from Southeast Europe to India, but it has been reduced to fragmented populations in sub-Saharan Africa and one population in western India.",
+                        "অবিষাক্ত",
+                        "সিংহ (প্যানথেরা লিও) হল আফ্রিকা এবং ভারতে বসবাসকারী প্যানথেরা গোত্রের একটি বড় বিড়াল। এটি একটি পেশীবহুল, চওড়া-বুকযুক্ত শরীর, ছোট, গোলাকার মাথা, গোলাকার কান এবং লেজের শেষে একটি লোমশ টুফ্ট রয়েছে। এটি যৌনভাবে দ্বিরূপ; প্রাপ্তবয়স্ক পুরুষ সিংহগুলি স্ত্রীদের চেয়ে বড় হয় এবং একটি বিশিষ্ট কেশর থাকে। এটি একটি সামাজিক প্রজাতি, যাকে প্রাইড বলা হয়। একসাথে শিকার করে, বেশিরভাগই বড় অগোলেদের শিকার করে। সিংহ একটি শীর্ষ এবং কীস্টোন শিকারী; যদিও কিছু সিংহ যখন সুযোগ আসে এবং মানুষকে শিকার করার জন্য পরিচিত হয়, তখনও প্রজাতিগুলি সাধারণত সক্রিয়ভাবে মানুষের সন্ধান করে না এবং শিকার করে না। সিংহ তৃণভূমি, সাভানা এবং গুল্মভূমিতে বাস করে। এটি সাধারণত অন্যান্য বন্য বিড়ালদের তুলনায় বেশি দৈনিক, কিন্তু যখন প্রতিকূলতার মুখে এটি রাতে এবং গোধূলিতে সক্রিয় থাকার জন্য খাপ খায়। নিওলিথিক যুগে, সিংহ দক্ষিণ-পূর্ব ইউরোপ থেকে ভারত পর্যন্ত আফ্রিকা এবং ইউরেশিয়া জুড়ে বিস্তৃত ছিল, কিন্তু এটা সাব-সাহারান আফ্রিকায় খণ্ডিত জনসংখ্যা এবং পশ্চিম ভারতে একটি জনসংখ্যা হ্রাস পেয়েছে।"
+                },
+                {
+                        "49",
+                        "African crocodile",
+                        "False",
+                        "Crocodylus niloticus",
+                        "Least Concern",
+                        "The West African crocodile, desert crocodile, or sacred crocodile (Crocodylus suchus) is a species of crocodile related to – and often confused with – the larger and more aggressive Nile crocodile (C. niloticus). Compared to the Nile crocodile, the West African crocodile is smaller: Adults are typically 1.5–2.5 m (5–8 ft) long, and maximum is perhaps 3–4 m (10–13 ft). The species was named by Étienne Geoffroy Saint-Hilaire in 1807, who discovered differences between the skulls of a mummified crocodile and those of Nile crocodile (C. niloticus). This new species was, however, for a long time afterwards regarded as a synonym of the Nile crocodile. In 2003, a study indicated that C. suchus was a valid species, and this was confirmed by several other studies in 2011–2015. Despite the long history of confusion, genetic testing has revealed that the two are not particularly close. The closest relatives of the Nile crocodile are the Crocodylus species from the Americas, while the West African crocodile is basal to the clade of Nile and American crocodiles.Below is a cladogram based on a 2018 tip dating study by Lee & Yates simultaneously using morphological, molecular (DNA sequencing), and stratigraphic (fossil age) data, as revised by the 2021 Hekkala et al. paleogenomics study using DNA extracted from the extinct Voay. The West African crocodile inhabits much of West and Central Africa, ranging east to South Sudan and Uganda, and south to Democratic Republic of the Congo (in all three countries it may come into contact with Nile crocodiles). Other countries where it is found include Mauritania, Benin, Liberia, Guinea-Bissau, Nigeria, Niger, Cameroon, Chad, Sierra Leone, Central African Republic, Equatorial Guinea, Senegal, Mali, Guinea, Gambia, Burkina Faso, Ghana, Gabon, Togo, Ivory Coast and Republic of Congo.",
+                        "অবিষাক্ত",
+                        "পশ্চিম আফ্রিকার কুমির, মরুভূমির কুমির, বা পবিত্র কুমির (Crocodylus suchus) হল একটি প্রজাতির কুমিরের সাথে সম্পর্কিত - এবং প্রায়শই বিভ্রান্ত হয় - বড় এবং আরও আক্রমণাত্মক নীল কুমির (C. niloticus)। নীল নদের কুমিরের তুলনায়, পশ্চিম আফ্রিকার কুমির ছোট: প্রাপ্তবয়স্কদের সাধারণত 1.5-2.5 মিটার (5-8 ফুট) লম্বা এবং সর্বাধিক সম্ভবত 3-4 মিটার (10-13 ফুট)। 1807 সালে এটিয়েন জিওফ্রয় সেন্ট-হিলাইরে প্রজাতিটির নামকরণ করেছিলেন, যিনি একটি মমি করা কুমির এবং নীল কুমিরের (সি. নিলোটিকাস) মাথার খুলির মধ্যে পার্থক্য আবিষ্কার করেছিলেন। এই নতুন প্রজাতিটি অবশ্য দীর্ঘকাল পরে নীল নদের কুমিরের প্রতিশব্দ হিসাবে বিবেচিত হয়েছিল। 2003 সালে, একটি গবেষণায় ইঙ্গিত দেওয়া হয়েছিল যে সি. সুসাস একটি বৈধ প্রজাতি, এবং এটি 2011-2015 সালে অন্যান্য বেশ কয়েকটি গবেষণা দ্বারা নিশ্চিত করা হয়েছিল। বিভ্রান্তির দীর্ঘ ইতিহাস সত্ত্বেও, জেনেটিক পরীক্ষায় দেখা গেছে যে দুটি বিশেষভাবে কাছাকাছি নয়। নীল নদের কুমিরের নিকটতম আত্মীয় হল আমেরিকা থেকে আসা ক্রোকোডাইলাস প্রজাতি, যখন পশ্চিম আফ্রিকার কুমির হল নীল এবং আমেরিকান কুমিরের ক্লেডের বেসাল। নীচে লি ও ইয়েটসের 2018 সালের টিপ ডেটিং স্টাডির উপর ভিত্তি করে একটি ক্ল্যাডোগ্রাম রয়েছে যা একই সাথে রূপতাত্ত্বিক ব্যবহার করে, আণবিক (ডিএনএ সিকোয়েন্সিং), এবং স্ট্র্যাটিগ্রাফিক (ফসিল বয়স) ডেটা, 2021 হেক্কালা এট আল দ্বারা সংশোধিত। বিলুপ্ত Voay থেকে নিষ্কাশিত ডিএনএ ব্যবহার করে প্যালিওজেনোমিক্স অধ্যয়ন। পশ্চিম আফ্রিকার কুমিরটি পশ্চিম ও মধ্য আফ্রিকার বেশিরভাগ অংশে বাস করে, পূর্বে দক্ষিণ সুদান এবং উগান্ডা এবং দক্ষিণে কঙ্গো গণতান্ত্রিক প্রজাতন্ত্র (তিনটি দেশেই এটি নীল নদের কুমিরের সংস্পর্শে আসতে পারে)। অন্যান্য দেশে যেখানে এটি পাওয়া যায় তার মধ্যে রয়েছে মৌরিতানিয়া, বেনিন, লাইবেরিয়া, গিনি-বিসাউ, নাইজেরিয়া, নাইজার, ক্যামেরুন, চাদ, সিয়েরা লিওন, মধ্য আফ্রিকান প্রজাতন্ত্র, নিরক্ষীয় গিনি, সেনেগাল, মালি, গিনি, গাম্বিয়া, বুর্কিনা ফাসো, ঘানা, গ্যাবন, টোগো, আইভরি কোস্ট এবং কঙ্গো প্রজাতন্ত্র।"
                 }
         };
 
