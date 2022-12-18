@@ -36,4 +36,6 @@
     <string name="ency_header_bangla">যে প্রাণীটি সম্পর্কে জানতে চান সেটি সিলেক্ট করুনঃ</string>
     <string name="ency_venom">Venomous Status</string>
     <string name="ency_venom_bangla">বিষাক্ত কী?</string>
+    <string name="data_not_added_sorry">Sorry, no data is available at this moment.</string>
+    <string name="data_not_added_sorry_bangla">দুঃখিত, এখনো তথ্য সংযোজন করা হয়নি।</string>
 </resources>

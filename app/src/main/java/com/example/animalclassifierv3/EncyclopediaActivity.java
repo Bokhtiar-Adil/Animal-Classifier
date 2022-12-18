@@ -23,7 +23,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     TextView scilbl,cstlbl,venomlbl,desclbl,header,more;
     Spinner spin;
     ArrayList<String> animals = new ArrayList<>();
-    Button speak, speak2;
+    Button speak, speak2, speak3, speak4, speak5;
     TextToSpeech ts;
     int language;
     String bnCst;
@@ -43,18 +43,23 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         more = findViewById(R.id.more);
         speak = findViewById(R.id.speak);
         speak2 = findViewById(R.id.speak2);
+        speak3 = findViewById(R.id.speak3);
+        speak4 = findViewById(R.id.speak4);
+        speak5 = findViewById(R.id.speak5);
 
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
-                @Override
-                public void onInit(int i) {
-                    // if No error is found then only it will run
-                    if(i!=TextToSpeech.ERROR){
-                        // To Choose language of speech
-                        if(language==0) ts.setLanguage(Locale.ENGLISH);
-                        else ts.setLanguage(new Locale("bn_IN"));
-                    }
+            @Override
+            public void onInit(int i) {
+                // if No error is found then only it will run
+                if(i!=TextToSpeech.ERROR){
+                    // To Choose language of speech
+                    if(language==0) ts.setLanguage(Locale.ENGLISH);
+                    else ts.setLanguage(new Locale("bn_IN"));
                 }
+            }
         });
+        if(language == 0) ts.setPitch(1.1f);
+        else ts.setPitch(1.0f);
 
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,8 +67,6 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
                 ts.speak(name.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
             }
         });
-
-
 
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
@@ -120,17 +123,33 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             }
         });
 
+        speak3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(cst.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(alert.getVisibility() == View.VISIBLE) ts.speak(alert.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+                else ts.speak(alert2.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(desc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
         int len = AnimalDetails.DETAILS.length;
         animals.add("");
-        int bnInd;
-        String bnName;
+
         for(int i=0; i<len; i++){
-            if(language==0) animals.add(AnimalDetails.DETAILS[i][1]);
-            else {
-                bnInd = Integer.parseInt(AnimalDetails.DETAILS[i][0]);
-                bnName = AnimalClasses.ANIMAL_CLASSES_BANGLA[bnInd];
-                animals.add(bnName);
-            }
+            animals.add(AnimalDetails.DETAILS[i][1]);
         }
         ArrayAdapter<String> spinAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, animals);
         spin.setAdapter(spinAdp);
@@ -168,13 +187,13 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
                 if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
                 else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
                 else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
-                else if(details[4].equalsIgnoreCase("Domesticated")) bnCst = "পোষ মানানো হয়েছে";
-                else bnCst = "শংকামুক্ত";
+                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
+                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
                 Log.d("BANGLA", details[4]);
                 Log.d("BANGLA", bnCst);
                 cst.setText(bnCst);
-                if(details.length==8) desc.setText(details[7]);
-                else desc.setText("দুঃখিত, বাংলা ডাটা এখনো যোগ করা হয়নি।");
+                if(details.length == 8) desc.setText(details[7]);
+                else desc.setText(R.string.data_not_added_sorry_bangla);
                 if(details[2]=="False") {
                     alert2.setVisibility(View.GONE);
                     alert.setVisibility(View.VISIBLE);
@@ -192,6 +211,12 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        ts.shutdown();
+        finish();
     }
 
 }

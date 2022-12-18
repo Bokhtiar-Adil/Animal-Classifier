@@ -34,7 +34,7 @@ public class ResultActivity extends AppCompatActivity {
     TextView alert,scifi,cst,desc;
     TextView scilbl,cstlbl,desclbl,header,more;
     int language;
-    Button btn, speak, speak2;
+    Button btn, speak, speak2, speak3, speak4;
     TextToSpeech ts;
     String bnCst;
 
@@ -95,7 +95,8 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-
+        if(language == 0) ts.setPitch(1.1f);
+        else ts.setPitch(1.0f);
 
         Bundle extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("userInput");
@@ -173,12 +174,8 @@ public class ResultActivity extends AppCompatActivity {
         desc = findViewById(R.id.descdet);
         speak = findViewById(R.id.speak);
         speak2 = findViewById(R.id.speak2);
-
-
-        alert.setTypeface(tf);
-        scifi.setTypeface(tf);
-        cst.setTypeface(tf);
-        desc.setTypeface(tf);
+        speak3 = findViewById(R.id.speak3);
+        speak4 = findViewById(R.id.speak4);
 
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -194,7 +191,7 @@ public class ResultActivity extends AppCompatActivity {
             if(language==0) alert.setText(details[2]);
             else alert.setText(details[6]);
         }
-        if(language==0) {
+        if(language==0){
             scifi.setText(details[3]);
             cst.setText(details[4]);
             desc.setText(details[5]);
@@ -209,7 +206,6 @@ public class ResultActivity extends AppCompatActivity {
             if(details.length==8) desc.setText(details[7]);
             else desc.setText("দুঃখিত, বাংলা ডাটা এখনো যোগ করা হয়নি।");
         }
-
         speak2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -218,6 +214,20 @@ public class ResultActivity extends AppCompatActivity {
         });
 
 
+
+        speak3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(cst.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(desc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -247,5 +257,11 @@ public class ResultActivity extends AppCompatActivity {
             }
             return file.getAbsolutePath();
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        ts.shutdown();
+        finish();
     }
 }
