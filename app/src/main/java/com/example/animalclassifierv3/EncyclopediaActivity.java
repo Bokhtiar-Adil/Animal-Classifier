@@ -149,7 +149,11 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         animals.add("");
 
         for(int i=0; i<len; i++){
-            animals.add(AnimalDetails.DETAILS[i][1]);
+            if(language==0) animals.add(AnimalDetails.DETAILS[i][1]);
+            else {
+                int bnClass = Integer.parseInt(AnimalDetails.DETAILS[i][0]);
+                animals.add(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+            }
         }
         ArrayAdapter<String> spinAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, animals);
         spin.setAdapter(spinAdp);
