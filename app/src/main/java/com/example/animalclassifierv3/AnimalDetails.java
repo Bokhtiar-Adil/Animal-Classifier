@@ -25,7 +25,7 @@ public class AnimalDetails {
                         "This is dummy description. This is dummy description. This is dummy description. This is dummy description."
         };
 
-        public static String[][] DETAILS = new String[][]{
+        public static final String[][] DETAILS = new String[][]{
                 {
                         "0",
                         "Tence fish",
@@ -667,6 +667,44 @@ public class AnimalDetails {
         };
 
 
+        public static final String[][] PHOTOS = new String[][]{
+                {
+                        "291",
+                        "Lion",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Lion_waiting_in_Namibia.jpg/1200px-Lion_waiting_in_Namibia.jpg",
+                        "https://cdn.britannica.com/55/2155-050-604F5A4A/lion.jpg",
+                        "https://th-thumbnailer.cdn-si-edu.com/PWHloyMbSU3lE5BWo5WcXgeYuFw=/fit-in/1072x0/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/two-male-lions-Kenya-520.jpg",
+                        "https://www.krugerpark.co.za/images/lion-facts-786x446.jpg",
+                        "https://www.humanesociety.org/sites/default/files/styles/400x400/public/2019/10/lioness-with-cub.jpg?h=e0668860&itok=GCe0XP5K"
+                },
+                {
+                        "9",
+                        "Ostrich",
+                        "https://cdn.mos.cms.futurecdn.net/tMnjLRtEm47ueTPt9Rkyxd-1200-80.jpg",
+                        "https://i.natgeofe.com/n/23b2ba2c-f668-4269-a68e-d918dfed59c2/6108126_16x9.jpg",
+                        "https://cdn.britannica.com/35/154235-050-E9B69238/ostriches-Maasai-Mara-National-Reserve-Kenya.jpg",
+                        "https://cdn.britannica.com/58/152058-050-9BFAC1EF/Ostriches.jpg",
+                        "https://www.zoodelahautetouche.fr/sites/hautetouche/files/styles/1020x576/public/thumbnails/image/autruches_c_gilles_martin.jpg?itok=ilANaLoi"
+                },
+                {
+                        "162",
+                        "Beagle Dog",
+                        "https://cdn.britannica.com/16/234216-050-C66F8665/beagle-hound-dog.jpg",
+                        "https://www.purina.co.uk/sites/default/files/styles/square_medium_440x440/public/2022-07/GettyImages-1064619358%20%281%29.jpg?h=d3398a4a&itok=IdOM_9v_",
+                        "https://cleverpuppies.com/wp-content/uploads/2022/01/Beagle-Dog-Breed-Everything-You-Need-to-Know.jpg",
+                        "https://blog.myollie.com/wp-content/uploads/2020/02/beagle-puppy-running-through-a-yard-with-a-ball-in-his-mouth.jpg",
+                        "https://cf.ltkcdn.net/dogs/dog-breeds/images/orig/325050-1600x1030-mini-beagle-puppy-pictures.jpg"
+                },
+                {
+                        "22",
+                        "Bald eagle",
+                        "https://d.newsweek.com/en/full/343853/bald-eagle-alaska-preserve-2.jpg",
+                        "https://people.com/thmb/8FHjWGYSrebOUV8tTxIg2hoZVb0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(999x0:1001x2)/bald-eagle-2-2000-5ed4d3089b6d4472848cc839bce306d4.jpg",
+                        "https://upload.wikimedia.org/wikipedia/commons/1/1a/About_to_Launch_%2826075320352%29.jpg",
+                        "https://nationaltoday.com/wp-content/uploads/2021/12/Bald-Eagle-Appreciation-Day-640x514.jpg",
+                        "https://nationalzoo.si.edu/sites/default/files/animals/baldeagle-001.jpg"
+                }
+        };
 
 
 }

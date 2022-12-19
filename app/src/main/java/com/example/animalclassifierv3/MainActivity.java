@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
   private final int CAMERA_REQ_CODE = 1;
   private final int GALLERY_REQ_CODE = 2;
-  Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn;
+  Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn, featuresbtn;
   ImageView imgview;
   TextView header_1, header_2, header_3, para_1, para_2, para_3;
   RadioGroup lang;
@@ -93,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     gallerybtn = findViewById(R.id.gallerybtn);
     encyclobtn = findViewById(R.id.encyclobtn);
     aboutbtn = findViewById(R.id.aboutbtn);
+    featuresbtn = findViewById(R.id.features);
 
 
     lang = findViewById(R.id.langSet);
@@ -143,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
     //imgview = findViewById(R.id.imageView);
 
 
-
     camerabtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
@@ -169,6 +169,16 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
       }
     });
+
+//    featuresbtn.setOnClickListener(new View.OnClickListener() {
+//      @Override
+//      public void onClick(View view) {
+//        Intent intent = new Intent(MainActivity.this, PhotosPage.class);
+//        //intent.putExtra("language", language);
+//        startActivity(intent);
+//      }
+//    });
+
   }
 
   @Override
