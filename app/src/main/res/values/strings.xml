@@ -30,8 +30,8 @@
     <string name="res_desc_bangla">বর্ণনা</string>
     <string name="res_more">Click on the following button to learn more about it from online. Also, make sure your internet connection is on.</string>
     <string name="res_more_bangla">আরও বিস্তারিত জানতে ইন্টারনেট একটিভ করে নিচের বাটনে ক্লিক করুন।</string>
-    <string name="res_more_btn">Learn More</string>
-    <string name="res_more_btn_bangla">আরও জানুন</string>
+    <string name="res_more_btn">Browse Internet</string>
+    <string name="res_more_btn_bangla">ইন্টারনেট ঘুরে দেখুন</string>
     <string name="ency_header">Select an animal to learn about:</string>
     <string name="ency_header_bangla">যে প্রাণীটি সম্পর্কে জানতে চান সেটি সিলেক্ট করুনঃ</string>
     <string name="ency_venom">Venomous Status</string>
@@ -42,4 +42,8 @@
     <string name="not_selected_photos_bangla">কোনো প্রাণী সিলেক্ট করা হয়নি</string>
     <string name="no_internet">No internet found. Please connect and try again.</string>
     <string name="no_internet_bangla">ইন্টারনেট সংযোগ নাই। দয়া করে কানেক্ট করে আবার চেষ্টা করুন।</string>
+    <string name="photosbtn">Photos</string>
+    <string name="photosbtn_bangla">ছবি</string>
+    <string name="linksbtn">Links and Sites</string>
+    <string name="linksbtn_bangla">লিংক এবং সাইট</string>
 </resources>
