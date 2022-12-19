@@ -13,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Locale;
@@ -23,10 +24,10 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     TextView scilbl,cstlbl,venomlbl,desclbl,header,more;
     Spinner spin;
     ArrayList<String> animals = new ArrayList<>();
-    Button speak, speak2, speak3, speak4, speak5;
+    Button speak, speak2, speak3, speak4, speak5, photos;
     TextToSpeech ts;
     int language;
-    String bnCst;
+    String bnCst, animal;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         speak3 = findViewById(R.id.speak3);
         speak4 = findViewById(R.id.speak4);
         speak5 = findViewById(R.id.speak5);
+        photos = findViewById(R.id.photos);
 
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -157,58 +159,85 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         }
         ArrayAdapter<String> spinAdp = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, animals);
         spin.setAdapter(spinAdp);
+
+        animal = "";
+
+        photos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isInternetConnected()) {
+                    Intent photoPage = new Intent(EncyclopediaActivity.this, PhotosPage.class);
+                    photoPage.putExtra("animal", animal);
+                    photoPage.putExtra("language", language);
+                    startActivity(photoPage);
+                }
+                else {
+                    if(language==0) Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_LONG).show();
+                    else Toast.makeText(getApplicationContext(), R.string.no_internet_bangla, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
     }
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        if(language==0){
-            if(i!=0){
-                String details[] = AnimalDetails.DETAILS[i-1];
-                name.setText(details[1]);
-                scifi.setText(details[3]);
-                cst.setText(details[4]);
-                desc.setText(details[5]);
-                if(details[2]=="False") {
-                    alert2.setVisibility(View.GONE);
-                    alert.setVisibility(View.VISIBLE);
-                    alert.setText("Not venomous");
-                }
-                else {
-                    alert2.setVisibility(View.VISIBLE);
-                    alert.setVisibility(View.GONE);
-                    alert2.setText(details[2]);
-                }
+        if(i==0) {
+            animal = "";
+            name.setText("");
+            scifi.setText("");
+            cst.setText("");
+            desc.setText("");
+            alert2.setVisibility(View.GONE);
+            alert.setVisibility(View.VISIBLE);
+            alert.setText("");
+        }
+        else if(language==0){
+            String details[] = AnimalDetails.DETAILS[i-1];
+            animal = details[1];
+            name.setText(details[1]);
+            scifi.setText(details[3]);
+            cst.setText(details[4]);
+            desc.setText(details[5]);
+            if(details[2]=="False") {
+                alert2.setVisibility(View.GONE);
+                alert.setVisibility(View.VISIBLE);
+                alert.setText("Not venomous");
+            }
+            else {
+                alert2.setVisibility(View.VISIBLE);
+                alert.setVisibility(View.GONE);
+                alert2.setText(details[2]);
             }
         }
         else {
-            if(i!=0){
-                String details[] = AnimalDetails.DETAILS[i-1];
-                int bnClass = Integer.parseInt(details[0]);
-                Log.d("BANGLA", String.valueOf(bnClass));
-                name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
-                scifi.setText(details[3]);
+            String details[] = AnimalDetails.DETAILS[i-1];
+            animal = details[1];
+            int bnClass = Integer.parseInt(details[0]);
+            Log.d("BANGLA", String.valueOf(bnClass));
+            name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+            scifi.setText(details[3]);
 
-                if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
-                else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
-                else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
-                else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
-                else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
-                Log.d("BANGLA", details[4]);
-                Log.d("BANGLA", bnCst);
-                cst.setText(bnCst);
-                if(details.length == 8) desc.setText(details[7]);
-                else desc.setText(R.string.data_not_added_sorry_bangla);
-                if(details[2]=="False") {
-                    alert2.setVisibility(View.GONE);
-                    alert.setVisibility(View.VISIBLE);
-                    alert.setText(details[6]);
-                }
-                else {
-                    alert2.setVisibility(View.VISIBLE);
-                    alert.setVisibility(View.GONE);
-                    alert2.setText(details[6]);
-                }
+            if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
+            else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
+            else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
+            else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
+            else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+            Log.d("BANGLA", details[4]);
+            Log.d("BANGLA", bnCst);
+            cst.setText(bnCst);
+            if(details.length == 8) desc.setText(details[7]);
+            else desc.setText(R.string.data_not_added_sorry_bangla);
+            if(details[2]=="False") {
+                alert2.setVisibility(View.GONE);
+                alert.setVisibility(View.VISIBLE);
+                alert.setText(details[6]);
             }
+            else {
+                alert2.setVisibility(View.VISIBLE);
+                alert.setVisibility(View.GONE);
+                alert2.setText(details[6]);
+            }
+
         }
     }
 
@@ -221,6 +250,15 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     public void onBackPressed() {
         ts.shutdown();
         finish();
+    }
+
+    public boolean isInternetConnected() {
+        try {
+            String command = "ping -c 1 google.com";
+            return (Runtime.getRuntime().exec(command).waitFor() == 0);
+        } catch (Exception e) {
+            return false;
+        }
     }
 
 }
