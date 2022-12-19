@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import org.pytorch.IValue;
 import org.pytorch.LiteModuleLoader;
@@ -34,9 +35,9 @@ public class ResultActivity extends AppCompatActivity {
     TextView alert,scifi,cst,desc;
     TextView scilbl,cstlbl,desclbl,header,more;
     int language;
-    Button btn, speak, speak2, speak3, speak4;
+    Button btn, speak, speak2, speak3, speak4, photos;
     TextToSpeech ts;
-    String bnCst;
+    String bnCst, animal;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +50,7 @@ public class ResultActivity extends AppCompatActivity {
         header = findViewById(R.id.header);
         more = findViewById(R.id.more);
         btn = findViewById(R.id.morebtn);
+        photos = findViewById(R.id.photos);
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -168,6 +170,7 @@ public class ResultActivity extends AppCompatActivity {
         final String cd = className;
 
         // showing details on UI
+        animal = details[1];
         alert = findViewById(R.id.alert);
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
@@ -229,6 +232,22 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
+        photos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(isInternetConnected()) {
+                    Intent photoPage = new Intent(ResultActivity.this, PhotosPage.class);
+                    photoPage.putExtra("animal", animal);
+                    photoPage.putExtra("language", language);
+                    startActivity(photoPage);
+                }
+                else {
+                    if(language==0) Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_LONG).show();
+                    else Toast.makeText(getApplicationContext(), R.string.no_internet_bangla, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -237,6 +256,8 @@ public class ResultActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
 
     }
 
@@ -263,5 +284,14 @@ public class ResultActivity extends AppCompatActivity {
     public void onBackPressed() {
         ts.shutdown();
         finish();
+    }
+
+    public boolean isInternetConnected() {
+        try {
+            String command = "ping -c 1 google.com";
+            return (Runtime.getRuntime().exec(command).waitFor() == 0);
+        } catch (Exception e) {
+            return false;
+        }
     }
 }
