@@ -170,14 +170,14 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
-//    featuresbtn.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View view) {
-//        Intent intent = new Intent(MainActivity.this, PhotosPage.class);
-//        //intent.putExtra("language", language);
-//        startActivity(intent);
-//      }
-//    });
+    featuresbtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        Intent intent = new Intent(MainActivity.this, KidsPictureGameActivity.class);
+        intent.putExtra("language", language);
+        startActivity(intent);
+      }
+    });
 
   }
 
