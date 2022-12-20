@@ -73,6 +73,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/name" />
 
+
         <TextView
             android:id="@+id/sciname"
             android:layout_width="wrap_content"
@@ -90,13 +91,11 @@
 
         <TextView
             android:id="@+id/scidet"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="20dp"
-
             android:padding="5dp"
-            android:textAlignment="center"
+            android:textAlignment="viewEnd"
             android:textColor="#000CF4"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/speak2"
@@ -114,6 +113,12 @@
 
             app:layout_constraintTop_toBottomOf="@+id/speak" />
 
+        <LinearLayout
+            android:id="@+id/divider1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/scidet"
+            android:orientation="horizontal" />
 
         <TextView
             android:id="@+id/cst"
@@ -121,27 +126,25 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-
             android:padding="5dp"
             android:textAlignment="center"
             android:textSize="18sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/sciname" />
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
         <TextView
             android:id="@+id/cstdet"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
 
             android:padding="5dp"
-            android:textAlignment="center"
-
+            android:textAlignment="viewEnd"
             android:textColor="#000CF4"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/speak3"
             app:layout_constraintHorizontal_bias="0.42"
-            app:layout_constraintTop_toBottomOf="@+id/scidet" />
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
         <Button
             android:id="@+id/speak3"
@@ -150,8 +153,7 @@
             android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/speaker"
             app:layout_constraintEnd_toEndOf="parent"
-
-            app:layout_constraintTop_toBottomOf="@+id/speak2" />
+            app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
         <TextView
             android:id="@+id/alert"
@@ -168,12 +170,11 @@
 
         <TextView
             android:id="@+id/alertdet"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:padding="5dp"
-            android:textAlignment="center"
-
+            android:textAlignment="viewEnd"
             android:textColor="#000CF4"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@+id/speak4"
@@ -187,7 +188,6 @@
             android:layout_marginTop="20dp"
             android:drawableLeft="@drawable/speaker"
             app:layout_constraintEnd_toEndOf="parent"
-
             app:layout_constraintTop_toBottomOf="@+id/speak3" />
 
         <TextView
