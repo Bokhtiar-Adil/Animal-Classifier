@@ -21,14 +21,16 @@ import java.util.Random;
 
 public class KidsPictureGameActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button optionA, optionB, optionC, optionD;
+    Button optionA, optionB, optionC, optionD, nextBtn;
     Button optionBtns[] = new Button[4];
     TextView heading, question, timerText, resMsg, resScore, resCorrect;
     ImageView imgView;
     int language, time, rtOpInd, ind, score;
+    boolean flag;
     int[] questionsLbl, questionsPhotos, wrongs;
     ConstraintLayout optionsView;
     LinearLayout resultView;
+    CountDownTimer roundTimer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +51,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         optionBtns[1] = findViewById(R.id.optionB);
         optionBtns[2] = findViewById(R.id.optionC);
         optionBtns[3] = findViewById(R.id.optionD);
+        nextBtn = findViewById(R.id.nextbtn);
 
         for(int i = 0; i < optionBtns.length; i++) optionBtns[i].setOnClickListener(this);
 
@@ -76,11 +79,43 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         if(language==0) question.setText(R.string.kids_pic_quiz_question_1);
         else question.setText(R.string.kids_pic_quiz_question_1_bangla);
 
+
+        roundTimer = new CountDownTimer(30000, 1000) {
+            public void onTick(long millisUntilFinished) {
+                if(time<10) timerText.setTextColor(getResources().getColor(R.color.red_1));
+                else timerText.setTextColor(getResources().getColor(R.color.lime));
+                timerText.setText(checkDigit(time));
+                time--;
+
+
+            }
+            public void onFinish() {
+                optionsView.setVisibility(View.GONE);
+                resultView.setVisibility(View.GONE);
+                optionsView.setVisibility(View.GONE);
+                resultView.setVisibility(View.VISIBLE);
+                resMsg.setTextColor(getResources().getColor(R.color.red_1));
+                if(language==0) {
+                    resMsg.setText(R.string.quiz_wrong_answer);
+                    resCorrect.setText("Correct Answer: "+optionBtns[rtOpInd].getText());
+                    resScore.setText("Current Score: "+String.valueOf(score)+" / "+"10");
+                }
+                else {
+                    if(!flag) {
+                        resMsg.setText(R.string.quiz_wrong_answer_bangla);
+                        resCorrect.setText("সঠিক উত্তর "+optionBtns[rtOpInd].getText());
+                        resScore.setText("বর্তমান স্কোরঃ "+String.valueOf(score)+" / "+"10");
+                    }
+                }
+            }
+        };
+
         score = 0;
         String lbl;
         questionsLbl = new int[10];
         wrongs = new int[3];
-        for(int i=0; i<10; i++){
+        for(int i=0; i<1; i++){
+
             questionsLbl[i] = new Random().nextInt(AnimalDetails.PHOTOS.length);
             int rndmImgInd = new Random().nextInt(AnimalDetails.PHOTOS[questionsLbl[i]].length);
             Picasso.get().load(AnimalDetails.PHOTOS[questionsLbl[i]][rndmImgInd]).into(imgView);
@@ -114,9 +149,12 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                 }
             }
         }
+        nextBtn.setOnClickListener(this);
 
-
-
+        flag = false;
+       // quizTime();
+        time = 30;
+        roundTimer.start();
 
     }
 
@@ -132,13 +170,35 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                 else timerText.setTextColor(getResources().getColor(R.color.lime));
                 timerText.setText(checkDigit(time));
                 time--;
+                nextBtn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                    }
+                });
 
             }
             public void onFinish() {
-                timerText.setText("try again");
+                optionsView.setVisibility(View.GONE);
+                resultView.setVisibility(View.GONE);
+                optionsView.setVisibility(View.GONE);
+                resultView.setVisibility(View.VISIBLE);
+                resMsg.setTextColor(getResources().getColor(R.color.red_1));
+                if(language==0) {
+                    resMsg.setText(R.string.quiz_wrong_answer);
+                    resCorrect.setText("Correct Answer: "+optionBtns[rtOpInd].getText());
+                    resScore.setText("Current Score: "+String.valueOf(score)+" / "+"10");
+                }
+                else {
+                    resMsg.setText(R.string.quiz_wrong_answer_bangla);
+                    resCorrect.setText("সঠিক উত্তর "+optionBtns[rtOpInd].getText());
+                    resScore.setText("বর্তমান স্কোরঃ "+String.valueOf(score)+" / "+"10");
+                }
             }
         }.start();
     }
+
+
 
 
     @Override
@@ -146,6 +206,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         switch (view.getId()){
             case R.id.optionA:
                 if(rtOpInd==0) {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -162,6 +223,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     }
                 }
                 else {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     resMsg.setTextColor(getResources().getColor(R.color.red_1));
@@ -180,6 +242,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
 
             case R.id.optionB:
                 if(rtOpInd==1) {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -196,6 +259,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     }
                 }
                 else {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     resMsg.setTextColor(getResources().getColor(R.color.red_1));
@@ -214,6 +278,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
 
             case R.id.optionC:
                 if(rtOpInd==2) {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -230,6 +295,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     }
                 }
                 else {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     resMsg.setTextColor(getResources().getColor(R.color.red_1));
@@ -248,6 +314,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
 
             case R.id.optionD:
                 if(rtOpInd==3) {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -264,6 +331,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     }
                 }
                 else {
+                    roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     resMsg.setTextColor(getResources().getColor(R.color.red_1));
@@ -279,6 +347,12 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     }
                 }
                 break;
+
+            case R.id.nextbtn:
+                resultView.setVisibility(View.GONE);
+                optionsView.setVisibility(View.VISIBLE);
+                break;
         }
     }
+
 }
