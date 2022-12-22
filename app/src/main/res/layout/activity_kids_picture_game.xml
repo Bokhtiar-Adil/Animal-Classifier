@@ -73,7 +73,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="#222"
-                android:text="Lion"
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAlignment="center"/>
@@ -85,6 +84,29 @@
                 android:textSize="20sp"
                 android:textAlignment="center"
                 android:padding="5dp"/>
+
+            <TextView
+                android:id="@+id/rndFinMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/finishbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:background="@drawable/custom_btn_2"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:shadowColor="#A0A857"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/nextbtn"

@@ -52,4 +52,6 @@
     <string name="quiz_correct_answer_bangla">দারুণ, সঠিক উত্তর!!!</string>
     <string name="quiz_wrong_answer">Oops, Wrong Answer!!!</string>
     <string name="quiz_wrong_answer_bangla">ভুল উত্তর!!!</string>
+    <string name="quiz_finished">Your final score: </string>
+    <string name="quiz_finished_bangla">সর্বশেষ স্কোরঃ </string>
 </resources>
