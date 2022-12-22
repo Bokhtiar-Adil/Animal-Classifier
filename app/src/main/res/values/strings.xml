@@ -48,4 +48,8 @@
     <string name="linksbtn_bangla">লিংক এবং সাইট</string>
     <string name="kids_pic_quiz_question_1">What is the animal in the picture?</string>
     <string name="kids_pic_quiz_question_1_bangla">ছবির প্রাণীটির নাম কি?</string>
+    <string name="quiz_correct_answer">Yay, Correct Answer!!!</string>
+    <string name="quiz_correct_answer_bangla">দারুণ, সঠিক উত্তর!!!</string>
+    <string name="quiz_wrong_answer">Oops, Wrong Answer!!!</string>
+    <string name="quiz_wrong_answer_bangla">ভুল উত্তর!!!</string>
 </resources>
