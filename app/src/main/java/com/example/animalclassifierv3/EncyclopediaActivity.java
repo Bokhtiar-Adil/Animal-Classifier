@@ -35,7 +35,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         setContentView(R.layout.activity_encyclopedia);
 
         Intent intent = getIntent();
-        language = intent.getIntExtra("language", 0);
+        Log.d("LANGUAGE", String.valueOf(GlobalSettings.getLanguage()));
+        if(GlobalSettings.getLanguage()==0) language=0;
+        else language = 1;
 
         scilbl = findViewById(R.id.sciname);
         cstlbl = findViewById(R.id.cst);

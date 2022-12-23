@@ -137,6 +137,7 @@ public class MainActivity extends AppCompatActivity {
             game2btn.setText(R.string.main_game2btn);
             aboutbtn.setText(R.string.main_aboutbtn);
             language = 0;
+            GlobalSettings.language = 0;
             break;
           case R.id.bangla:
             header_1.setText(getString(R.string.main_header_1_bangla));
@@ -158,6 +159,7 @@ public class MainActivity extends AppCompatActivity {
             game1btn.setText(R.string.main_game1btn_bangla);
             game2btn.setText(R.string.main_game2btn_bangla);
             language = 1;
+            GlobalSettings.language = 1;
             break;
           default:
             throw new IllegalStateException("Unexpected value: " + i);
@@ -192,7 +194,6 @@ public class MainActivity extends AppCompatActivity {
       public void onClick(View view) {
         click.start();
         Intent intent = new Intent(MainActivity.this, EncyclopediaActivity.class);
-        intent.putExtra("language", language);
         startActivity(intent);
       }
     });
@@ -202,7 +203,6 @@ public class MainActivity extends AppCompatActivity {
       public void onClick(View view) {
         click.start();
         Intent intent = new Intent(MainActivity.this, GuessPhotoGameActivity.class);
-        intent.putExtra("language", language);
         startActivity(intent);
       }
     });
@@ -238,7 +238,6 @@ public class MainActivity extends AppCompatActivity {
 
         Intent toResult = new Intent(this, ResultActivity.class);
         toResult.putExtra("userInput", byteArray);
-        toResult.putExtra("language", language);
         startActivity(toResult);
       }
       else if(requestCode==GALLERY_REQ_CODE){
@@ -283,7 +282,6 @@ public class MainActivity extends AppCompatActivity {
 
           Intent toResult = new Intent(this, ResultActivity.class);
           toResult.putExtra("userInput", byteArray);
-          toResult.putExtra("language", language);
           startActivity(toResult);
         } catch (IOException e) {
           e.printStackTrace();
