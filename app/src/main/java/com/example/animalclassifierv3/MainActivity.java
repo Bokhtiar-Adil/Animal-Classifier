@@ -7,6 +7,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
   ImageView imgview;
   TextView header_1, header_2, header_3, para_1, para_2, para_3;
   RadioGroup lang;
+  TextToSpeech ts;
   int language = 0;
 //  TextView temp;
 
@@ -77,6 +80,18 @@ public class MainActivity extends AppCompatActivity {
 //    DatabaseReference myRef = database.getReference("message");
 //
 //    myRef.setValue("Hello, World!");
+
+    ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+      @Override
+      public void onInit(int i) {
+        // if No error is found then only it will run
+        if(i!=TextToSpeech.ERROR){
+          // To Choose language of speech
+          if(language==0) ts.setLanguage(Locale.ENGLISH);
+          else ts.setLanguage(new Locale("bn_IN"));
+        }
+      }
+    });
 
     header_1 = findViewById(R.id.header1);
     header_2 = findViewById(R.id.header2);
@@ -192,12 +207,20 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
+    game2btn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        //ts.speak("ছোট্ট বন্ধুরা, বলোতো প্রাণীটির নাম কি?",TextToSpeech.QUEUE_FLUSH,null);
+      }
+    });
+
     aboutbtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
         click.start();
       }
     });
+
 
   }
 

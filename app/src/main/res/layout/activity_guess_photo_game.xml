@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".GuessPhotoGameActivity">
+    android:minHeight="800dp"
+    tools:context=".GuessPhotoGameActivity"
+    android:background="@color/dark_1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +21,7 @@
             tools:layout_editor_absoluteX="0dp"
             android:textAlignment="center"
             android:textSize="20sp"
-            android:textColor="#222"
+            android:textColor="#fff"
             android:visibility="invisible"/>
 
         <androidx.cardview.widget.CardView
@@ -57,7 +59,7 @@
                 android:textAlignment="center"
                 android:textSize="20sp"
                 android:background="#000000"
-                android:textColor="#fff"
+                android:textColor="#1A75FF"
                 android:padding="10dp"
                 />
             <TextView

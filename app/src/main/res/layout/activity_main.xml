@@ -199,7 +199,7 @@
                 android:background="@drawable/custom_btn_1"
                 android:drawableLeft="@android:drawable/ic_menu_agenda"
                 android:focusable="true"
-                android:padding="15dp"
+                android:padding="10dp"
                 android:text="Encyclopedia"
                 android:textAllCaps="false"
                 android:textColor="@color/midnight_blue"

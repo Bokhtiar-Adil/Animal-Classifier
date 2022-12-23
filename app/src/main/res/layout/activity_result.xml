@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".ResultActivity"
+    android:background="@color/dark_1"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -73,7 +74,7 @@
             android:textAlignment="center"
             android:textSize="22sp"
             android:padding="5dp"
-            android:textColor="#ff0000"
+            android:textColor="@color/red_1"
             android:visibility="visible"
             />
 
@@ -86,6 +87,7 @@
             android:padding="5dp"
             android:textAlignment="center"
             android:textSize="18sp"
+            android:textColor="#fff"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/alert" />
 
@@ -98,7 +100,7 @@
             android:padding="5dp"
 
             android:textAlignment="viewEnd"
-            android:textColor="#000CF4"
+            android:textColor="@color/glowing_blue"
             android:textSize="18sp"
             android:textStyle="italic"
             app:layout_constraintEnd_toStartOf="@+id/speak2"
@@ -133,6 +135,7 @@
             android:padding="5dp"
             android:textAlignment="center"
             android:textSize="18sp"
+            android:textColor="#fff"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/divider1" />
 
@@ -143,7 +146,7 @@
             android:layout_marginTop="20dp"
             android:padding="5dp"
             android:textAlignment="viewEnd"
-            android:textColor="#000CF4"
+            android:textColor="@color/glowing_blue"
             android:textSize="18sp"
             app:layout_constraintEnd_toStartOf="@id/speak3"
             app:layout_constraintTop_toBottomOf="@+id/divider1" />
@@ -170,6 +173,7 @@
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
+            android:textColor="#fff"
             android:padding="5dp" />
 
         <Button
@@ -193,7 +197,7 @@
             android:textAlignment="center"
             android:textSize="18sp"
             android:padding="5dp"
-            android:textColor="#000CF4" />
+            android:textColor="@color/pink_1" />
 
         <TextView
             android:id="@+id/more"
@@ -204,14 +208,15 @@
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
+            android:textColor="#fff"
             android:padding="5dp" />
+
 
         <Button
             android:id="@+id/photos"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="76dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="16dp"
             android:background="@drawable/custom_btn_1"
             android:focusable="true"
             android:paddingStart="25dp"
@@ -222,38 +227,36 @@
             android:textAllCaps="false"
             android:textColor="@color/midnight_blue"
             android:textSize="17sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/more" />
 
         <Button
             android:id="@+id/links"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.37"
-            app:layout_constraintStart_toEndOf="@+id/photos"
-            app:layout_constraintTop_toBottomOf="@+id/more"
+            android:background="@drawable/custom_btn_1"
+            android:focusable="true"
+            android:paddingStart="25dp"
+            android:paddingTop="15dp"
+            android:paddingEnd="25dp"
+            android:paddingBottom="15dp"
             android:text="Links"
+            android:textAllCaps="false"
             android:textColor="@color/midnight_blue"
             android:textSize="17sp"
-            android:paddingTop="15dp"
-            android:paddingBottom="15dp"
-            android:paddingStart="25dp"
-            android:paddingEnd="25dp"
-            android:focusable="true"
-            android:textAllCaps="false"
-            android:background="@drawable/custom_btn_1"
-            />
-
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/photos" />
 
         <Button
             android:id="@+id/morebtn"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/photos"
+            app:layout_constraintTop_toBottomOf="@+id/links"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
 
