@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -181,7 +180,7 @@ public class MainActivity extends AppCompatActivity {
     game1btn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this, KidsPictureGameActivity.class);
+        Intent intent = new Intent(MainActivity.this, GuessPhotoGameActivity.class);
         intent.putExtra("language", language);
         startActivity(intent);
       }

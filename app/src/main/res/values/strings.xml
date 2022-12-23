@@ -58,4 +58,8 @@
     <string name="quiz_wrong_answer_bangla">ভুল উত্তর!!!</string>
     <string name="quiz_finished">Your final score: </string>
     <string name="quiz_finished_bangla">সর্বশেষ স্কোরঃ </string>
+    <string name="game1_start_header">GUESS THE PHOTO</string>
+    <string name="game1_start_header_bangla">ছবির প্রাণীটি কি?</string>
+    <string name="game1_start_msg">In this game, a photo of a random animal will be provided. Within 30 seconds, you will have to guess the name of the animal from the options given under it. There will be 10 rounds with different photos.</string>
+    <string name="game1_start_msg_bangla">এই খেলাতে একটি প্রাণির ছবি দেওয়া হবে। নিচে দেওয়া ৪টি অপশন থেকে আপনাকে ৩০ সেকেন্ডের ভেতরে সঠিকভাবে প্রাণীটির নাম অনুমান করতে হবে। মোট ১০টি রাউন্ড হবে বিভিন্ন প্রাণীর ছবি দ্বারা।</string>
 </resources>

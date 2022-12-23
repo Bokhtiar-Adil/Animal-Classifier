@@ -1,12 +1,10 @@
 package com.example.animalclassifierv3;
 
-import static android.webkit.ConsoleMessage.MessageLevel.LOG;
-
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.CountDownTimer;
@@ -21,19 +19,19 @@ import com.squareup.picasso.Picasso;
 
 import java.util.Random;
 
-public class KidsPictureGameActivity extends AppCompatActivity implements View.OnClickListener{
+public class GuessPhotoGameActivity extends AppCompatActivity implements View.OnClickListener{
 
-    Button optionA, optionB, optionC, optionD, nextBtn, finishBtn;
+    Button optionA, optionB, optionC, optionD, startBtn, nextBtn, finishBtn;
     Button optionBtns[] = new Button[4];
-    TextView heading, question, timerText, resMsg, resScore, resCorrect, rndfinMsg;
+    TextView heading, question, timerText, startHeader, startPara, resMsg, resScore, resCorrect, rndfinMsg;
     ImageView imgView;
     int language, time, rtOpInd, ind, score, roundCnt;
     boolean flag;
-    int[] questionsLbl, questionsPhotos, wrongs;
+    int[] wrongs;
     ConstraintLayout optionsView;
-    LinearLayout resultView;
+    LinearLayout startView,resultView;
     CountDownTimer roundTimer;
-
+    CardView cardView;
     @Override
     public void onBackPressed() {
         roundTimer.cancel();
@@ -43,11 +41,13 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kids_picture_game);
+        setContentView(R.layout.activity_guess_photo_game);
 
         Intent intent = getIntent();
         language = intent.getIntExtra("language", 0);
 
+        startView = findViewById(R.id.startView);
+        cardView = findViewById(R.id.cardView);
         optionsView = findViewById(R.id.optionsView);
         resultView = findViewById(R.id.resultView);
 
@@ -60,13 +60,17 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         optionBtns[1] = findViewById(R.id.optionB);
         optionBtns[2] = findViewById(R.id.optionC);
         optionBtns[3] = findViewById(R.id.optionD);
+        startBtn = findViewById(R.id.startbtn);
         nextBtn = findViewById(R.id.nextbtn);
         finishBtn = findViewById(R.id.finishbtn);
 
         for(int i = 0; i < optionBtns.length; i++) optionBtns[i].setOnClickListener(this);
+        startBtn.setOnClickListener(this);
         nextBtn.setOnClickListener(this);
         finishBtn.setOnClickListener(this);
 
+        startHeader = findViewById(R.id.startHeader);
+        startPara = findViewById(R.id.startPara);
         heading = findViewById(R.id.heading);
         timerText = findViewById(R.id.timertext);
         question = findViewById(R.id.question);
@@ -82,6 +86,11 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         optionBtns[1].setTypeface(tf);
         optionBtns[2].setTypeface(tf);
         optionBtns[3].setTypeface(tf);
+        startBtn.setTypeface(tf);
+        nextBtn.setTypeface(tf);
+        finishBtn.setTypeface(tf);
+        startHeader.setTypeface(tf);
+        startPara.setTypeface(tf);
         heading.setTypeface(tf);
         timerText.setTypeface(tf);
         question.setTypeface(tf);
@@ -89,6 +98,21 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         resScore.setTypeface(tf);
         resCorrect.setTypeface(tf);
         rndfinMsg.setTypeface(tf);
+
+        if(language==0) {
+            startHeader.setText(R.string.game1_start_header);
+            startPara.setText(R.string.game1_start_msg);
+            startBtn.setText("Start");
+            nextBtn.setText("Next");
+            finishBtn.setText("Home");
+        }
+        else {
+            startHeader.setText(R.string.game1_start_header_bangla);
+            startPara.setText(R.string.game1_start_msg_bangla);
+            startBtn.setText("শুরু");
+            nextBtn.setText("পরবর্তী প্রশ্ন");
+            finishBtn.setText("হোমপেজ");
+        }
 
         if(language==0) question.setText(R.string.kids_pic_quiz_question_1);
         else question.setText(R.string.kids_pic_quiz_question_1_bangla);
@@ -121,12 +145,12 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
             }
         };
 
-        roundCnt = 0;
-        score = 0;
-        String lbl;
-        questionsLbl = new int[10];
-        wrongs = new int[3];
-        rounds();
+//        roundCnt = 0;
+//        score = 0;
+//        String lbl;
+//        questionsLbl = new int[10];
+//        wrongs = new int[3];
+//        rounds();
 
     }
 
@@ -299,6 +323,18 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                 resultView.setVisibility(View.GONE);
                 optionsView.setVisibility(View.VISIBLE);
                 if(roundCnt<10) rounds();
+                break;
+
+            case R.id.startbtn:
+                startView.setVisibility(View.GONE);
+                optionsView.setVisibility(View.VISIBLE);
+                heading.setVisibility(View.VISIBLE);
+                cardView.setVisibility(View.VISIBLE);
+                question.setVisibility(View.VISIBLE);
+                roundCnt = 0;
+                score = 0;
+                wrongs = new int[3];
+                rounds();
                 break;
 
             case R.id.finishbtn:
