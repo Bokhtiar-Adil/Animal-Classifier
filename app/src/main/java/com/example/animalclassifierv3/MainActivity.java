@@ -3,6 +3,7 @@ package com.example.animalclassifierv3;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
@@ -66,6 +67,7 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
+    final MediaPlayer click = MediaPlayer.create(MainActivity.this,R.raw.click_1);
     final Typeface tf = Typeface.createFromAsset(this.getAssets(),
             "font/kalpurush.ttf");
     final Typeface tf2 = Typeface.DEFAULT;
@@ -154,6 +156,7 @@ public class MainActivity extends AppCompatActivity {
     camerabtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        click.start();
         Intent cam = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
         startActivityForResult(cam, CAMERA_REQ_CODE);
       }
@@ -162,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
     gallerybtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        click.start();
         Intent gallery = new Intent(Intent.ACTION_PICK);
         gallery.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(gallery, GALLERY_REQ_CODE);
@@ -171,6 +175,7 @@ public class MainActivity extends AppCompatActivity {
     encyclobtn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        click.start();
         Intent intent = new Intent(MainActivity.this, EncyclopediaActivity.class);
         intent.putExtra("language", language);
         startActivity(intent);
@@ -180,9 +185,17 @@ public class MainActivity extends AppCompatActivity {
     game1btn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
+        click.start();
         Intent intent = new Intent(MainActivity.this, GuessPhotoGameActivity.class);
         intent.putExtra("language", language);
         startActivity(intent);
+      }
+    });
+
+    aboutbtn.setOnClickListener(new View.OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        click.start();
       }
     });
 

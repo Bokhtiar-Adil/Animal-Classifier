@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -62,6 +63,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         });
         if(language == 0) ts.setPitch(1.1f);
         else ts.setPitch(1.0f);
+
+        final MediaPlayer click = MediaPlayer.create(EncyclopediaActivity.this,R.raw.click_1);
 
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -165,6 +168,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click.start();
                 if(isInternetConnected()) {
                     Intent photoPage = new Intent(EncyclopediaActivity.this, PhotosPage.class);
                     photoPage.putExtra("animal", animal);

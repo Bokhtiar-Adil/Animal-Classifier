@@ -6,6 +6,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 
 import android.content.Intent;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.Log;
@@ -32,6 +33,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
     LinearLayout startView,resultView;
     CountDownTimer roundTimer;
     CardView cardView;
+    MediaPlayer click, correctSnd, wrongSnd;
     @Override
     public void onBackPressed() {
         roundTimer.cancel();
@@ -79,6 +81,10 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         resScore = findViewById(R.id.currScore);
         resCorrect = findViewById(R.id.correct);
         rndfinMsg = findViewById(R.id.rndFinMsg);
+
+        click = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.click_1);
+        correctSnd = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.correct_1);
+        wrongSnd = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.wrong_1);
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -201,6 +207,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
 
     public void wrongAnswer(){
         roundTimer.cancel();
+        wrongSnd.start();
         optionsView.setVisibility(View.GONE);
         resultView.setVisibility(View.VISIBLE);
         if(roundCnt==10) roundEnd();
@@ -234,6 +241,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
             case R.id.optionA:
                 if(rtOpInd==0) {
                     roundTimer.cancel();
+                    correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     if(roundCnt==10) roundEnd();
@@ -256,6 +264,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
             case R.id.optionB:
                 if(rtOpInd==1) {
                     roundTimer.cancel();
+                    correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -278,6 +287,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
             case R.id.optionC:
                 if(rtOpInd==2) {
                     roundTimer.cancel();
+                    correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -300,6 +310,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
             case R.id.optionD:
                 if(rtOpInd==3) {
                     roundTimer.cancel();
+                    correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
@@ -320,17 +331,20 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.nextbtn:
+                click.start();
                 resultView.setVisibility(View.GONE);
                 optionsView.setVisibility(View.VISIBLE);
                 if(roundCnt<10) rounds();
                 break;
 
             case R.id.startbtn:
+                click.start();
                 startView.setVisibility(View.GONE);
                 optionsView.setVisibility(View.VISIBLE);
                 heading.setVisibility(View.VISIBLE);
                 cardView.setVisibility(View.VISIBLE);
                 question.setVisibility(View.VISIBLE);
+                imgView.setVisibility(View.VISIBLE);
                 roundCnt = 0;
                 score = 0;
                 wrongs = new int[3];
@@ -338,8 +352,9 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 break;
 
             case R.id.finishbtn:
+                click.start();
                 finish();
-
+                break;
         }
     }
 
