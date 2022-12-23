@@ -25,7 +25,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -33,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
   private final int CAMERA_REQ_CODE = 1;
   private final int GALLERY_REQ_CODE = 2;
-  Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn, featuresbtn;
+  Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn, game1btn, game2btn;
   ImageView imgview;
   TextView header_1, header_2, header_3, para_1, para_2, para_3;
   RadioGroup lang;
@@ -93,8 +92,8 @@ public class MainActivity extends AppCompatActivity {
     gallerybtn = findViewById(R.id.gallerybtn);
     encyclobtn = findViewById(R.id.encyclobtn);
     aboutbtn = findViewById(R.id.aboutbtn);
-    featuresbtn = findViewById(R.id.features);
-
+    game1btn = findViewById(R.id.game1);
+    game2btn = findViewById(R.id.game2);
 
     lang = findViewById(R.id.langSet);
     lang.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -112,9 +111,13 @@ public class MainActivity extends AppCompatActivity {
             gallerybtn.setTypeface(Typeface.DEFAULT);
             aboutbtn.setTypeface(Typeface.DEFAULT);
             encyclobtn.setTypeface(Typeface.DEFAULT);
+            game1btn.setTypeface(Typeface.DEFAULT);
+            game2btn.setTypeface(Typeface.DEFAULT);
             camerabtn.setText(R.string.main_camerabtn);
             gallerybtn.setText(R.string.main_gallerybtn);
             encyclobtn.setText(R.string.main_encybtn);
+            game1btn.setText(R.string.main_game1btn);
+            game2btn.setText(R.string.main_game2btn);
             aboutbtn.setText(R.string.main_aboutbtn);
             language = 0;
             break;
@@ -129,10 +132,14 @@ public class MainActivity extends AppCompatActivity {
             gallerybtn.setTypeface(tf);
             aboutbtn.setTypeface(tf);
             encyclobtn.setTypeface(tf);
+            game1btn.setTypeface(tf);
+            game2btn.setTypeface(tf);
             camerabtn.setText(R.string.main_camerabtn_bangla);
             gallerybtn.setText(R.string.main_gallerybtn_bangla);
             encyclobtn.setText(R.string.main_encybtn_bangla);
             aboutbtn.setText(R.string.main_aboutbtn_bangla);
+            game1btn.setText(R.string.main_game1btn_bangla);
+            game2btn.setText(R.string.main_game2btn_bangla);
             language = 1;
             break;
           default:
@@ -170,10 +177,10 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
-    featuresbtn.setOnClickListener(new View.OnClickListener() {
+    game1btn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        Intent intent = new Intent(MainActivity.this, KidsPictureGameActivity.class);
+        Intent intent = new Intent(MainActivity.this, GuessPhotoGameActivity.class);
         intent.putExtra("language", language);
         startActivity(intent);
       }
