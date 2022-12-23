@@ -196,7 +196,7 @@
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:padding="5dp"
+            android:padding="10dp"
             android:textColor="@color/pink_1" />
 
         <TextView

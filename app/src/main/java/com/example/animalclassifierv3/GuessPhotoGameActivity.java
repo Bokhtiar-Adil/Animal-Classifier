@@ -46,7 +46,8 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         setContentView(R.layout.activity_guess_photo_game);
 
         Intent intent = getIntent();
-        language = intent.getIntExtra("language", 0);
+        if(GlobalSettings.getLanguage()==0) language=0;
+        else language = 1;
 
         startView = findViewById(R.id.startView);
         cardView = findViewById(R.id.cardView);

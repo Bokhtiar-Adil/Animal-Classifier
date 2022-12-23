@@ -66,7 +66,8 @@ public class ResultActivity extends AppCompatActivity {
         //btn.setTypeface(tf);
 
         Intent intent = getIntent();
-        language = intent.getIntExtra("language", 0);
+        if(GlobalSettings.getLanguage()==0) language=0;
+        else language = 1;
         Log.d("languageRes", String.valueOf(language));
 
         if(language==0) {
