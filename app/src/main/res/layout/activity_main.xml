@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.example.animalclassifierv3.MainActivity">
+    tools:context="com.example.animalclassifierv3.MainActivity"
+    android:background="@drawable/custom_background_3">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#393742">
-
+        >
+<!--        android:background="#393742"-->
 <!--        <TextView-->
 <!--            android:id="@+id/hudai1"-->
 <!--            android:layout_width="match_parent"-->
@@ -52,22 +53,20 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@id/langSet">
 
-
-
             <TextView
                 android:id="@+id/header1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="@string/main_header_1"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:textColor="@color/lime"
                 android:textSize="25sp"
                 android:textStyle="bold" />
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/lime"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="5dp"-->
+<!--                android:background="@color/lime"/>-->
 
             <TextView
                 android:id="@+id/para1"
@@ -75,66 +74,77 @@
                 android:layout_height="wrap_content"
                 android:padding="10dp"
                 android:text="@string/main_capture"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:textColor="#fff"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                android:layout_marginBottom="10dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layoutDirection="rtl"
-                android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/camerabtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/custom_btn_1"
-                    android:focusable="true"
-                    android:paddingStart="25dp"
-                    android:paddingTop="15dp"
-                    android:paddingEnd="25dp"
-                    android:paddingBottom="15dp"
-                    android:drawableLeft="@android:drawable/ic_menu_camera"
-                    android:text="Camera"
-                    android:textAllCaps="false"
-                    android:textColor="@color/midnight_blue"
-                    android:textSize="17sp" >
-                </Button>
 
-                <Button
-                    android:id="@+id/gallerybtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:background="@drawable/custom_btn_1"
-                    android:focusable="true"
-                    android:paddingStart="25dp"
-                    android:paddingTop="15dp"
-                    android:paddingEnd="25dp"
-                    android:paddingBottom="15dp"
-                    android:drawableLeft="@android:drawable/ic_menu_gallery"
-                    android:text="Gallery"
-                    android:textAllCaps="false"
-                    android:textColor="@color/midnight_blue"
-                    android:textSize="17sp" />
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp" />-->
 
 
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/topBtnHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@+id/top"
+            tools:layout_editor_absoluteX="0dp">
+
+            <Button
+                android:id="@+id/camerabtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/custom_btn_1"
+                android:drawableLeft="@android:drawable/ic_menu_camera"
+                android:focusable="true"
+                android:paddingStart="25dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="15dp"
+                android:text="Camera"
+                android:textAllCaps="false"
+                android:textColor="@color/midnight_blue"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/gallerybtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_marginEnd="4dp"
+                android:background="@drawable/custom_btn_1"
+                android:drawableLeft="@android:drawable/ic_menu_gallery"
+                android:focusable="true"
+                android:paddingStart="25dp"
+                android:paddingTop="15dp"
+                android:paddingEnd="25dp"
+                android:paddingBottom="15dp"
+                android:text="Gallery"
+                android:textAllCaps="false"
+                android:textColor="@color/midnight_blue"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/hudai2"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            app:layout_constraintTop_toBottomOf="@+id/top" />
+            app:layout_constraintTop_toBottomOf="@+id/topBtnHolder" />
 
         <LinearLayout
             android:id="@+id/middle"
@@ -153,63 +163,67 @@
                 android:textStyle="bold"
                 android:textColor="@color/lime"
                 android:padding="10dp"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/lime"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="5dp"-->
+<!--                android:background="@color/lime"/>-->
 
             <TextView
                 android:id="@+id/para2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:text="@string/main_encyclo"
                 android:padding="10dp"
                 android:textColor="#fff"
+                android:layout_marginBottom="10dp"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layoutDirection="rtl"
-                android:layout_gravity="center" >
-
-
-                <Button
-                    android:id="@+id/encyclobtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Encyclopedia"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-                    android:textColor="@color/midnight_blue"
-                    android:textSize="17sp"
-                    android:focusable="true"
-                    android:textAllCaps="false"
-                    android:drawableLeft="@android:drawable/ic_menu_agenda"
-                    android:background="@drawable/custom_btn_1"
-                    />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp" />-->
 
         </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/middleBtnHolder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/middle">
+
+
+            <Button
+                android:id="@+id/encyclobtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_btn_1"
+                android:drawableLeft="@android:drawable/ic_menu_agenda"
+                android:focusable="true"
+                android:padding="15dp"
+                android:text="Encyclopedia"
+                android:textAllCaps="false"
+                android:textColor="@color/midnight_blue"
+                android:textSize="17sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.497"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TextView
             android:id="@+id/hudai3"
             android:layout_width="match_parent"
             android:layout_height="30dp"
-            app:layout_constraintTop_toBottomOf="@+id/middle" />
+            app:layout_constraintTop_toBottomOf="@+id/middleBtnHolder" />
 
         <LinearLayout
             android:id="@+id/middle2"
@@ -228,58 +242,60 @@
                 android:textStyle="bold"
                 android:textColor="@color/lime"
                 android:padding="10dp"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 />
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="5dp"
-                android:background="@color/lime"/>
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="5dp"-->
+<!--                android:background="@color/lime"/>-->
 
             <TextView
                 android:id="@+id/para3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
-                android:textAlignment="viewStart"
+                android:textAlignment="center"
                 android:text="@string/main_online_feature"
                 android:padding="10dp"
                 android:textColor="#fff"
+                android:layout_marginBottom="10dp"
                 />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layoutDirection="rtl"
-                android:layout_gravity="center" >
-
-
-                <Button
-                    android:id="@+id/features"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Features"
-                    android:layout_margin="10dp"
-                    android:padding="15dp"
-                    android:textColor="@color/midnight_blue"
-                    android:textSize="17sp"
-                    android:focusable="true"
-                    android:textAllCaps="false"
-                    android:drawableLeft="@android:drawable/ic_menu_more"
-                    android:background="@drawable/custom_btn_1"
-                    />
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
+<!--            <TextView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="30dp" />-->
 
 
         </LinearLayout>
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/middle2BtnHolder"
+            android:layout_width="match_parent"
+            android:layout_marginTop="16dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/middle2">
+
+
+            <Button
+                android:id="@+id/features"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:background="@drawable/custom_btn_1"
+                android:drawableLeft="@android:drawable/ic_menu_more"
+                android:focusable="true"
+                android:padding="15dp"
+                android:text="Features"
+                android:textAllCaps="false"
+                android:textColor="@color/midnight_blue"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         <Button
@@ -289,7 +305,7 @@
             android:layout_marginTop="30dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/middle2"
+            app:layout_constraintTop_toBottomOf="@+id/middle2BtnHolder"
             android:text="About App"
             android:textColor="@color/midnight_blue"
             android:textSize="20sp"

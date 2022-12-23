@@ -16,7 +16,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             app:layout_constraintTop_toTopOf="parent"
-            tools:layout_editor_absoluteX="0dp" />
+            tools:layout_editor_absoluteX="0dp"
+            android:textAlignment="center"
+            android:textSize="20sp"
+            android:textColor="#222"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -57,8 +60,10 @@
             app:layout_constraintTop_toBottomOf="@+id/question"
             android:orientation="vertical"
             android:layout_marginTop="10dp"
+            android:background="#52555A"
             android:visibility="gone"
-            >
+            android:paddingBottom="10dp"
+            android:paddingTop="10dp">
 
             <TextView
                 android:id="@+id/resMsg"
@@ -72,8 +77,7 @@
                 android:id="@+id/correct"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textColor="#222"
-                android:text="Lion"
+                android:textColor="#fff"
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAlignment="center"/>
@@ -84,7 +88,33 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textAlignment="center"
-                android:padding="5dp"/>
+                android:padding="5dp"
+                android:textColor="#fff"/>
+
+            <TextView
+                android:id="@+id/rndFinMsg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:textColor="#7B1FA2"
+                android:background="#F3DB06"/>
+
+            <Button
+                android:id="@+id/finishbtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Home"
+                android:background="@drawable/custom_btn_2"
+                android:textColor="#fff"
+                android:textSize="20sp"
+                android:shadowColor="#A0A857"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                android:visibility="gone"/>
 
             <Button
                 android:id="@+id/nextbtn"
