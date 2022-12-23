@@ -20,7 +20,7 @@
             android:textAlignment="center"
             android:textSize="20sp"
             android:textColor="#222"
-            android:visibility="gone"/>
+            android:visibility="invisible"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
@@ -36,7 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:scaleType="fitCenter"
-
+                android:visibility="gone"
                 tools:layout_editor_absoluteX="0dp"
                 tools:layout_editor_absoluteY="133dp" />
 
@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:textAlignment="center"
                 android:textSize="20sp"
-                android:background="#52555A"
+                android:background="#000000"
                 android:textColor="#fff"
                 android:padding="10dp"
                 />
@@ -67,12 +67,14 @@
                 android:textAlignment="center"
                 android:textSize="18sp"
                 android:background="#52555A"
-                android:textColor="#fff" />
+                android:textColor="#fff"
+                android:padding="10dp"/>
             <Button
                 android:id="@+id/startbtn"
                 android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:padding="10dp"
                 android:text="Start"
                 android:background="@drawable/custom_btn_2"
                 android:textColor="#fff"

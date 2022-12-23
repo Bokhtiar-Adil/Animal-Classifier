@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Typeface;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -51,6 +52,8 @@ public class ResultActivity extends AppCompatActivity {
         more = findViewById(R.id.more);
         btn = findViewById(R.id.morebtn);
         photos = findViewById(R.id.photos);
+
+        final MediaPlayer click = MediaPlayer.create(ResultActivity.this,R.raw.click_1);
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -235,6 +238,7 @@ public class ResultActivity extends AppCompatActivity {
         photos.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click.start();
                 if(isInternetConnected()) {
                     Intent photoPage = new Intent(ResultActivity.this, PhotosPage.class);
                     photoPage.putExtra("animal", animal);
@@ -251,6 +255,7 @@ public class ResultActivity extends AppCompatActivity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                click.start();
                 Intent intent = new Intent(ResultActivity.this, WebViewActivity.class);
                 intent.putExtra("searchItem", cd);
                 startActivity(intent);
