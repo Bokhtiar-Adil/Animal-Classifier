@@ -2,7 +2,7 @@
     <string name="app_name">Animal Classifier</string>
     <string name="main_capture">Capture a photo or upload an image of an animal and find out what it is.</string>
     <string name="main_encyclo">Take a deep dive into the vast ocean of knowledge about animal characteristics. Connect to online to learn more.</string>
-    <string name="main_online_feature">Connect to online to unlock some more exclusive features!</string>
+    <string name="main_online_feature">Connect to online to enjoy some more exclusive features!</string>
     <string name="main_header_1">Classify Animals From Images</string>
     <string name="main_header_2">Learn About Animals</string>
     <string name="main_header_3">Exclusive Online Feature</string>

@@ -137,6 +137,8 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
 
     public void rounds() {
         roundCnt++;
+        if(language==0) heading.setText("Guess the animal: round "+String.valueOf(roundCnt)+" of 10");
+        else heading.setText("প্রানীটি কি?: রাউন্ড "+String.valueOf(roundCnt)+" / 10");
         int curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
         int rndmImgInd = new Random().nextInt(AnimalDetails.PHOTOS[curr].length);
         Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(imgView);
@@ -177,14 +179,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         roundTimer.cancel();
         optionsView.setVisibility(View.GONE);
         resultView.setVisibility(View.VISIBLE);
-        if(roundCnt==10) {
-            nextBtn.setVisibility(View.GONE);
-            rndfinMsg.setVisibility(View.VISIBLE);
-            finishBtn.setVisibility(View.VISIBLE);
-            Log.d("SCORE", String.valueOf(score));
-            if(language==0) rndfinMsg.setText(R.string.quiz_finished+""+String.valueOf(score)+" / 10");
-            else rndfinMsg.setText(R.string.quiz_finished_bangla+""+String.valueOf(score)+" / 10");
-        }
+        if(roundCnt==10) roundEnd();
         resMsg.setTextColor(getResources().getColor(R.color.red_1));
         if(language==0) {
             resMsg.setText(R.string.quiz_wrong_answer);
@@ -198,6 +193,17 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
         }
     }
 
+    public void roundEnd(){
+        if(language==0) heading.setText("Gusess the animal: all rounds finished");
+        else heading.setText("প্রাণীটি কি? সকল রাউন্ড শেষ");
+        nextBtn.setVisibility(View.GONE);
+        rndfinMsg.setVisibility(View.VISIBLE);
+        finishBtn.setVisibility(View.VISIBLE);
+        Log.d("SCORE", String.valueOf(score));
+        if(language==0) rndfinMsg.setText("Total Score: "+String.valueOf(score)+" / 10");
+        else rndfinMsg.setText("সর্বমোট স্কোরঃ "+String.valueOf(score)+" / 10");
+    }
+
     @Override
     public void onClick(View view) {
         switch (view.getId()){
@@ -206,13 +212,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     roundTimer.cancel();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
-                    if(roundCnt==10) {
-                        nextBtn.setVisibility(View.GONE);
-                        rndfinMsg.setVisibility(View.VISIBLE);
-                        finishBtn.setVisibility(View.VISIBLE);
-                        if(language==0) rndfinMsg.setText(R.string.quiz_finished+""+String.valueOf(score)+" / 10");
-                        else rndfinMsg.setText(R.string.quiz_finished_bangla+""+String.valueOf(score)+" / 10");
-                    }
+                    if(roundCnt==10) roundEnd();
                     score++;
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
                     if(language==0) {
@@ -235,13 +235,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
-                    if(roundCnt==10) {
-                        nextBtn.setVisibility(View.GONE);
-                        rndfinMsg.setVisibility(View.VISIBLE);
-                        finishBtn.setVisibility(View.VISIBLE);
-                        if(language==0) rndfinMsg.setText(R.string.quiz_finished+""+String.valueOf(score)+" / 10");
-                        else rndfinMsg.setText(R.string.quiz_finished_bangla+""+String.valueOf(score)+" / 10");
-                    }
+                    if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
                     if(language==0) {
                         resMsg.setText(R.string.quiz_correct_answer);
@@ -263,13 +257,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
-                    if(roundCnt==10) {
-                        nextBtn.setVisibility(View.GONE);
-                        rndfinMsg.setVisibility(View.VISIBLE);
-                        finishBtn.setVisibility(View.VISIBLE);
-                        if(language==0) rndfinMsg.setText(R.string.quiz_finished+""+String.valueOf(score)+" / 10");
-                        else rndfinMsg.setText(R.string.quiz_finished_bangla+""+String.valueOf(score)+" / 10");
-                    }
+                    if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
                     if(language==0) {
                         resMsg.setText(R.string.quiz_correct_answer);
@@ -291,13 +279,7 @@ public class KidsPictureGameActivity extends AppCompatActivity implements View.O
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
                     score++;
-                    if(roundCnt==10) {
-                        nextBtn.setVisibility(View.GONE);
-                        rndfinMsg.setVisibility(View.VISIBLE);
-                        finishBtn.setVisibility(View.VISIBLE);
-                        if(language==0) rndfinMsg.setText(R.string.quiz_finished+""+String.valueOf(score)+" / 10");
-                        else rndfinMsg.setText(R.string.quiz_finished_bangla+""+String.valueOf(score)+" / 10");
-                    }
+                    if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
                     if(language==0) {
                         resMsg.setText(R.string.quiz_correct_answer);
