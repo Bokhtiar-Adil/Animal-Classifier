@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context=".EncyclopediaActivity"
-    android:background="@color/dark_1"
+    android:background="#222"
     >
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -244,7 +244,7 @@
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:padding="5dp"
+            android:padding="15dp"
             android:textColor="@color/pink_1" />
 
 

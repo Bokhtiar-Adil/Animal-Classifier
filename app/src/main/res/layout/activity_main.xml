@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     tools:context="com.example.animalclassifierv3.MainActivity"
-    android:background="@drawable/custom_background_3">
+    android:background="@color/dark_1">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -60,8 +60,8 @@
                 android:padding="10dp"
                 android:text="@string/main_header_1"
                 android:textAlignment="center"
-                android:textColor="@color/lime"
-                android:textSize="20sp"
+                android:textColor="@color/glowing_blue"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 <!--            <TextView-->
 <!--                android:layout_width="match_parent"-->
@@ -75,7 +75,7 @@
                 android:padding="10dp"
                 android:text="@string/main_capture"
                 android:textAlignment="center"
-                android:textColor="#fff"
+                android:textColor="@color/dark_1"
                 android:textSize="18sp"
                 android:layout_marginBottom="10dp"/>
 
@@ -152,10 +152,10 @@
                 android:id="@+id/header2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:text="@string/main_header_2"
                 android:textStyle="bold"
-                android:textColor="@color/lime"
+                android:textColor="@color/glowing_blue"
                 android:padding="10dp"
                 android:textAlignment="center"
                 />
@@ -173,7 +173,7 @@
                 android:textAlignment="center"
                 android:text="@string/main_encyclo"
                 android:padding="10dp"
-                android:textColor="#fff"
+                android:textColor="@color/dark_1"
                 android:layout_marginBottom="10dp"
                 />
 
@@ -231,10 +231,10 @@
                 android:id="@+id/header3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"
+                android:textSize="22sp"
                 android:text="@string/main_header_3"
                 android:textStyle="bold"
-                android:textColor="@color/lime"
+                android:textColor="@color/glowing_blue"
                 android:padding="10dp"
                 android:textAlignment="center"
                 />
@@ -252,7 +252,7 @@
                 android:textAlignment="center"
                 android:text="@string/main_online_feature"
                 android:padding="10dp"
-                android:textColor="#fff"
+                android:textColor="@color/dark_1"
                 android:layout_marginBottom="10dp"
                 />
 
