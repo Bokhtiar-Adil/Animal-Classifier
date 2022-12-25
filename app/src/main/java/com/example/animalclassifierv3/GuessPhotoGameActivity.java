@@ -127,8 +127,8 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
             finishBtn.setText("হোমপেজ");
         }
 
-        if(language==0) question.setText(R.string.kids_pic_quiz_question_1);
-        else question.setText(R.string.kids_pic_quiz_question_1_bangla);
+        if(language==0) question.setText(R.string.game1_question_1);
+        else question.setText(R.string.game1_question_1_bangla);
 
         roundTimer = new CountDownTimer(15000, 1000) {
             public void onTick(long millisUntilFinished) {
