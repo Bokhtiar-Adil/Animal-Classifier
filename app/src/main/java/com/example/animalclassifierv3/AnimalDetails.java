@@ -703,6 +703,25 @@ public class AnimalDetails {
                         "https://upload.wikimedia.org/wikipedia/commons/1/1a/About_to_Launch_%2826075320352%29.jpg",
                         "https://nationaltoday.com/wp-content/uploads/2021/12/Bald-Eagle-Appreciation-Day-640x514.jpg",
                         "https://nationalzoo.si.edu/sites/default/files/animals/baldeagle-001.jpg"
+                },
+                {
+                        "285",
+                        "Egyptian cat",
+                        "https://www.purina.co.uk/sites/default/files/2022-02/GettyImages-1250476831%20%281%29.jpg",
+                        "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/1200px-Egyptian_Mau_Bronze.jpg",
+                        "https://imagesvc.meredithcorp.io/v3/mm/image?q=60&c=sc&poi=%5B1120%2C479%5D&w=2000&h=1333&url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2021%2F04%2F13%2Fsavannah-brick-1411656827-2000.jpg",
+                        "http://azure.wgp-cdn.co.uk/app-yourcat/posts/egytian_mau1.jpg?&width=1200&height=630&mode=crop&format=webp&webp.quality=40&scale=both",
+                        "https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F47%2F2022%2F01%2F06%2Fabyssinian-outdoors-1290957479-2000.jpg&q=60"
+                },
+                {
+                        "26",
+                        "Spotted salamander",
+                        "https://i.natgeofe.com/n/2d4a5585-ff8c-429b-bdd6-437ec10884d5/spotted-salamander.jpg?w=636&h=422",
+                        "https://texashillcountry.com/wp-content/uploads/reed-e1562867214582.jpg",
+                        "https://static01.nyt.com/images/2016/04/17/nyregion/17NATURE1/17NATURE1-superJumbo.jpg",
+                        "https://reptilesmagazine.com/wp-content/uploads/data-import/a07c22e7/spotted-salamander-shutterstock_82093852.jpg",
+                        "https://i.pinimg.com/736x/36/0d/02/360d022a1eccbfb1db6b4e3700bc23f4--all-about-animals-salamanders.jpg"
+
                 }
         };
 
