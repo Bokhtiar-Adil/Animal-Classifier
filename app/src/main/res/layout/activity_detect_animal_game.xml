@@ -75,7 +75,7 @@
         <TextView
             android:id="@+id/question"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/startView"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
@@ -83,12 +83,12 @@
             android:paddingTop="10dp"
             android:textColor="@color/lime"
             android:background="@color/midnight_blue"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <TextView
             android:id="@+id/questionAnimal"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/question"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
@@ -96,7 +96,7 @@
             android:paddingTop="10dp"
             android:textColor="@color/lime"
             android:background="@color/midnight_blue"
-            android:visibility="visible"/>
+            android:visibility="gone"/>
 
         <LinearLayout
             android:id="@+id/resultView"
@@ -127,6 +127,12 @@
                 android:textSize="20sp"
                 android:padding="5dp"
                 android:textAlignment="center"/>
+
+            <ImageView
+                android:id="@+id/resImg"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:scaleType="fitXY"/>
 
             <TextView
                 android:id="@+id/currScore"
@@ -206,7 +212,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/resultView"
             android:layout_marginTop="10dp"
-            android:visibility="visible">
+            android:visibility="gone">
 
             <TextView
                 android:id="@+id/timertext"
