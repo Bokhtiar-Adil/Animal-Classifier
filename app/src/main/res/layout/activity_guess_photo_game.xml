@@ -61,6 +61,7 @@
                 android:background="#000000"
                 android:textColor="#1A75FF"
                 android:padding="10dp"
+                android:layout_marginBottom="10dp"
                 />
             <TextView
                 android:id="@+id/startPara"
@@ -70,21 +71,24 @@
                 android:textSize="18sp"
                 android:background="#52555A"
                 android:textColor="#fff"
-                android:padding="10dp"/>
+                android:padding="10dp"
+                android:layout_marginBottom="10dp"/>
             <Button
                 android:id="@+id/startbtn"
                 android:layout_margin="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:padding="10dp"
+                android:paddingVertical="10dp"
+                android:paddingHorizontal="20dp"
                 android:text="Start"
                 android:background="@drawable/custom_btn_2"
-                android:textColor="#fff"
+                android:textColor="@color/lime"
                 android:textSize="20sp"
                 android:shadowColor="#A0A857"
                 android:shadowDx="0"
                 android:shadowDy="0"
-                android:shadowRadius="5"/>
+                android:shadowRadius="5"
+                android:layout_marginBottom="10dp"/>
 
         </LinearLayout>
 
@@ -141,6 +145,29 @@
                 android:textColor="#fff"/>
 
             <TextView
+                android:id="@+id/gameName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:textColor="@color/glowing_blue"
+                android:background="#222"
+                android:layout_marginVertical="10dp"/>
+
+            <TextView
+                android:id="@+id/bye"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:textAlignment="center"
+                android:padding="5dp"
+                android:visibility="gone"
+                android:textColor="#fff"
+                android:layout_marginVertical="10dp" />
+
+            <TextView
                 android:id="@+id/rndFinMsg"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -148,8 +175,7 @@
                 android:textAlignment="center"
                 android:padding="5dp"
                 android:visibility="gone"
-                android:textColor="#7B1FA2"
-                android:background="#F3DB06"/>
+                android:textColor="@color/red_1" />
 
             <Button
                 android:id="@+id/finishbtn"
