@@ -24,7 +24,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
 
     Button optionA, optionB, optionC, optionD, startBtn, nextBtn, finishBtn;
     Button optionBtns[] = new Button[4];
-    TextView heading, question, timerText, startHeader, startPara, resMsg, resScore, resCorrect, rndfinMsg;
+    TextView heading, question, timerText, startHeader, startPara, resMsg, resScore, resCorrect, rndfinMsg, bye, gameName;
     ImageView imgView;
     int language, time, rtOpInd, ind, score, roundCnt;
     boolean flag;
@@ -33,7 +33,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
     LinearLayout startView,resultView;
     CountDownTimer roundTimer;
     CardView cardView;
-    MediaPlayer click, correctSnd, wrongSnd;
+    MediaPlayer click, correctSnd, wrongSnd, timeSnd, timesUpSnd;
     @Override
     public void onBackPressed() {
         roundTimer.cancel();
@@ -82,10 +82,14 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         resScore = findViewById(R.id.currScore);
         resCorrect = findViewById(R.id.correct);
         rndfinMsg = findViewById(R.id.rndFinMsg);
+        gameName = findViewById(R.id.gameName);
+        bye = findViewById(R.id.bye);
 
         click = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.click_1);
         correctSnd = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.correct_1);
         wrongSnd = MediaPlayer.create(GuessPhotoGameActivity.this,R.raw.wrong_1);
+        timeSnd = MediaPlayer.create(GuessPhotoGameActivity.this, R.raw.time_1);
+        timesUpSnd = MediaPlayer.create(GuessPhotoGameActivity.this, R.raw.times_up_1);
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
@@ -105,6 +109,8 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         resScore.setTypeface(tf);
         resCorrect.setTypeface(tf);
         rndfinMsg.setTypeface(tf);
+        gameName.setTypeface(tf);
+        bye.setTypeface(tf);
 
         if(language==0) {
             startHeader.setText(R.string.game1_start_header);
@@ -124,9 +130,10 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         if(language==0) question.setText(R.string.kids_pic_quiz_question_1);
         else question.setText(R.string.kids_pic_quiz_question_1_bangla);
 
-        roundTimer = new CountDownTimer(30000, 1000) {
+        roundTimer = new CountDownTimer(15000, 1000) {
             public void onTick(long millisUntilFinished) {
-                if(time<10) timerText.setTextColor(getResources().getColor(R.color.red_1));
+                timeSnd.start();
+                if(time<=5) timerText.setTextColor(getResources().getColor(R.color.red_1));
                 else timerText.setTextColor(getResources().getColor(R.color.lime));
                 timerText.setText(checkDigit(time));
                 time--;
@@ -137,6 +144,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 optionsView.setVisibility(View.GONE);
                 resultView.setVisibility(View.VISIBLE);
                 resMsg.setTextColor(getResources().getColor(R.color.red_1));
+                timesUpSnd.start();
                 if(language==0) {
                     resMsg.setText("Times Up!!!");
                     resCorrect.setText("Correct Answer: "+optionBtns[rtOpInd].getText());
@@ -202,7 +210,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 k++;
             }
         }
-        time = 30;
+        time = 15;
         roundTimer.start();
     }
 
@@ -225,15 +233,40 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
         }
     }
 
-    public void roundEnd(){
-        if(language==0) heading.setText("Gusess the animal: all rounds finished");
-        else heading.setText("প্রাণীটি কি? সকল রাউন্ড শেষ");
+    public void gameFinished(){
+        resultView.setVisibility(View.VISIBLE);
+        optionsView.setVisibility(View.GONE);
+        question.setVisibility(View.GONE);
+        imgView.setVisibility(View.GONE);
+        resMsg.setVisibility(View.GONE);
+        resCorrect.setVisibility(View.GONE);
+        resScore.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
         rndfinMsg.setVisibility(View.VISIBLE);
         finishBtn.setVisibility(View.VISIBLE);
+        gameName.setVisibility(View.VISIBLE);
+        bye.setVisibility(View.VISIBLE);
         Log.d("SCORE", String.valueOf(score));
-        if(language==0) rndfinMsg.setText("Total Score: "+String.valueOf(score)+" / 10");
-        else rndfinMsg.setText("সর্বমোট স্কোরঃ "+String.valueOf(score)+" / 10");
+        if(language==0) {
+            gameName.setText(R.string.game1_start_header);
+            bye.setText(R.string.game1_bye);
+            rndfinMsg.setText("Total Score: "+String.valueOf(score)+" / 10");
+        }
+        else {
+            gameName.setText(R.string.game1_start_header_bangla);
+            bye.setText(R.string.game1_bye_bangla);
+            rndfinMsg.setText("সর্বমোট স্কোরঃ "+String.valueOf(score)+" / 10");
+        }
+    }
+
+    public void roundEnd(){
+        if(language==0) heading.setText("Gusess the animal: all rounds finished");
+        else heading.setText("প্রাণীটি কি? সকল রাউন্ড শেষ");
+//        resMsg.setVisibility(View.GONE);
+//        resCorrect.setVisibility(View.GONE);
+//        resScore.setVisibility(View.GONE);
+//        nextBtn.setVisibility(View.GONE);
+
     }
 
     @Override
@@ -336,6 +369,7 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 resultView.setVisibility(View.GONE);
                 optionsView.setVisibility(View.VISIBLE);
                 if(roundCnt<10) rounds();
+                else gameFinished();
                 break;
 
             case R.id.startbtn:
