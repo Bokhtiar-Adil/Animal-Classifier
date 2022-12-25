@@ -214,7 +214,9 @@ public class MainActivity extends AppCompatActivity {
     game2btn.setOnClickListener(new View.OnClickListener() {
       @Override
       public void onClick(View view) {
-        //ts.speak("ছোট্ট বন্ধুরা, বলোতো প্রাণীটির নাম কি?",TextToSpeech.QUEUE_FLUSH,null);
+        click.start();
+        Intent intent = new Intent(MainActivity.this, DetectAnimalGameActivity.class);
+        startActivity(intent);
       }
     });
 

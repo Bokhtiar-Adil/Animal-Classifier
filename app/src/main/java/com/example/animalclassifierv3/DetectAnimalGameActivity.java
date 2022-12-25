@@ -25,9 +25,9 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
     Button optionA, optionB, optionC, optionD, startBtn, nextBtn, finishBtn;
     Button optionBtns[] = new Button[4];
     TextView heading, question, questionAnimal, timerText, startHeader, startPara, resMsg, resScore, resCorrect, rndfinMsg, bye, gameName;
-    ImageView imgA, imgB, imgC, imgD;
-    ImageView[] imgs;
-    int language, time, rtOpInd, ind, score, roundCnt;
+    ImageView imgA, imgB, imgC, imgD, resImg;
+    ImageView[] imgs = new ImageView[4];
+    int language, time, rtOpInd, ind, score, roundCnt, curr, rndmImgInd;
     boolean flag;
     int[] wrongs;
     ConstraintLayout optionsView;
@@ -63,6 +63,11 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
         imgs[1] = findViewById(R.id.imgB);
         imgs[2] = findViewById(R.id.imgC);
         imgs[3] = findViewById(R.id.imgD);
+        resImg = findViewById(R.id.resImg);
+        optionBtns[0] = findViewById(R.id.optionA);
+        optionBtns[1] = findViewById(R.id.optionB);
+        optionBtns[2] = findViewById(R.id.optionC);
+        optionBtns[3] = findViewById(R.id.optionD);
         startBtn = findViewById(R.id.startbtn);
         nextBtn = findViewById(R.id.nextbtn);
         finishBtn = findViewById(R.id.finishbtn);
@@ -178,47 +183,46 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
 
     public void rounds() {
         roundCnt++;
-        int curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
+        curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
+        ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]); // ind holds correct photo label index in animal classes
         if(language==0) {
             heading.setText("Find the animal: round "+String.valueOf(roundCnt)+" of 10");
-            int ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]);
-            questionAnimal.setText(AnimalClasses.ANIMAL_CLASSES[curr]);
+            questionAnimal.setText(AnimalDetails.PHOTOS[curr][1]);
         }
         else {
             heading.setText("প্রানীটির ছবি কোনটি?: রাউন্ড "+String.valueOf(roundCnt)+" / 10");
-            int ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]);
-            questionAnimal.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[curr]);
+            questionAnimal.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[ind]);
         }
-        int curr2 = new Random().nextInt(AnimalDetails.PHOTOS[curr].length);
-        //Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(imgView);
+        rndmImgInd = new Random().nextInt(AnimalDetails.PHOTOS[curr].length); // rndmImgInd holds correct photo index
         wrongs[0] = -1; wrongs[1] = -1; wrongs[2] = -1;
         Log.d("LBL", String.valueOf(curr));
         rtOpInd = new Random().nextInt(4);
-        ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]);
+        Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(imgs[rtOpInd]); // painting correct photo
         for(int j=0; j<3; j++) {
-            int tmp = new Random().nextInt(398);
+            int tmp = new Random().nextInt(AnimalDetails.PHOTOS.length);
             while(true){
-                if(tmp == ind || tmp == wrongs[0] || tmp == wrongs[1] || tmp == wrongs[2])
-                    tmp = new Random().nextInt(398);
+                if(tmp == curr || tmp == wrongs[0] || tmp == wrongs[1] || tmp == wrongs[2])
+                    tmp = new Random().nextInt(AnimalDetails.PHOTOS.length);
                 else break;
             }
-            wrongs[j] = tmp;
+            wrongs[j] = tmp; // wrongs elements hold the indices for wrong animal image-labels
+        }
+        for(int i=0, j=0; i<4; i++) {
+            if(i==rtOpInd) continue;
+            int wrongImgInd = new Random().nextInt(AnimalDetails.PHOTOS[wrongs[j]].length); // finding wrong images randomly
+            Picasso.get().load(AnimalDetails.PHOTOS[wrongs[j]][wrongImgInd]).into(imgs[i]);
         }
         if(language==0) {
-            optionBtns[rtOpInd].setText(AnimalClasses.ANIMAL_CLASSES[ind]);
-            for(int j=0, k=0; j<4; j++) {
-                if(j==rtOpInd) continue;
-                optionBtns[j].setText(AnimalClasses.ANIMAL_CLASSES[wrongs[k]]);
-                k++;
-            }
+            optionA.setText("Option A");
+            optionB.setText("Option B");
+            optionC.setText("Option C");
+            optionD.setText("Option D");
         }
         else {
-            optionBtns[rtOpInd].setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[ind]);
-            for(int j=0, k=0; j<4; j++) {
-                if(j==rtOpInd) continue;
-                optionBtns[j].setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[wrongs[k]]);
-                k++;
-            }
+            optionA.setText("অপশন এ");
+            optionB.setText("অপশন বি");
+            optionC.setText("অপশন সি");
+            optionD.setText("অপশন ডি");
         }
         time = 15;
         roundTimer.start();
@@ -229,6 +233,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
         wrongSnd.start();
         optionsView.setVisibility(View.GONE);
         resultView.setVisibility(View.VISIBLE);
+        Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(resImg);
         if(roundCnt==10) roundEnd();
         resMsg.setTextColor(getResources().getColor(R.color.red_1));
         if(language==0) {
@@ -249,6 +254,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
         question.setVisibility(View.GONE);
         questionAnimal.setVisibility(View.GONE);
         resMsg.setVisibility(View.GONE);
+        resImg.setVisibility(View.GONE);
         resCorrect.setVisibility(View.GONE);
         resScore.setVisibility(View.GONE);
         nextBtn.setVisibility(View.GONE);
@@ -288,8 +294,9 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
                     correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
-                    if(roundCnt==10) roundEnd();
+                    Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(resImg);
                     score++;
+                    if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
                     if(language==0) {
                         resMsg.setText(R.string.quiz_correct_answer);
@@ -311,6 +318,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
                     correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
+                    Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(resImg);
                     score++;
                     if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
@@ -334,6 +342,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
                     correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
+                    Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(resImg);
                     score++;
                     if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
@@ -357,6 +366,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
                     correctSnd.start();
                     optionsView.setVisibility(View.GONE);
                     resultView.setVisibility(View.VISIBLE);
+                    Picasso.get().load(AnimalDetails.PHOTOS[curr][rndmImgInd]).into(resImg);
                     score++;
                     if(roundCnt==10) roundEnd();
                     resMsg.setTextColor(getResources().getColor(R.color.lime));
@@ -387,8 +397,8 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
                 startView.setVisibility(View.GONE);
                 optionsView.setVisibility(View.VISIBLE);
                 heading.setVisibility(View.VISIBLE);
-                cardView.setVisibility(View.VISIBLE);
                 question.setVisibility(View.VISIBLE);
+                questionAnimal.setVisibility(View.VISIBLE);
                 questionAnimal.setVisibility(View.VISIBLE);
                 roundCnt = 0;
                 score = 0;
