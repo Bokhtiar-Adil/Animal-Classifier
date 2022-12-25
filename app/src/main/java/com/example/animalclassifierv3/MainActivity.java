@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
   private final int GALLERY_REQ_CODE = 2;
   Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn, game1btn, game2btn;
   ImageView imgview;
-  TextView header_1, header_2, header_3, para_1, para_2, para_3;
+  TextView header_1, header_2, header_3, para_1, para_2, para_3, langText;
   RadioGroup lang;
   TextToSpeech ts;
   int language = 0;
@@ -93,12 +93,14 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
+    langText = findViewById(R.id.lang);
     header_1 = findViewById(R.id.header1);
     header_2 = findViewById(R.id.header2);
     header_3 = findViewById(R.id.header3);
     para_1 = findViewById(R.id.para1);
     para_2 = findViewById(R.id.para2);
     para_3 = findViewById(R.id.para3);
+    langText.setTypeface(tf);
     header_1.setTypeface(tf);
     header_2.setTypeface(tf);
     header_3.setTypeface(tf);
@@ -118,6 +120,7 @@ public class MainActivity extends AppCompatActivity {
       public void onCheckedChanged(RadioGroup radioGroup, int i) {
         switch (i) {
           case R.id.english:
+            langText.setText(R.string.lang);
             header_1.setText(getString(R.string.main_header_1));
             header_2.setText(getString(R.string.main_header_2));
             header_3.setText(getString(R.string.main_header_3));
@@ -140,6 +143,7 @@ public class MainActivity extends AppCompatActivity {
             GlobalSettings.language = 0;
             break;
           case R.id.bangla:
+            langText.setText(R.string.lang_bangla);
             header_1.setText(getString(R.string.main_header_1_bangla));
             header_2.setText(getString(R.string.main_header_2_bangla));
             header_3.setText(getString(R.string.main_header_3_bangla));
