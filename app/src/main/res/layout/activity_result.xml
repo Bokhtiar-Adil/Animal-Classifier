@@ -165,15 +165,15 @@
 
 
         <TextView
-            android:id="@+id/desc"
+            android:id="@+id/food"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/cstdet"
             tools:layout_editor_absoluteX="16dp"
+            android:textColor="#fff"
             android:textAlignment="center"
             android:textSize="18sp"
-            android:textColor="#fff"
             android:padding="5dp" />
 
         <Button
@@ -185,14 +185,84 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/desc" />
+            app:layout_constraintTop_toBottomOf="@+id/food" />
 
         <TextView
-            android:id="@+id/descdet"
+            android:id="@+id/fooddet"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="15dp"
             app:layout_constraintTop_toBottomOf="@+id/speak4"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="@color/pink_1" />
+
+        <TextView
+            android:id="@+id/habitat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/fooddet"
+            tools:layout_editor_absoluteX="16dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/speak5"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/speaker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/habitat" />
+
+        <TextView
+            android:id="@+id/habitatdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/speak5"
+            tools:layout_editor_absoluteX="16dp"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="10dp"
+            android:textColor="@color/pink_1" />
+
+        <TextView
+            android:id="@+id/misc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/habitatdet"
+            tools:layout_editor_absoluteX="16dp"
+            android:textColor="#fff"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:padding="5dp" />
+
+        <Button
+            android:id="@+id/speak6"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="8dp"
+            android:drawableLeft="@drawable/speaker"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/misc" />
+
+        <TextView
+            android:id="@+id/miscdet"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintTop_toBottomOf="@+id/speak6"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"
@@ -204,7 +274,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@+id/descdet"
+            app:layout_constraintTop_toBottomOf="@+id/miscdet"
             tools:layout_editor_absoluteX="16dp"
             android:textAlignment="center"
             android:textSize="18sp"

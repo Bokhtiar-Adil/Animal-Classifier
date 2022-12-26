@@ -24,7 +24,7 @@ public class AnimalClasses {
       "Chickadee",
       "Water ouzel, dipper",
       "Kite",
-      "Eagle",
+      "Bald Eagle",
       "Vulture",
       "Owl",
       "European fire salamander",
