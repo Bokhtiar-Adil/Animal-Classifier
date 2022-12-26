@@ -162,6 +162,7 @@ public class MainActivity extends AppCompatActivity {
             aboutbtn.setText(R.string.main_aboutbtn_bangla);
             game1btn.setText(R.string.main_game1btn_bangla);
             game2btn.setText(R.string.main_game2btn_bangla);
+            aboutbtn.setText(R.string.main_aboutbtn_bangla);
             language = 1;
             GlobalSettings.language = 1;
             break;
@@ -224,6 +225,8 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onClick(View view) {
         click.start();
+        Intent intent = new Intent(MainActivity.this, AboutAppActivity.class);
+        startActivity(intent);
       }
     });
 
