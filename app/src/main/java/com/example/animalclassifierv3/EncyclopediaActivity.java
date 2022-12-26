@@ -21,11 +21,11 @@ import java.util.Locale;
 
 public class EncyclopediaActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextView text,name,alert,alert2,scifi,cst,desc;
-    TextView scilbl,cstlbl,venomlbl,desclbl,header,more;
+    TextView text,name,alert,alert2,scifi,cst,food,habitat,misc;
+    TextView scilbl,cstlbl,venomlbl,foodlbl,habitatlbl,misclbl,header,more;
     Spinner spin;
     ArrayList<String> animals = new ArrayList<>();
-    Button speak, speak2, speak3, speak4, speak5, photos;
+    Button speak, speak2, speak3, speak4, speak5, speak6, speak7, photos;
     TextToSpeech ts;
     int language;
     String bnCst, animal;
@@ -42,7 +42,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         scilbl = findViewById(R.id.sciname);
         cstlbl = findViewById(R.id.cst);
         venomlbl = findViewById(R.id.alert);
-        desclbl = findViewById(R.id.desc);
+        foodlbl = findViewById(R.id.food);
+        habitatlbl = findViewById(R.id.habitat);
+        misclbl = findViewById(R.id.misc);
         header = findViewById(R.id.text);
         more = findViewById(R.id.more);
         speak = findViewById(R.id.speak);
@@ -50,6 +52,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         speak3 = findViewById(R.id.speak3);
         speak4 = findViewById(R.id.speak4);
         speak5 = findViewById(R.id.speak5);
+        speak6 = findViewById(R.id.speak6);
+        speak7 = findViewById(R.id.speak7);
         photos = findViewById(R.id.photos);
 
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -81,7 +85,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
 
         header.setTypeface(tf);
         scilbl.setTypeface(tf);
-        desclbl.setTypeface(tf);
+        foodlbl.setTypeface(tf);
+        habitatlbl.setTypeface(tf);
+        misclbl.setTypeface(tf);
         cstlbl.setTypeface(tf);
         venomlbl.setTypeface(tf);
         more.setTypeface(tf);
@@ -90,7 +96,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             header.setText(R.string.ency_header);
             scilbl.setText(R.string.res_scifi);
             venomlbl.setText(R.string.ency_venom);
-            desclbl.setText(R.string.res_desc);
+            foodlbl.setText(R.string.res_food);
+            habitatlbl.setText(R.string.res_habitat);
+            misclbl.setText(R.string.res_misc);
             cstlbl.setText(R.string.res_cst);
             more.setText(R.string.res_more);
             //btn.setText(R.string.res_more_btn);
@@ -99,7 +107,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             header.setText(R.string.ency_header_bangla);
             scilbl.setText(R.string.res_scifi_bangla);
             venomlbl.setText(R.string.ency_venom_bangla);
-            desclbl.setText(R.string.res_desc_bangla);
+            foodlbl.setText(R.string.res_food_bangla);
+            habitatlbl.setText(R.string.res_habitat_bangla);
+            misclbl.setText(R.string.res_misc_bangla);
             cstlbl.setText(R.string.res_cst_bangla);
             more.setText(R.string.res_more_bangla);
             //btn.setText(R.string.res_more_btn_bangla);
@@ -113,7 +123,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         alert2 = findViewById(R.id.alertdet2);
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
-        desc = findViewById(R.id.descdet);
+        food = findViewById(R.id.fooddet);
+        habitat = findViewById(R.id.habitatdet);
+        misc = findViewById(R.id.miscdet);
 
         text.setTypeface(tf);
         name.setTypeface(tf);
@@ -121,7 +133,9 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         alert2.setTypeface(tf);
         scifi.setTypeface(tf);
         cst.setTypeface(tf);
-        desc.setTypeface(tf);
+        food.setTypeface(tf);
+        habitat.setTypeface(tf);
+        misc.setTypeface(tf);
 
         speak2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,7 +162,21 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         speak5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ts.speak(desc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+                ts.speak(food.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(habitat.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(misc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
             }
         });
 
@@ -192,19 +220,24 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             name.setText("");
             scifi.setText("");
             cst.setText("");
-            desc.setText("");
+            food.setText("");
+            habitat.setText("");
+            misc.setText("");
             alert2.setVisibility(View.GONE);
             alert.setVisibility(View.VISIBLE);
             alert.setText("");
         }
         else if(language==0){
             String details[] = AnimalDetails.DETAILS[i-1];
+            if(details.length<12) details = AnimalDetails.Dummy;
             animal = details[1];
             name.setText(details[1]);
             scifi.setText(details[3]);
             cst.setText(details[4]);
-            desc.setText(details[5]);
-            if(details[2]=="False") {
+            food.setText(details[5]);
+            habitat.setText(details[6]);
+            misc.setText(details[7]);
+            if(details[2].equalsIgnoreCase("False")) {
                 alert2.setVisibility(View.GONE);
                 alert.setVisibility(View.VISIBLE);
                 alert.setText("Not venomous");
@@ -217,31 +250,40 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         }
         else {
             String details[] = AnimalDetails.DETAILS[i-1];
-            animal = details[1];
-            int bnClass = Integer.parseInt(details[0]);
-            Log.d("BANGLA", String.valueOf(bnClass));
-            name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+            if(details.length<12) {
+                details = AnimalDetails.Dummy;
+                name.setText(details[1]);
+            }
+            else {
+                animal = details[1];
+                int bnClass = Integer.parseInt(details[0]);
+                Log.d("BANGLA", String.valueOf(bnClass));
+                name.setText(AnimalClasses.ANIMAL_CLASSES_BANGLA[bnClass]);
+            }
             scifi.setText(details[3]);
-
             if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
             else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
             else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
             else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
             else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
+            else bnCst = "ডামি";
             Log.d("BANGLA", details[4]);
             Log.d("BANGLA", bnCst);
             cst.setText(bnCst);
-            if(details.length == 8) desc.setText(details[7]);
-            else desc.setText(R.string.data_not_added_sorry_bangla);
-            if(details[2]=="False") {
+//            if(details.length == 8) food.setText(details[7]);
+//            else desc.setText(R.string.data_not_added_sorry_bangla);
+            food.setText(details[9]);
+            habitat.setText(details[10]);
+            misc.setText(details[11]);
+            if(details[2].equalsIgnoreCase("False")) {
                 alert2.setVisibility(View.GONE);
                 alert.setVisibility(View.VISIBLE);
-                alert.setText(details[6]);
+                alert.setText(details[8]);
             }
             else {
                 alert2.setVisibility(View.VISIBLE);
                 alert.setVisibility(View.GONE);
-                alert2.setText(details[6]);
+                alert2.setText(details[8]);
             }
 
         }

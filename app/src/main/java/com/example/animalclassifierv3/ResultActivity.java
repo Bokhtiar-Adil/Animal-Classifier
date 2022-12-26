@@ -33,10 +33,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class ResultActivity extends AppCompatActivity {
 
-    TextView alert,scifi,cst,desc;
-    TextView scilbl,cstlbl,desclbl,header,more;
+    TextView alert,scifi,cst,food,habitat,misc;
+    TextView scilbl,cstlbl,foodlbl,habitatlbl,misclbl,header,more;
     int language;
-    Button btn, speak, speak2, speak3, speak4, photos;
+    Button btn, speak, speak2, speak3, speak4, speak5, speak6, photos;
     TextToSpeech ts;
     String bnCst, animal;
 
@@ -47,7 +47,9 @@ public class ResultActivity extends AppCompatActivity {
 
         scilbl = findViewById(R.id.sciname);
         cstlbl = findViewById(R.id.cst);
-        desclbl = findViewById(R.id.desc);
+        foodlbl = findViewById(R.id.food);
+        habitatlbl = findViewById(R.id.habitat);
+        misclbl = findViewById(R.id.misc);
         header = findViewById(R.id.header);
         more = findViewById(R.id.more);
         btn = findViewById(R.id.morebtn);
@@ -60,7 +62,9 @@ public class ResultActivity extends AppCompatActivity {
 
         header.setTypeface(tf);
         scilbl.setTypeface(tf);
-        desclbl.setTypeface(tf);
+        foodlbl.setTypeface(tf);
+        habitatlbl.setTypeface(tf);
+        misclbl.setTypeface(tf);
         cstlbl.setTypeface(tf);
         more.setTypeface(tf);
         //btn.setTypeface(tf);
@@ -73,7 +77,9 @@ public class ResultActivity extends AppCompatActivity {
         if(language==0) {
             header.setText(R.string.res_header);
             scilbl.setText(R.string.res_scifi);
-            desclbl.setText(R.string.res_desc);
+            foodlbl.setText(R.string.res_food);
+            habitatlbl.setText(R.string.res_habitat);
+            misclbl.setText(R.string.res_misc);
             cstlbl.setText(R.string.res_cst);
             more.setText(R.string.res_more);
             btn.setTypeface(Typeface.DEFAULT);
@@ -82,7 +88,9 @@ public class ResultActivity extends AppCompatActivity {
         else {
             header.setText(R.string.res_header_bangla);
             scilbl.setText(R.string.res_scifi_bangla);
-            desclbl.setText(R.string.res_desc_bangla);
+            foodlbl.setText(R.string.res_food_bangla);
+            habitatlbl.setText(R.string.res_habitat_bangla);
+            misclbl.setText(R.string.res_misc_bangla);
             cstlbl.setText(R.string.res_cst_bangla);
             more.setText(R.string.res_more_bangla);
             btn.setTypeface(tf);
@@ -162,7 +170,7 @@ public class ResultActivity extends AppCompatActivity {
         //String[] details = AnimalDetails.DETAILS[maxScoreIdx];
         int ind;
         for(ind=0; ind<AnimalDetails.DETAILS.length; ind++){
-            if(Integer.parseInt(AnimalDetails.DETAILS[ind][0]) == maxScoreIdx){
+            if(Integer.parseInt(AnimalDetails.DETAILS[ind][0]) == maxScoreIdx && AnimalDetails.DETAILS[ind].length==12){
                 details = AnimalDetails.DETAILS[ind];
                 break;
             }
@@ -178,11 +186,15 @@ public class ResultActivity extends AppCompatActivity {
         alert = findViewById(R.id.alert);
         scifi = findViewById(R.id.scidet);
         cst = findViewById(R.id.cstdet);
-        desc = findViewById(R.id.descdet);
+        food = findViewById(R.id.fooddet);
+        habitat = findViewById(R.id.habitatdet);
+        misc = findViewById(R.id.miscdet);
         speak = findViewById(R.id.speak);
         speak2 = findViewById(R.id.speak2);
         speak3 = findViewById(R.id.speak3);
         speak4 = findViewById(R.id.speak4);
+        speak5 = findViewById(R.id.speak5);
+        speak6 = findViewById(R.id.speak6);
 
         speak.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -191,17 +203,19 @@ public class ResultActivity extends AppCompatActivity {
             }
         });
 
-        if(details[2] == "False") {
+        if(details[2].equalsIgnoreCase("False")) {
             alert.setVisibility(View.GONE);
         }
         else {
             if(language==0) alert.setText(details[2]);
-            else alert.setText(details[6]);
+            else alert.setText(details[8]);
         }
         if(language==0){
             scifi.setText(details[3]);
             cst.setText(details[4]);
-            desc.setText(details[5]);
+            food.setText(details[5]);
+            habitat.setText(details[6]);
+            misc.setText(details[7]);
         }
         else {
             scifi.setText(details[3]);
@@ -210,8 +224,11 @@ public class ResultActivity extends AppCompatActivity {
             else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
             else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
             else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
-            if(details.length==8) desc.setText(details[7]);
-            else desc.setText("দুঃখিত, বাংলা ডাটা এখনো যোগ করা হয়নি।");
+            else bnCst = "ডামি";
+            cst.setText(bnCst);
+            food.setText(details[9]);
+            habitat.setText(details[10]);
+            misc.setText(details[11]);
         }
         speak2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -232,7 +249,21 @@ public class ResultActivity extends AppCompatActivity {
         speak4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ts.speak(desc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+                ts.speak(food.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(habitat.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
+            }
+        });
+
+        speak6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ts.speak(misc.getText().toString(),TextToSpeech.QUEUE_FLUSH,null);
             }
         });
 

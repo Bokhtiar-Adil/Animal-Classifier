@@ -34,6 +34,12 @@
     <string name="res_cst_bangla">বিলুপ্তির সম্ভাবনা</string>
     <string name="res_desc">Description</string>
     <string name="res_desc_bangla">বর্ণনা</string>
+    <string name="res_food">Diet</string>
+    <string name="res_food_bangla">খাদ্য</string>
+    <string name="res_habitat">Habitat</string>
+    <string name="res_habitat_bangla">বাসস্থান</string>
+    <string name="res_misc">Miscellaneous</string>
+    <string name="res_misc_bangla">বিবিধ</string>
     <string name="res_more">Click on the following button to learn more about it from online. Also, make sure your internet connection is on.</string>
     <string name="res_more_bangla">আরও বিস্তারিত জানতে ইন্টারনেট একটিভ করে নিচের বাটনে ক্লিক করুন।</string>
     <string name="res_more_btn">Browse Internet</string>
