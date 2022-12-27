@@ -25,7 +25,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
     TextView scilbl,cstlbl,venomlbl,foodlbl,habitatlbl,misclbl,header,more;
     Spinner spin;
     ArrayList<String> animals = new ArrayList<>();
-    Button speak, speak2, speak3, speak4, speak5, speak6, speak7, photos;
+    Button speak, speak2, speak3, speak4, speak5, speak6, speak7, photos, browsebtn;
     TextToSpeech ts;
     int language;
     String bnCst, animal;
@@ -55,6 +55,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         speak6 = findViewById(R.id.speak6);
         speak7 = findViewById(R.id.speak7);
         photos = findViewById(R.id.photos);
+        browsebtn = findViewById(R.id.links);
 
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
@@ -91,6 +92,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         cstlbl.setTypeface(tf);
         venomlbl.setTypeface(tf);
         more.setTypeface(tf);
+        photos.setTypeface(tf);
+        browsebtn.setTypeface(tf);
 
         if(language==0) {
             header.setText(R.string.ency_header);
@@ -101,6 +104,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             misclbl.setText(R.string.res_misc);
             cstlbl.setText(R.string.res_cst);
             more.setText(R.string.res_more);
+            photos.setText(R.string.photosbtn);
+            browsebtn.setText(R.string.res_more_btn);
             //btn.setText(R.string.res_more_btn);
         }
         else {
@@ -112,6 +117,8 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             misclbl.setText(R.string.res_misc_bangla);
             cstlbl.setText(R.string.res_cst_bangla);
             more.setText(R.string.res_more_bangla);
+            photos.setText(R.string.photosbtn_bangla);
+            browsebtn.setText(R.string.res_more_btn_bangla);
             //btn.setText(R.string.res_more_btn_bangla);
         }
 
@@ -204,6 +211,22 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
                     photoPage.putExtra("animal", animal);
                     photoPage.putExtra("language", language);
                     startActivity(photoPage);
+                }
+                else {
+                    if(language==0) Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_LONG).show();
+                    else Toast.makeText(getApplicationContext(), R.string.no_internet_bangla, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
+        browsebtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                click.start();
+                if(isInternetConnected()) {
+                    Intent intent = new Intent(EncyclopediaActivity.this, WebViewActivity.class);
+                    intent.putExtra("searchItem", animal);
+                    if(!animal.equals("")) startActivity(intent);
                 }
                 else {
                     if(language==0) Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_LONG).show();

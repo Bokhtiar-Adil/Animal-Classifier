@@ -361,7 +361,7 @@
             android:paddingTop="15dp"
             android:paddingEnd="25dp"
             android:paddingBottom="15dp"
-            android:text="Links"
+            android:text="Browse Internet"
             android:textAllCaps="false"
             android:textColor="@color/midnight_blue"
             android:textSize="17sp"

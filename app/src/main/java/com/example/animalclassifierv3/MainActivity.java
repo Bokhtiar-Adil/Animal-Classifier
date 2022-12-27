@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
   private final int GALLERY_REQ_CODE = 2;
   Button btn,camerabtn,gallerybtn,encyclobtn,aboutbtn, game1btn, game2btn;
   ImageView imgview;
-  TextView header_1, header_2, header_3, para_1, para_2, para_3, langText;
+  TextView head, header_1, header_2, header_3, para_1, para_2, para_3, langText;
   RadioGroup lang;
   TextToSpeech ts;
   int language = 0;
@@ -73,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
     final MediaPlayer click = MediaPlayer.create(MainActivity.this,R.raw.click_1);
     final Typeface tf = Typeface.createFromAsset(this.getAssets(),
             "font/kalpurush.ttf");
-    final Typeface tf2 = Typeface.DEFAULT;
+    final Typeface tf2 = Typeface.createFromAsset(this.getAssets(),
+            "font/roboto_condensed_regular.ttf");
 
     // Write a message to the database
 //    FirebaseDatabase database = FirebaseDatabase.getInstance(FirebaseApp.getInstance("https://animalclassifierv3-default-rtdb.asia-southeast1.firebasedatabase.app/"));
@@ -93,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
+    head = findViewById(R.id.head);
     langText = findViewById(R.id.lang);
     header_1 = findViewById(R.id.header1);
     header_2 = findViewById(R.id.header2);
@@ -100,19 +102,26 @@ public class MainActivity extends AppCompatActivity {
     para_1 = findViewById(R.id.para1);
     para_2 = findViewById(R.id.para2);
     para_3 = findViewById(R.id.para3);
-    langText.setTypeface(tf);
-    header_1.setTypeface(tf);
-    header_2.setTypeface(tf);
-    header_3.setTypeface(tf);
-    para_1.setTypeface(tf);
-    para_2.setTypeface(tf);
-    para_3.setTypeface(tf);
+    head.setTypeface(tf2);
+    langText.setTypeface(tf2);
+    header_1.setTypeface(tf2);
+    header_2.setTypeface(tf2);
+    header_3.setTypeface(tf2);
+    para_1.setTypeface(tf2);
+    para_2.setTypeface(tf2);
+    para_3.setTypeface(tf2);
     camerabtn = findViewById(R.id.camerabtn);
     gallerybtn = findViewById(R.id.gallerybtn);
     encyclobtn = findViewById(R.id.encyclobtn);
     aboutbtn = findViewById(R.id.aboutbtn);
     game1btn = findViewById(R.id.game1);
     game2btn = findViewById(R.id.game2);
+    camerabtn.setTypeface(tf2);
+    gallerybtn.setTypeface(tf2);
+    aboutbtn.setTypeface(tf2);
+    encyclobtn.setTypeface(tf2);
+    game1btn.setTypeface(tf2);
+    game2btn.setTypeface(tf2);
 
     lang = findViewById(R.id.langSet);
     lang.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -127,12 +136,12 @@ public class MainActivity extends AppCompatActivity {
             para_1.setText(getString(R.string.main_capture));
             para_2.setText(getString(R.string.main_encyclo));
             para_3.setText(getString(R.string.main_online_feature));
-            camerabtn.setTypeface(Typeface.DEFAULT);
-            gallerybtn.setTypeface(Typeface.DEFAULT);
-            aboutbtn.setTypeface(Typeface.DEFAULT);
-            encyclobtn.setTypeface(Typeface.DEFAULT);
-            game1btn.setTypeface(Typeface.DEFAULT);
-            game2btn.setTypeface(Typeface.DEFAULT);
+            camerabtn.setTypeface(tf2);
+            gallerybtn.setTypeface(tf2);
+            aboutbtn.setTypeface(tf2);
+            encyclobtn.setTypeface(tf2);
+            game1btn.setTypeface(tf2);
+            game2btn.setTypeface(tf2);
             camerabtn.setText(R.string.main_camerabtn);
             gallerybtn.setText(R.string.main_gallerybtn);
             encyclobtn.setText(R.string.main_encybtn);
