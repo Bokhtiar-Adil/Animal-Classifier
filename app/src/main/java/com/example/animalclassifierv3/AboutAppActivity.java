@@ -47,12 +47,12 @@ public class AboutAppActivity extends AppCompatActivity {
 
         if(language==0) {
             heading.setText("ANIMALO");
-            subheading.setText("Learn about animals in fun way with Animalo!!");
+            subheading.setText("A simple, friendly and informative app to learn about animals.");
             madeBy.setText("Made by");
             bokhtiar.setText("Bokhtiar Adil Prottoy");
             rakib.setText("Rakibul Islam");
             supervisedBy.setText("Supervised by");
-            sir.setText("Professor Dr. Aminul Haque Akhand");
+            sir.setText("Professor Dr. MD Aminul Haque Akhand");
             rights.setText("All rights reserved by");
             dept.setText("Department of Computer Science and Engineering");
             varsity.setText("Khulna University of Engineering and Technology");
@@ -60,15 +60,15 @@ public class AboutAppActivity extends AppCompatActivity {
         }
         else {
             heading.setText("এনিমেলো");
-            subheading.setText("আনন্দের সাথে প্রাণী সম্পর্কে জানুন এনিমেলোর সাথে!!");
+            subheading.setText("প্রাণীদের সম্পর্কে জানার জন্য একটি সরল, উপযোগী ও তথ্যবহুল এপ।");
             madeBy.setText("এপ ডেভেলপার");
             bokhtiar.setText("বখতিয়ার আদিল প্রত্যয়");
             rakib.setText("রাকিবুল ইসলাম");
             supervisedBy.setText("তত্ত্বাবধায়ক");
-            sir.setText("অধ্যাপক ডঃ আমিনুল হক আখন্দ");
+            sir.setText("অধ্যাপক ডঃ মোহাম্মদ আমিনুল হক আকন্দ");
             rights.setText("স্বত্বাধিকারী");
             dept.setText("কম্পিউটার বিজ্ঞান ও প্রকৌশল বিভাগ");
-            varsity.setText("খুলনা বিজ্ঞান ও প্রকৌশল বিশ্ববিদ্যালয়");
+            varsity.setText("খুলনা প্রকৌশল ও প্রযুক্তি বিশ্ববিদ্যালয়");
             country.setText("খুলনা, বাংলাদেশ");
         }
 
