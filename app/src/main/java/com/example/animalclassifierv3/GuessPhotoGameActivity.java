@@ -159,14 +159,6 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
                 }
             }
         };
-
-//        roundCnt = 0;
-//        score = 0;
-//        String lbl;
-//        questionsLbl = new int[10];
-//        wrongs = new int[3];
-//        rounds();
-
     }
 
     public String checkDigit(int number) {
@@ -262,11 +254,6 @@ public class GuessPhotoGameActivity extends AppCompatActivity implements View.On
     public void roundEnd(){
         if(language==0) heading.setText("Gusess the animal: all rounds finished");
         else heading.setText("প্রাণীটি কি? সকল রাউন্ড শেষ");
-//        resMsg.setVisibility(View.GONE);
-//        resCorrect.setVisibility(View.GONE);
-//        resScore.setVisibility(View.GONE);
-//        nextBtn.setVisibility(View.GONE);
-
     }
 
     @Override

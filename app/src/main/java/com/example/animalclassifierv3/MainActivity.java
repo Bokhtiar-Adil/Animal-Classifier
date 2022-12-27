@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
   RadioGroup lang;
   TextToSpeech ts;
   int language = 0;
-//  TextView temp;
+
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -57,15 +57,12 @@ public class MainActivity extends AppCompatActivity {
     myRef.addValueEventListener(new ValueEventListener() {
       @Override
       public void onDataChange(DataSnapshot dataSnapshot) {
-        // This method is called once with the initial value and again
-        // whenever data at this location is updated.
         String value = dataSnapshot.getValue(String.class);
         Log.d("DBDB", "Value is: " + value);
       }
 
       @Override
       public void onCancelled(DatabaseError error) {
-        // Failed to read value
         Log.w("RRRR", "Failed to read value.", error.toException());
       }
     });
@@ -76,18 +73,10 @@ public class MainActivity extends AppCompatActivity {
     final Typeface tf2 = Typeface.createFromAsset(this.getAssets(),
             "font/roboto_condensed_regular.ttf");
 
-    // Write a message to the database
-//    FirebaseDatabase database = FirebaseDatabase.getInstance(FirebaseApp.getInstance("https://animalclassifierv3-default-rtdb.asia-southeast1.firebasedatabase.app/"));
-//    DatabaseReference myRef = database.getReference("message");
-//
-//    myRef.setValue("Hello, World!");
-
     ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
       @Override
       public void onInit(int i) {
-        // if No error is found then only it will run
         if(i!=TextToSpeech.ERROR){
-          // To Choose language of speech
           if(language==0) ts.setLanguage(Locale.ENGLISH);
           else ts.setLanguage(new Locale("bn_IN"));
         }
@@ -181,8 +170,6 @@ public class MainActivity extends AppCompatActivity {
       }
     });
 
-    //imgview = findViewById(R.id.imageView);
-
 
     camerabtn.setOnClickListener(new View.OnClickListener() {
       @Override
@@ -249,7 +236,6 @@ public class MainActivity extends AppCompatActivity {
     if(resultCode==RESULT_OK){
       if(requestCode==CAMERA_REQ_CODE){
         Bitmap img = (Bitmap) data.getExtras().get("data");
-        //imgview.setImageBitmap(img);
         ByteArrayOutputStream stream = new ByteArrayOutputStream();
         img.compress(Bitmap.CompressFormat.JPEG, 100, stream);
         byte[] byteArray = stream.toByteArray();
@@ -259,41 +245,20 @@ public class MainActivity extends AppCompatActivity {
         startActivity(toResult);
       }
       else if(requestCode==GALLERY_REQ_CODE){
-        //imgview.setImageURI(data.getData());
-//        Uri uri = data.getData();
-//        Intent toResult = new Intent(this, ResultActivity.class);
-//        toResult.putExtra("userInput", uri.toString());
-//        startActivity(toResult);
         final Uri uri = data.getData();
         try {
           Bitmap img = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri);
           int ht = img.getHeight();
           int wt = img.getWidth();
-//          String ddf = String.valueOf(ht), fff = String.valueOf(wt);
-//          temp.setText(ddf+fff);
           Bitmap resizedImg = img;
           if(ht*wt > 876544 && wt>=ht) {
             int newHt = (int) ((ht*512)/wt);
             resizedImg = Bitmap.createScaledBitmap(img, 512,newHt,true);
-//            if(newHt<856) resizedImg = Bitmap.createScaledBitmap(img, 512,newHt,true);
-//            else {
-//              newHt /= 2;
-//              resizedImg = Bitmap.createScaledBitmap(img, 512, newHt,true);
-//            }
-
           }
           else if(ht*wt > 876544 && ht>wt) {
             int newWt = (int) ((wt*512)/ht);
             resizedImg = Bitmap.createScaledBitmap(img, newWt,512,true);
-//            if(newWt<856) resizedImg = Bitmap.createScaledBitmap(img, newWt,512,true);
-//            else {
-//              newWt /= 2;
-//              resizedImg = Bitmap.createScaledBitmap(img, newWt, 512,true);
-//            }
-            //temp.setText(ddf+" "+fff+" "+String.valueOf(newWt)+" "+String.valueOf(1024));
           }
-          //temp.setText(ddf+fff+String.valueOf(newWt));
-          //resizedImg = Bitmap.createScaledBitmap(img, 512, 512,true);
           ByteArrayOutputStream stream = new ByteArrayOutputStream();
           resizedImg.compress(Bitmap.CompressFormat.JPEG, 100, stream);
           byte[] byteArray = stream.toByteArray();

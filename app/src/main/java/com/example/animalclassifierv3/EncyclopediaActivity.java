@@ -60,9 +60,7 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
-                // if No error is found then only it will run
                 if(i!=TextToSpeech.ERROR){
-                    // To Choose language of speech
                     if(language==0) ts.setLanguage(Locale.ENGLISH);
                     else ts.setLanguage(new Locale("bn_IN"));
                 }
@@ -293,8 +291,6 @@ public class EncyclopediaActivity extends AppCompatActivity implements AdapterVi
             Log.d("BANGLA", details[4]);
             Log.d("BANGLA", bnCst);
             cst.setText(bnCst);
-//            if(details.length == 8) food.setText(details[7]);
-//            else desc.setText(R.string.data_not_added_sorry_bangla);
             food.setText(details[9]);
             habitat.setText(details[10]);
             misc.setText(details[11]);

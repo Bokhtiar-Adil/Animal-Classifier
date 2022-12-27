@@ -106,9 +106,7 @@ public class ResultActivity extends AppCompatActivity {
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int i) {
-                // if No error is found then only it will run
                 if(i!=TextToSpeech.ERROR){
-                    // To Choose language of speech
                     if(language==0) ts.setLanguage(Locale.ENGLISH);
                     else ts.setLanguage(new Locale("bn_IN"));
                 }
@@ -120,10 +118,6 @@ public class ResultActivity extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         byte[] byteArray = extras.getByteArray("userInput");
-
-//        Intent intent = getIntent();
-//        String img = intent.getStringExtra("userInput");
-//        Uri file
 
         Bitmap bitmap = null;
         Module module = null;
@@ -156,10 +150,6 @@ public class ResultActivity extends AppCompatActivity {
             if (i>=398) continue;
             if (scores[i] > maxScore) {
                 maxScore = scores[i];
-//                maxFifthScoreIdx = maxFourthScoreIdx;
-//                maxFourthScoreIdx = maxThirdScoreIdx;
-//                maxThirdScoreIdx = maxSecondScoreIdx;
-//                maxSecondScoreIdx = maxScoreIdx;
                 maxScoreIdx = i;
             }
         }

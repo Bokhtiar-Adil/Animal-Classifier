@@ -55,7 +55,7 @@ public class AboutAppActivity extends AppCompatActivity {
             sir.setText("Professor Dr. MD Aminul Haque Akhand");
             rights.setText("All rights reserved by");
             dept.setText("Department of Computer Science and Engineering");
-            varsity.setText("Khulna University of Engineering and Technology");
+            varsity.setText("Khulna University of Engineering & Technology");
             country.setText("Khulna, Bangladesh");
         }
         else {
