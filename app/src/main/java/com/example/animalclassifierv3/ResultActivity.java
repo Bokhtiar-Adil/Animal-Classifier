@@ -215,11 +215,11 @@ public class ResultActivity extends AppCompatActivity {
         else {
             scifi.setText(details[3]);
             if(details[4].equalsIgnoreCase("Extinct")) bnCst = "বিলুপ্ত";
-            else if(details[4].equalsIgnoreCase("Threatened")) bnCst = "বিলুপ্তপ্রায়";
+            else if(details[4].equalsIgnoreCase("Threatened") || details[4].equalsIgnoreCase("Endangered")) bnCst = "বিলুপ্তপ্রায়";
             else if(details[4].equalsIgnoreCase("Vulnerable")) bnCst = "বিলুপ্তির পথে";
             else if(details[4].equalsIgnoreCase("Not threatened")) bnCst = "আশংকা নাই";
             else if(details[4].equalsIgnoreCase("Least concern")) bnCst = "শংকামুক্ত";
-            else bnCst = "ডামি";
+            else bnCst = "শংকামুক্ত";
             cst.setText(bnCst);
             food.setText(details[9]);
             habitat.setText(details[10]);
