@@ -183,7 +183,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
 
     public void rounds() {
         roundCnt++;
-        curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
+        //curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
         ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]); // ind holds correct photo label index in animal classes
         if(language==0) {
             heading.setText("Find the animal: round "+String.valueOf(roundCnt)+" of 10");

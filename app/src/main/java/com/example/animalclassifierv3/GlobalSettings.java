@@ -1,5 +1,7 @@
 package com.example.animalclassifierv3;
 
+import android.graphics.Typeface;
+
 public class GlobalSettings {
     public static int language;
 

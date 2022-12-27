@@ -6,16 +6,22 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_vertical"
-    android:background="@color/midnight_blue"
+    android:background="@color/dark_2"
     tools:context="com.example.animalclassifierv3.Splash">
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/abstract_horse"/>
+
     <TextView
+        android:id="@+id/name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Animal Classifier"
+        android:text="Animalo"
         android:textSize="25sp"
         android:textAlignment="center"
-        android:textColor="@color/lime"
+        android:textColor="@color/glowing_blue"
         />
 
 </LinearLayout>

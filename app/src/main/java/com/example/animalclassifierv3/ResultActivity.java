@@ -59,6 +59,8 @@ public class ResultActivity extends AppCompatActivity {
 
         final Typeface tf = Typeface.createFromAsset(this.getAssets(),
                 "font/kalpurush.ttf");
+        final Typeface tf2 = Typeface.createFromAsset(this.getAssets(),
+                "font/roboto_condensed_regular.ttf");
 
         header.setTypeface(tf);
         scilbl.setTypeface(tf);
@@ -83,7 +85,9 @@ public class ResultActivity extends AppCompatActivity {
             cstlbl.setText(R.string.res_cst);
             more.setText(R.string.res_more);
             btn.setTypeface(Typeface.DEFAULT);
+            photos.setTypeface(Typeface.DEFAULT);
             btn.setText(R.string.res_more_btn);
+            photos.setText(R.string.photosbtn);
         }
         else {
             header.setText(R.string.res_header_bangla);
@@ -94,7 +98,9 @@ public class ResultActivity extends AppCompatActivity {
             cstlbl.setText(R.string.res_cst_bangla);
             more.setText(R.string.res_more_bangla);
             btn.setTypeface(tf);
+            photos.setTypeface(tf);
             btn.setText(R.string.res_more_btn_bangla);
+            photos.setText(R.string.photosbtn_bangla);
         }
 
         ts = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
@@ -123,7 +129,6 @@ public class ResultActivity extends AppCompatActivity {
         Module module = null;
         try {
             bitmap = BitmapFactory.decodeByteArray(byteArray,0,byteArray.length);
-            //bitmap = BitmapFactory.decodeStream(getAssets().open("image.jpg"));
             module = LiteModuleLoader.load(assetFilePath(this, "model.pt"));
         } catch (IOException e) {
             Log.e("AnimalClassifier", "Error reading assets", e);
@@ -288,9 +293,15 @@ public class ResultActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 click.start();
-                Intent intent = new Intent(ResultActivity.this, WebViewActivity.class);
-                intent.putExtra("searchItem", cd);
-                startActivity(intent);
+                if(isInternetConnected()) {
+                    Intent intent = new Intent(ResultActivity.this, WebViewActivity.class);
+                    intent.putExtra("searchItem", cd);
+                    startActivity(intent);
+                }
+                else {
+                    if(language==0) Toast.makeText(getApplicationContext(), R.string.no_internet, Toast.LENGTH_LONG).show();
+                    else Toast.makeText(getApplicationContext(), R.string.no_internet_bangla, Toast.LENGTH_LONG).show();
+                }
             }
         });
 
