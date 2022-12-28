@@ -175,7 +175,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
 
     public void rounds() {
         roundCnt++;
-        //curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
+        curr = new Random().nextInt(AnimalDetails.PHOTOS.length);
         ind = Integer.parseInt(AnimalDetails.PHOTOS[curr][0]); // ind holds correct photo label index in animal classes
         if(language==0) {
             heading.setText("Find the animal: round "+String.valueOf(roundCnt)+" of 10");
@@ -203,6 +203,7 @@ public class DetectAnimalGameActivity extends AppCompatActivity implements View.
             if(i==rtOpInd) continue;
             int wrongImgInd = new Random().nextInt(AnimalDetails.PHOTOS[wrongs[j]].length); // finding wrong images randomly
             Picasso.get().load(AnimalDetails.PHOTOS[wrongs[j]][wrongImgInd]).into(imgs[i]);
+            j++;
         }
         if(language==0) {
             optionA.setText("Option A");
