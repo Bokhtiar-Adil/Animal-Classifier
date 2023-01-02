@@ -5,7 +5,7 @@ In this modern world of technology, interaction with wild animals is getting rar
 In this project, we worked on an android app that can correctly classify animals from images. So, in any such event of emergency, if the victim or the people around him could take picture of that particular poisonous snake or insect and feed it into our app, our app will identify that species and help them to take further steps. The encyclopedia integrated in this app can be helpful to anybody. Whenever someone wants to learn about an animal, he can just open this app and look up the animal in encyclopedia. There is also a game section that teaches it’s users about animals in a fun way. It can be really helpful in case of the encyclopedia seems boring to some people. Our goal was to utilize the excessive obsession of people to android, provide them a simpler way to learn about animals and make a useful app for identifying wild animals.
 
 # Video demo
-A short video demonstration is here --> https://youtu.be/pXn5unyGFGw
+A short video demonstration is here --> https://youtu.be/kV9a2QPt0WE
 
 # Features
 1. This app can classify 398 distinct animals including mammals, primates, insects, snakes, birds and others. This can be done in offline.
