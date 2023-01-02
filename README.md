@@ -1,0 +1,8 @@
+# Animalo
+
+In this modern world of technology, interaction with wild animals is getting rarer and rarer day by day. The vast and diverse world of animals are like a mystery to us all. Due to urban life filled with technology and artificial abstraction, young generation of this era are losing interest in learning about animals. They rarely have any interaction with animals. Even the adults are not at much better state. The ignorance of people regarding animals and their characteristics can get very fatal if they visit any deep jungle such as Sundarbans. There are so many deadly and poisonous animals in those jungle and some of them can even kill a grown man within minutes. In any snake-bite case, if the correct name of the species of that particular snake can be known in time, victim can be saved. 
+
+In this project, we worked on an android app that can correctly classify animals from images. So, in any such event of emergency, if the victim or the people around him could take picture of that particular poisonous snake or insect and feed it into our app, our app will identify that species and help them to take further steps. The encyclopedia integrated in this app can be helpful to anybody. Whenever someone wants to learn about an animal, he can just open this app and look up the animal in encyclopedia. There is also a game section that teaches it’s users about animals in a fun way. It can be really helpful in case of the encyclopedia seems boring to some people. Our goal was to utilize the excessive obsession of people to android, provide them a simpler way to learn about animals and make a useful app for identifying wild animals.
+
+# Video demo
+A short video demonstration is here --> https://youtu.be/pXn5unyGFGw
