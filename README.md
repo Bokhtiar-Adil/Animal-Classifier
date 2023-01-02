@@ -6,3 +6,11 @@ In this project, we worked on an android app that can correctly classify animals
 
 # Video demo
 A short video demonstration is here --> https://youtu.be/pXn5unyGFGw
+
+# Features
+1. This app can classify 398 distinct animals including mammals, primates, insects, snakes, birds and others. This can be done in offline.
+2. It has a rich offline encyclopedia contiaining the information about venomous status, scientific name, conservation status and other necessary info.
+3. It has some quick games that will test the user's knowledge about animals. It can be enjoyed by kids.
+4. This app is available in both English and Bangla.
+5. User can use the automated voice system that will read the text for them.
+6. Kids-friendly.
